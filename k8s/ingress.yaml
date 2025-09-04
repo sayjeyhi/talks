@@ -11,10 +11,10 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - 'webcontainer.catshoulder.dev'
+        - 'talks.catshoulder.dev'
       secretName: talks-tls-v2
   rules:
-    - host: 'webcontainer.catshoulder.dev'
+    - host: 'talks.catshoulder.dev'
       http:
         paths:
           - path: /
