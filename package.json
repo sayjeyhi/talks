@@ -4,13 +4,21 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "dev:slides": "node scripts/dev-slides.mjs",
+    "dev:all": "concurrently \"bun run dev\" \"bun run dev:slides\"",
+    "build": "bun run build:slides && astro build",
+    "build:slides": "node scripts/build-slides.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "@slidev/cli": "latest",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.5",
+    "concurrently": "latest",
+    "slidev-theme-excali-slide": "^1.3.0",
     "tailwindcss": "^4.1.12"
   }
 }

@@ -6,6 +6,8 @@ tmp
 .git
 .gitignore
 node_modules
+presentations
+src
 
 # Docker
 compose*.yml

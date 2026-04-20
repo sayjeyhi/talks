@@ -1,0 +1,24 @@
+---
+import { readdirSync, existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import PresentationLayout from '../../layouts/PresentationLayout.astro';
+import { TALKS } from '../../data/talks';
+
+export function getStaticPaths() {
+  const presentationsDir = resolve(process.cwd(), 'presentations');
+  const slugs = readdirSync(presentationsDir, { withFileTypes: true })
+    .filter(d => d.isDirectory() && existsSync(resolve(presentationsDir, d.name, 'slides.md')))
+    .map(d => d.name);
+  return slugs.map(slug => ({ params: { presentation: slug } }));
+}
+
+const { presentation } = Astro.params;
+const talk = TALKS.find(t => t.link === `/${presentation}/`);
+const title = talk?.title ?? presentation.replace(/-/g, ' ');
+const description = talk?.description ?? `Presentation: ${presentation}`;
+---
+<PresentationLayout
+  title={title}
+  description={description}
+  slidesPath={`/${presentation}/slides/`}
+/>

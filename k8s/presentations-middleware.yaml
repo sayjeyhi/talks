@@ -1,0 +1,32 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-to-talks-n8n
+  namespace: default
+spec:
+  redirectRegex:
+    regex: "^https://n8n\\.catshoulder\\.dev(.*)"
+    replacement: "https://talks.catshoulder.dev/n8n$1"
+    permanent: true
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-to-talks-i18n
+  namespace: default
+spec:
+  redirectRegex:
+    regex: "^https://i18n\\.catshoulder\\.dev(.*)"
+    replacement: "https://talks.catshoulder.dev/i18n$1"
+    permanent: true
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: redirect-to-talks-web-container
+  namespace: default
+spec:
+  redirectRegex:
+    regex: "^https://webcontainer\\.catshoulder\\.dev(.*)"
+    replacement: "https://talks.catshoulder.dev/web-container$1"
+    permanent: true

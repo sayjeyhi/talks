@@ -1,0 +1,47 @@
+---
+interface Props {
+  title: string;
+  slidesPath: string;
+  description?: string;
+}
+const { title, slidesPath, description = title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Jafar Rezaei" />
+    <meta property="og:title" content={`${title} — Talks by Jafar Rezaei`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <title>{title} — Talks by Jafar Rezaei</title>
+    <style>
+      *, html, body {
+        margin: 0;
+        padding: 0;
+      }
+      html, body {
+        height: 100%;
+        overflow: hidden;
+        background: #000;
+      }
+      iframe {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src={slidesPath}
+      title={title}
+      allow="fullscreen; clipboard-write; autoplay"
+    />
+  </body>
+</html>
