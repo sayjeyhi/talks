@@ -70,17 +70,11 @@ jobs:
 
 
       - name: Deploy
-        uses: Azure/k8s-deploy@v5.0.1
-        with:
-          action: deploy
-          strategy: basic
-          imagepullsecrets: |
-            dockerconfigjson-github-com
-          manifests: |
-            ./k8s/deployment.yaml
-            ./k8s/service.yaml
-            ./k8s/ingress.yaml
-            ./k8s/middleware.yaml
-            ./k8s/presentations-middleware.yaml
-            ./k8s/presentations-ingress.yaml
-          images: ghcr.io/${{ env.REPOSITORY_NAME }}:${{ env.COMMIT_SHA_SHORT }}
+        run: |
+          kubectl set image deployment/talks talks=ghcr.io/${{ env.REPOSITORY_NAME }}:${{ env.COMMIT_SHA_SHORT }} --validate=false
+          kubectl apply --validate=false -f ./k8s/deployment.yaml
+          kubectl apply --validate=false -f ./k8s/service.yaml
+          kubectl apply --validate=false -f ./k8s/ingress.yaml
+          kubectl apply --validate=false -f ./k8s/middleware.yaml
+          kubectl apply --validate=false -f ./k8s/presentations-middleware.yaml
+          kubectl apply --validate=false -f ./k8s/presentations-ingress.yaml
