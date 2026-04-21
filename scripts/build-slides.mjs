@@ -19,8 +19,9 @@ console.log(`Found ${presentations.length} presentation(s): ${presentations.join
 
 for (const slug of presentations) {
   console.log(`▶  Building "${slug}"...`)
+  const outDir = resolve(root, 'dist', slug, 'slides')
   execSync(
-    `slidev build presentations/${slug}/slides.md --base /${slug}/slides/ --out dist/${slug}/slides`,
+    `slidev build presentations/${slug}/slides.md --base /${slug}/slides/ --out "${outDir}"`,
     { stdio: 'inherit', cwd: root }
   )
   console.log(`✓  "${slug}" built → dist/${slug}/slides\n`)

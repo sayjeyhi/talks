@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "dev:slides": "node scripts/dev-slides.mjs",
     "dev:all": "concurrently \"bun run dev\" \"bun run dev:slides\"",
-    "build": "bun run build:slides && astro build",
+    "build": "astro build && bun run build:slides",
     "build:slides": "node scripts/build-slides.mjs",
     "preview": "astro preview",
     "astro": "astro"
