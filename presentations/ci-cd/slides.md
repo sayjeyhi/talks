@@ -72,11 +72,31 @@ layout: center
 class: text-center
 ---
 
+today we talk about
+
+# Optimizing Enterprise CI/CD Pipelines
+
+
+---
+layout: center
+class: text-center
+---
+
 <div class="flex justify-start">
   <div class="bg-gray-100 text-gray-800 px-4 py-2 rounded-2xl rounded-bl-sm shadow-sm">
 Enterprise makes everything more complicated
   </div>
 </div>
+
+---
+layout: center
+class: text-center
+---
+
+<span class="text-3xl mb-3">We are developing it :D</span>
+
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjNnenlqZzZxNWtoZzF5bTEzc2Myb2J2eWFvcHg4NnlqanFyMmhoayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/12msOFU8oL1eww/giphy.gif" />
+
 
 
 ---
@@ -93,7 +113,7 @@ layout: center
 class: text-center
 ---
 
-# Today we focus only on enterprise CI/CD
+# In this talk we cover enterprise CI/CD
 
 
 ---
@@ -106,8 +126,8 @@ image: https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=c
 <div class="space-y-8 mt-9">
 
 <div>
-  <span class="text-base font-semibold text-blue-900 bg-blue-100/70 rounded-xl p-3">Continuous Integration (CI)</span>
-  <div class="text-sm text-gray-400 mt-4">Automatically build, test, and validate every code change as it is merged. Catch bugs early, not in production.</div>
+  <span class="text-base font-semibold text-blue-200 bg-blue-100/20 rounded-xl p-3">Continuous Integration (CI)</span>
+  <div class="text-sm text-gray-400 mt-4">Automatically test, lint, build, and validate every code change as it is merged. </div>
 </div>
 
 <div >
@@ -117,7 +137,7 @@ image: https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=c
 
 <div>
   <span class="text-base font-semibold text-teal-200 bg-teal-100/20 rounded-xl p-3"">Continuous Deployment</span>
-  <div class="text-sm text-gray-400 mt-4">Automatically push every validated change to production — zero human gates required.</div>
+  <div class="text-sm text-gray-400 mt-4">Automatically push every validated change to production, zero human gates required.</div>
 </div>
 
 
@@ -169,6 +189,9 @@ layout: center
 class: text-center
 ---
 
+# Facts!
+
+<br/>
 
 <p class="text-xl flex gap-2 items-center">
   <span class="bg-gray-100 rounded-lg px-3 py-2 text-2xl font-black text-yellow-600">
@@ -178,7 +201,7 @@ class: text-center
 </p>
 
 <div class="mt-3 inline-flex items-baseline gap-2 ">
-  <span class="bg-gray-100 rounded-lg px-3 py-2 text-4xl font-black text-indigo-600">
+  <span class="bg-gray-100 rounded-lg px-3 py-2 text-3xl font-black text-indigo-600">
     20m
   </span>
   to a 
@@ -193,6 +216,12 @@ layout: center
 class: text-center
 ---
 
+# I'm sorry but
+
+<br/>
+<br/>
+<br/>
+<br/>
 
 <div class="flex flex-col  gap-8">
 
@@ -208,75 +237,32 @@ The problem is real and we are involved.
 
 ---
 
-Lyreco's Journey
+# Lyreco's Journey
 
-## From 1-Hour Jenkins Builds to 5-Minute GitHub Actions
+<h1 class="text-xl!">From 1-Hour Jenkins Builds to 5-Minute GitHub Actions</h1>
 
-
-<div class="grid grid-cols-2 gap-8 mt-6">
-
-<div class="space-y-4">
-
-
-<div class="flex items-start gap-3 p-3 rounded-lg bg-orange-50 border border-orange-200">
-  <div class="w-8 h-8 rounded-full bg-orange-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</div>
-  <div>
-    <div class="font-semibold text-orange-900">Our Jenkins Setup</div>
-    <div class="text-sm text-orange-700">The old world & its limitations</div>
-  </div>
+<div class="border-2 border-gray-600 p-10 rounded-2xl">
+<div class="flex items-center justify-center">
+<img class="w-40 relative bg-white p-2 rounded-2xl " src="/Lyreco_Logotype_RGB_positive.png" />
 </div>
 
 
-<div class="flex items-start gap-3 p-3 rounded-lg bg-teal-50 border border-teal-200">
-  <div class="w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">3</div>
-  <div>
-    <div class="font-semibold text-teal-900">Optimisation Techniques</div>
-    <div class="text-sm text-teal-700">Parallelism, caching, smart builds</div>
-  </div>
-</div>
-
-<div class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200">
-  <div class="w-8 h-8 rounded-full bg-slate-700 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">5</div>
-  <div>
-    <div class="font-semibold text-slate-900">Results & Takeaways</div>
-    <div class="text-sm text-slate-700">60 min → 5 min & what's next</div>
-  </div>
-</div>
+Lyreco is a worldwide distributor of office supplies and workplace services, founded in 1926 by Georges-Gaston Gaspard in the Valenciennes area of France.
 
 </div>
 
-<div class="space-y-4">
+Source: [wikipedia](https://en.wikipedia.org/wiki/Lyreco)
 
 
-
-<div class="flex items-start gap-3 p-3 rounded-lg bg-red-50 border border-red-200">
-  <div class="w-8 h-8 rounded-full bg-red-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</div>
-  <div>
-    <div class="font-semibold text-red-900">The Breaking Point</div>
-    <div class="text-sm text-red-700">Why we had to act</div>
-  </div>
-</div>
-
-
-
-<div class="flex items-start gap-3 p-3 rounded-lg bg-green-50 border border-green-200">
-  <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold flex-shrink-0">4</div>
-  <div>
-    <div class="font-semibold text-green-900">GitHub Actions Migration</div>
-    <div class="text-sm text-green-700">Self-hosted runners & architecture</div>
-  </div>
-</div>
-
-
-
-</div>
-</div>
 
 
 
 ---
 
 # DORA Metrics
+
+standard set of metrics used for evaluating process performance and maturity
+
 
 <br/>
 
@@ -296,7 +282,7 @@ Lyreco's Journey
         2015
       </div>
       <div class="mt-4 text-sm text-gray-300">
-        Start of DORA research project<br/>
+        Start of DORA research project by Nicole Forsgren<br/>
       </div>
     </div>
     <!-- 2016 -->
@@ -337,7 +323,7 @@ Lyreco's Journey
 
 <h2 class="mb-2">Datadog DORA dashboard</h2>
 
-<div class="bg-white p-2 rounded-2xl">
+<div class="bg-white p-2 ">
 <img class="w-screen" src="/dora.webp" />
 </div>
 
@@ -345,10 +331,11 @@ Lyreco's Journey
 ---
 
 
+for lyreco
 <h1>DORA metrics compare</h1>
 
 
-<div class="mt-10 grid grid-cols-2 gap-6">
+<div class="mt-8 grid grid-cols-2 gap-6">
 
   <!-- BEFORE -->
   <div class="p-6 rounded-2xl shadow-lg">
@@ -597,6 +584,17 @@ image: https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=com
 
 <div class="space-y-3 mt-12">
 
+
+<div>
+<div class="font-semibold text-gray-100">- On premise setup</div>
+<div class="p-3 ">
+  <ul class="text-xs text-gray-400">
+    <li>Many build agents provisioned on-premise.</li>
+    <li>but queues were bottleneck during peak development hours.</li>
+  </ul>
+</div>
+</div>
+
 <div>
 <div class="font-semibold text-gray-100">- Centralised Master</div>
 <div class="p-3 rounded-lg">
@@ -617,15 +615,6 @@ image: https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg?auto=com
 </div>
 </div>
 
-<div>
-<div class="font-semibold text-gray-100">- On premise queue</div>
-<div class="p-3 ">
-  <ul class="text-xs text-gray-400">
-    <li>Many build agents provisioned on-premise.</li>
-    <li>Queues were a constant bottleneck during peak development hours.</li>
-  </ul>
-</div>
-</div>
 
 
 
@@ -1042,6 +1031,12 @@ steps:
 
 <h1 class="text-lg!">#4 — Docker BuildX & Registry Cache</h1>
 
+<img src="/single-stage-go.webp" />
+
+---
+
+<h1 class="text-lg!">#4 — Docker BuildX & Registry Cache</h1>
+
 
 Build each Docker layer once — reuse forever across all branches and runners
 
@@ -1078,12 +1073,32 @@ steps:
 
 <div class="grid grid-cols-2 gap-6 mt-4">
 
+
+<div>
+  <div class="font-bold text-gray-400 mb-3">Frontend / Node</div>
+  <div class="space-y-3 text-sm">
+    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
+      <div class="font-semibold text-green-800">Vite over Webpack</div>
+      <div class="text-green-700 text-xs mt-1">Vite's esbuild-based bundler is 10–100× faster than Webpack for both dev builds and CI production bundles.</div>
+    </div>
+    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
+      <div class="font-semibold text-green-800"><code class="text-gray-200">npm ci</code>,  <code class="text-gray-200">bun</code> or <code class="text-gray-200">pnpm</code> over <code class="text-gray-200">npm install</code></div>
+      <div class="text-green-700 text-xs mt-1">Clean, deterministic install from lockfile. Faster, reproducible, and never mutates the lockfile during CI.</div>
+    </div>
+    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
+      <div class="font-semibold text-green-800">Logical Test Grouping</div>
+      <div class="text-green-700 text-xs mt-1">Unit, component, and E2E tests run in separate jobs. Fast unit tests give instant feedback; E2E only runs on merge candidates.</div>
+    </div>
+  </div>
+</div>
+
+
 <div>
   <div class="font-bold text-gray-400 mb-3">Java / Maven</div>
   <div class="space-y-3 text-sm">
     <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
       <div class="font-semibold text-blue-800">Parallel Module Builds</div>
-      <div class="text-blue-700 text-xs mt-1"><code>-T 1C</code> flag — Maven builds independent modules in parallel, using all available CPU cores on the runner.</div>
+      <div class="text-blue-700 text-xs mt-1">like <code class="text-gray-200">-T 1C</code> flag, Maven builds independent modules in parallel, using all available CPU cores on the runner.</div>
     </div>
     <div class="p-3 bg-blue-50 rounded-lg border border-blue-200">
       <div class="font-semibold text-blue-800">Skip Unnecessary Goals</div>
@@ -1096,25 +1111,14 @@ steps:
   </div>
 </div>
 
-<div>
-  <div class="font-bold text-gray-400 mb-3">Frontend / Node</div>
-  <div class="space-y-3 text-sm">
-    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
-      <div class="font-semibold text-green-800">Vite over Webpack</div>
-      <div class="text-green-700 text-xs mt-1">Vite's esbuild-based bundler is 10–100× faster than Webpack for both dev builds and CI production bundles.</div>
-    </div>
-    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
-      <div class="font-semibold text-green-800"><code>npm ci</code> over <code>npm install</code></div>
-      <div class="text-green-700 text-xs mt-1">Clean, deterministic install from lockfile. Faster, reproducible, and never mutates the lockfile during CI.</div>
-    </div>
-    <div class="p-3 bg-green-50 rounded-lg border border-green-200">
-      <div class="font-semibold text-green-800">Logical Test Grouping</div>
-      <div class="text-green-700 text-xs mt-1">Unit, component, and E2E tests run in separate jobs. Fast unit tests give instant feedback; E2E only runs on merge candidates.</div>
-    </div>
-  </div>
 </div>
 
-</div>
+
+---
+
+<h1 class="text-lg!">#6 — Prepare CD artifacts on CI</h1>
+
+<img src="/docker-share-image.png">
 
 ---
 layout: center
@@ -1233,15 +1237,20 @@ class: text-center
 background: https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1
 ---
 
+Team now owns the github pipelines...
+Better than groovy files.
+
+<div class="mt-6 p-1 bg-gray-100 rounded-lg border-l-4 border-blue-500">
+  <span class="text-sm font-medium text-gray-700">"Ship small, ship often, ship safely."</span>
+</div>
+
 <div class="abs-inset flex flex-col items-center justify-center bg-black bg-opacity-65">
 
-<div class="mt-4 text-2xl text-gray-300 font-light">From 60 minutes to 5 minutes.</div>
-<div class="text-gray-400 mt-2 text-lg">One deliberate decision at a time.</div>
-
-<div class="mt-10 grid grid-cols-4 gap-5 text-sm max-w-2xl mx-auto">
+<div class="mt-10 grid grid-cols-3 gap-5 text-sm max-w-2xl mx-auto">
+  
   <div class="p-4 bg-white bg-opacity-10 rounded-xl border border-white border-opacity-20">
-    <div class="text-3xl font-black text-white">12×</div>
-    <div class="text-gray-300 mt-1 text-xs">Faster Builds</div>
+    <div class="text-3xl font-black text-white">🚀</div>
+    <div class="text-gray-300 mt-1 text-xs">Developer Flow</div>
   </div>
   <div class="p-4 bg-white bg-opacity-10 rounded-xl border border-white border-opacity-20">
     <div class="text-3xl font-black text-white">0</div>
@@ -1250,10 +1259,6 @@ background: https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?aut
   <div class="p-4 bg-white bg-opacity-10 rounded-xl border border-white border-opacity-20">
     <div class="text-3xl font-black text-white">∞</div>
     <div class="text-gray-300 mt-1 text-xs">Feature Branches</div>
-  </div>
-  <div class="p-4 bg-white bg-opacity-10 rounded-xl border border-white border-opacity-20">
-    <div class="text-3xl font-black text-white">🚀</div>
-    <div class="text-gray-300 mt-1 text-xs">Developer Flow</div>
   </div>
 </div>
 
@@ -1267,9 +1272,6 @@ background: https://images.pexels.com/photos/574073/pexels-photo-574073.jpeg?aut
 
 # Thank You!
 
-<div class="mt-6 p-1 bg-gray-100 rounded-lg border-l-4 border-blue-500">
-  <span class="text-sm font-medium text-gray-700">"Ship small, ship often, ship safely."</span>
-</div>
 
 <span class="text-xs -mt-4">
 
