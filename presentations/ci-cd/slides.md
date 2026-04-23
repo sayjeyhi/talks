@@ -32,6 +32,8 @@ Techniques That Worked for Us
   </a>
 </div>
 
+
+
 ---
 
 # I'm
@@ -1275,7 +1277,7 @@ Better than groovy files.
 
 <span class="text-xs -mt-4">
 
-Slides: <a href="https://talks.catshoulder.dev/ci-cd" class="text-blue-400">talks.catshoulder.dev/ci-cd</a>
+Slides: <a href="https://talks.catshoulder.dev/ci-cd/" target="_blank" class="text-blue-400">talks.catshoulder.dev/ci-cd</a>
 
 </span>
 
