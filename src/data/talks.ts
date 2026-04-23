@@ -79,4 +79,14 @@ export const TALKS = [
     image: "./talks/webcontainer.jpeg",
     date: "Oct 2025",
   },
+  {
+    title: "Optimizing Enterprise CI/CD Pipelines",
+    subtitle: "Techniques That Worked for Us",
+    description:
+      "A talk about how to optimize enterprise CI/CD pipelines, covering best practices, tools, and strategies.",
+    link: "/ci-cd/",
+    tags: ["Kubernetes", "Docker", "CI/CD", "DevOps"],
+    image: "./talks/enterprise-ci-cd.jpg",
+    date: "April 2026",
+  },
 ];

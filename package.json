@@ -3,9 +3,8 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "concurrently \"astro dev\" \"bun run dev:slides\"",
     "dev:slides": "node scripts/dev-slides.mjs",
-    "dev:all": "concurrently \"bun run dev\" \"bun run dev:slides\"",
     "build": "astro build && bun run build:slides",
     "build:slides": "node scripts/build-slides.mjs",
     "preview": "astro preview",
