@@ -1,0 +1,17 @@
+{
+  "name": "ai-talk-demos",
+  "version": "1.0.0",
+  "description": "Live demo code for 'AI at Full Power for Developers' talk",
+  "type": "module",
+  "scripts": {
+    "demo1": "node skills-demo/demo-1-skills.js",
+    "demo2": "node plugins-demo/demo-2-plugins.js",
+    "demo3": "node combined-demo/demo-3-combined.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
