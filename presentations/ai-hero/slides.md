@@ -1,5 +1,6 @@
 ---
 theme: seriph
+background: /openart-video_cf97c9b8_1759827505833.gif
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -248,8 +249,6 @@ The model reads the full history on each pass.
 
 Most chat usage stays here. Fresh context, full attention, low cost.
 
-<img src="/ctx-40pct.png" style="margin-top: 1rem; border-radius: 8px; max-height: 260px;" />
-
 </div>
 <div>
 
@@ -257,7 +256,24 @@ Most chat usage stays here. Fresh context, full attention, low cost.
 
 Tool calls, results, and reasoning stack up — the window fills quickly.
 
-<img src="/ctx-full-conversation.png" style="margin-top: 1rem; border-radius: 8px; max-height: 260px;" />
+</div>
+</div>
+
+---
+
+<div class="tag tag-teal">01 · REPL Loop</div>
+
+## Context fills up fast
+
+<div class="grid-2" style="margin-top: 1.5rem;">
+<div>
+
+<img src="/ctx-40pct.png" style="border-radius: 8px; max-height: 340px;" />
+
+</div>
+<div>
+
+<img src="/ctx-full-conversation.png" style="border-radius: 8px; max-height: 340px;" />
 
 </div>
 </div>
@@ -273,20 +289,35 @@ Tool calls, results, and reasoning stack up — the window fills quickly.
 
 **Compaction** — Claude summarizes history to free space. Signal survives.
 
-<img src="/ctx-compacted.png" style="margin-top: 1rem; border-radius: 8px; max-height: 240px;" />
-
 </div>
 <div>
 
 **Overflow** — no compaction, no guards. Context rots. Goals drift.
 
-<img src="/ctx-overloaded.png" style="margin-top: 1rem; border-radius: 8px; max-height: 240px;" />
-
 </div>
 </div>
 
-<div class="callout" style="margin-top: 1rem;">
+<div class="callout" style="margin-top: 1.5rem;">
   Principle of Least Context: sub-agents isolate work so the orchestrator stays lean.
+</div>
+
+---
+
+<div class="tag tag-teal">01 · REPL Loop</div>
+
+## Compaction vs. overflow
+
+<div class="grid-2" style="margin-top: 1.5rem;">
+<div>
+
+<img src="/ctx-compacted.png" style="border-radius: 8px; max-height: 340px;" />
+
+</div>
+<div>
+
+<img src="/ctx-overloaded.png" style="border-radius: 8px; max-height: 340px;" />
+
+</div>
 </div>
 
 ---
@@ -297,12 +328,18 @@ Tool calls, results, and reasoning stack up — the window fills quickly.
 
 Each sub-agent spawns its own window. Without isolation, the orchestrator pays for all of it.
 
-<div style="text-align: center; margin-top: 1.5rem;">
-  <img src="/ctx-parallel-agents.png" style="border-radius: 8px; max-height: 300px; margin: 0 auto;" />
+<div class="callout callout-teal" style="margin-top: 2rem;">
+  Three explorer agents × ~60k tokens each = 180k tokens before orchestrator does any work.
 </div>
 
-<div class="callout callout-teal" style="margin-top: 1rem;">
-  Three explorer agents × ~60k tokens each = 180k tokens before orchestrator does any work.
+---
+
+<div class="tag tag-teal">01 · REPL Loop</div>
+
+## Parallel agents eat context fast
+
+<div style="text-align: center; margin-top: 2rem;">
+  <img src="/ctx-parallel-agents.png" style="border-radius: 8px; max-height: 400px; margin: 0 auto;" />
 </div>
 
 ---
