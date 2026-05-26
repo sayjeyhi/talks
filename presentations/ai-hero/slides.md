@@ -4,8 +4,8 @@ class: text-center
 highlighter: shiki
 lineNumbers: false
 info: |
-  ## Optimizing Enterprise CI/CD Pipelines
-  Techniques That Worked for Us
+  ## AI Hero: Building Systems, Not Prompts
+  From single-shot answers to autonomous agents
 drawings:
   persist: false
 css: unocss
@@ -18,10 +18,9 @@ export ANTHROPIC_API_KEY=sk-ant-...
 npm run demo1  # then demo2, demo3 
 -->
 
-# Optimizing Enterprise CI/CD Pipelines
+# AI Hero
 
-
-Techniques That Worked for Us
+Building Systems, Not Prompts
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -34,7 +33,7 @@ Techniques That Worked for Us
 
   <a class="text-left ml-4 mt-2" href="https://github.com/sayjeyhi">
     <strong class="text-xl">Jafar Rezaei</strong> <br/>
-    <span class="text-gray-400 text-sm">April 2026</span>
+    <span class="text-gray-400 text-sm">May 2026</span>
   </a>
 </div>
 
@@ -719,6 +718,159 @@ class: 'text-center'
 
 <div style="margin-top: 2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; color: #666;">
   GitHub webhook → agent → reads PR → reviews each file → posts comment → pings Slack
+</div>
+
+---
+layout: section
+---
+
+<div class="tag tag-purple">Section 05</div>
+
+# DevM8
+
+*Your AI dev partner. In your pocket.*
+
+---
+
+<div class="tag tag-purple">05 · DevM8</div>
+
+## What is DevM8?
+
+<div class="grid-2" style="margin-top: 1.5rem;">
+<div>
+
+A **Telegram bot** that puts your entire dev workflow in your pocket.
+
+- Manage Jira tickets — create, move, comment, solve
+- Ask Claude questions about your codebase
+- Run CLI commands remotely
+- AI-assisted dev workflows
+
+<br/>
+
+**No browser. No laptop. No context switch.**
+
+</div>
+<div class="card" style="border-color: var(--purple);">
+
+```
+You (Telegram)
+      ↓
+  DevM8 Bot
+      ↓
+Claude + MCP tools
+   /    |    \
+Jira  GitHub  CLI
+```
+
+</div>
+</div>
+
+---
+
+<div class="tag tag-purple">05 · DevM8</div>
+
+## What you can do from Telegram
+
+<div class="grid-2" style="margin-top: 1.5rem;">
+<div>
+
+**Jira**
+- Create, move, comment tickets
+- Solve issues with AI help
+- Triage your backlog on the go
+
+**Code**
+- Ask Claude questions about your repo
+- Run CLI commands from your phone
+- Get PR summaries instantly
+
+</div>
+<div>
+
+**The flow:**
+
+<div style="font-family: 'DM Mono', monospace; font-size: 0.8rem; background: #111; color: #eee; border-radius: 10px; padding: 1rem; line-height: 1.8; margin-top: 0.5rem;">
+
+```
+"Move PROJ-123 to In Review
+ and comment with the PR link"
+         ↓
+  DevM8 executes autonomously
+         ↓
+  ✅ Done (reply in Telegram)
+```
+
+</div>
+</div>
+</div>
+
+<div class="callout" style="margin-top: 1.5rem;">
+  This is the AFK pattern. Triggered from your phone.
+</div>
+
+---
+
+<div class="tag tag-purple">05 · DevM8</div>
+
+## The architecture
+
+<div style="margin-top: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.82rem; background: #f8f8f8; border-radius: 10px; padding: 1.25rem; line-height: 2.2;">
+
+```
+Telegram message
+       ↓
+  DevM8 Bot  (Node.js)
+       ↓
+  Claude  (orchestrator)
+  + SKILL.md (dev workflow expertise)
+       ↓
+  MCP Tools:
+  ├── jira_search / jira_update / jira_comment
+  ├── github_pr / github_review
+  ├── run_cli_command
+  └── ask_codebase (RAG over your repo)
+       ↓
+  Result → Telegram reply
+```
+
+</div>
+
+<div class="callout" style="margin-top: 1rem;">
+  Skills + Tools + Loop — the same three components. Just triggered differently.
+</div>
+
+---
+
+<div class="tag tag-purple">05 · DevM8</div>
+
+## Before vs After
+
+<div class="grid-2" style="margin-top: 1.5rem;">
+<div class="card" style="border-color: #f5c6c6;">
+
+**Before DevM8**
+
+- Need laptop to move a ticket
+- Need browser to review a PR
+- Need IDE to ask a code question
+- Every tiny action = context switch
+
+</div>
+<div class="card" style="border-color: #a8e6cf;">
+
+**With DevM8**
+
+- Commuting → manage backlog
+- In a meeting → answer code question
+- Phone in hand → full dev workflow
+- Always connected to your stack
+
+</div>
+</div>
+
+<div style="margin-top: 2rem; text-align: center; font-family: 'DM Mono', monospace; font-size: 0.9rem; color: #555;">
+  github.com/sayjeyhi/DevM8
 </div>
 
 ---
