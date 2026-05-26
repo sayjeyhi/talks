@@ -12,13 +12,6 @@ drawings:
 css: unocss
 ---
 
-<!-- 
-Demo:
-cd demo && npm install
-export ANTHROPIC_API_KEY=sk-ant-...
-npm run demo1  # then demo2, demo3 
--->
-
 # AI Hero
 
 Building Systems, Not Prompts
@@ -104,10 +97,7 @@ class: 'text-center'
 
 ## What we're covering
 
-<div class="grid-2" style="margin-top: 1.5rem;">
-<div>
-
-**Concepts**
+<div style="margin-top: 1.5rem;">
 
 <div style="margin-top: 0.75rem; line-height: 2.2;">
 
@@ -119,23 +109,6 @@ class: 'text-center'
 
 <span class="step-num">04</span> AFK Systems
 
-</div>
-</div>
-<div>
-
-**Live Demos**
-
-<div style="margin-top: 0.75rem; line-height: 2.2; font-family: 'DM Mono', monospace; font-size: 0.85rem; color: #555;">
-
-→ demo-1-skills.js
-
-→ demo-2-plugins.js
-
-→ demo-3-combined.js
-
-→ PR review agent
-
-</div>
 </div>
 </div>
 
@@ -444,41 +417,6 @@ Claude waits until it has a complete answer.
 </div>
 
 ---
-
-<div class="tag tag-coral">02 · Plugins & MCP</div>
-
-## 🎬 Demo 2 — Plugins live
-
-<div style="margin-top: 1.5rem; font-family: 'DM Mono', monospace; font-size: 0.85rem; background: #111; color: #eee; border-radius: 10px; padding: 1.25rem; line-height: 1.8;">
-
-```bash
-$ node demo-2-plugins.js
-```
-
-```
-GOAL: Review PR #47. Focus on auth.
-      Search for login code, read files, post review.
-
-── Turn 1 ──────────────────────────
-  🔧 search_codebase({ query: "login" })
-  ↩ [src/auth/login.js:42, src/auth/middleware.js:17]
-
-── Turn 2 ──────────────────────────
-  🔧 read_file({ path: "src/auth/login.js" })
-  ↩ [file contents with SQL injection + plaintext passwords]
-
-── Turn 3 ──────────────────────────
-  🔧 post_comment({ pr_number: 47, verdict: "BLOCKED" })
-  ↩ { comment_url: "github.com/..." }
-```
-
-</div>
-
-<div class="callout" style="margin-top: 1rem;">
-  Claude chose the sequence. You gave it a goal and a toolbox.
-</div>
-
----
 layout: section
 ---
 
@@ -596,40 +534,6 @@ const systemPrompt = [
 
 <div class="callout" style="margin-top: 1.5rem;">
   Specialized agent. No fine-tuning. Just composed Markdown.
-</div>
-
----
-
-<div class="tag tag-amber">03 · Skills</div>
-
-## 🎬 Demo 1 — Skills before vs after
-
-<div style="margin-top: 1rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; background: #111; color: #eee; border-radius: 10px; padding: 1.25rem; line-height: 1.8;">
-
-```
-❌  WITHOUT SKILL
-
-"This function looks good overall! A few minor things 
-to consider: you might want to add some error handling,
-and the variable names could be clearer."
-
-════════════════════════════════════════
-
-✅  WITH SKILL
-
-VERDICT: BLOCKED
-
-Issues found:
-- [CRITICAL] Hardcoded secret key 'sk-prod-abc123' at line 9
-             → Move to env var immediately. Rotate the key.
-- [CRITICAL] No try/catch on 3 async fetch calls
-             → Any network error crashes the entire function
-- [WARNING]  Function is 28 lines — extract report logic
-
-One thing done well:
-- Early return on non-admin path is clean
-```
-
 </div>
 
 ---
@@ -753,78 +657,6 @@ async function executeAction(action, input) {
 
 <div class="callout" style="margin-top: 1rem;">
   Define "irreversible" for your domain. Be conservative at first.
-</div>
-
----
-
-<div class="tag tag-purple">04 · AFK Systems</div>
-
-## 🎬 Demo 3 — Combined (SRE agent)
-
-<div style="font-family: 'DM Mono', monospace; font-size: 0.7rem; background: #111; color: #eee; border-radius: 10px; padding: 1.25rem; line-height: 1.8; margin-top: 1rem;">
-
-```
-🚨 ALERT: payment-service is down. auth-service elevated errors.
-
-── Turn 1 ── check_service_health(["api-gateway","auth-service","payment-service",...])
-  payment-service → DOWN (error_rate: 1.0)
-  auth-service    → DEGRADED (latency: 3200ms, error_rate: 0.34)
-
-── Turn 2 ── read_logs({ service: "payment-service", minutes: 15 })
-  14:27:51 ERROR OOMKilled — exceeded 512Mi memory limit
-  14:27:55 ERROR Restart failed — image pull backoff (registry rate limit)
-
-── Turn 3 ── read_logs({ service: "auth-service", minutes: 15 })
-  14:28:14 ERROR Max retries exceeded for payment-service → degraded mode
-  14:28:15 WARN  Auth tokens not validated against payment scope
-
-── Turn 4 ── create_incident({ severity: "P1", title: "payment OOM cascading to auth" })
-  ✅ INC-2026-0512-001 created → Slack + PagerDuty notified
-```
-
-</div>
-
----
-layout: center
-class: 'text-center'
----
-
-<div class="tag tag-teal">Demo 4</div>
-
-## PR Review Agent
-
-*All concepts combined*
-
-<div style="margin-top: 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 640px; margin-left: auto; margin-right: auto;">
-
-<div class="card" style="text-align: center; font-size: 0.75rem;">
-  <div style="font-size: 1.2rem; margin-bottom: 0.25rem;">📋</div>
-  <strong>Skill</strong>
-  <div style="color: #888; margin-top: 0.25rem;">Code review rules</div>
-</div>
-
-<div class="card" style="text-align: center; font-size: 0.75rem;">
-  <div style="font-size: 1.2rem; margin-bottom: 0.25rem;">🔧</div>
-  <strong>Tools</strong>
-  <div style="color: #888; margin-top: 0.25rem;">GitHub + Slack APIs</div>
-</div>
-
-<div class="card" style="text-align: center; font-size: 0.75rem;">
-  <div style="font-size: 1.2rem; margin-bottom: 0.25rem;">🔄</div>
-  <strong>Loop</strong>
-  <div style="color: #888; margin-top: 0.25rem;">File-by-file iteration</div>
-</div>
-
-<div class="card" style="text-align: center; font-size: 0.75rem;">
-  <div style="font-size: 1.2rem; margin-bottom: 0.25rem;">💤</div>
-  <strong>AFK</strong>
-  <div style="color: #888; margin-top: 0.25rem;">Triggered by webhook</div>
-</div>
-
-</div>
-
-<div style="margin-top: 2rem; font-family: 'DM Mono', monospace; font-size: 0.75rem; color: #666;">
-  GitHub webhook → agent → reads PR → reviews each file → posts comment → pings Slack
 </div>
 
 ---
@@ -1076,29 +908,3 @@ class: 'text-center'
   "Which developers will build<br>the systems that change everything?"
 </div>
 
----
-layout: center
-class: 'text-center'
----
-
-<div class="tag tag-purple">Demo code</div>
-
-# Get the code
-
-<div style="margin-top: 2rem; font-family: 'DM Mono', monospace; background: #111; color: #eee; border-radius: 10px; padding: 1.5rem; display: inline-block; text-align: left; font-size: 0.85rem; line-height: 2;">
-
-```bash
-# Setup
-npm install && export ANTHROPIC_API_KEY=sk-ant-...
-
-# Run demos
-npm run demo1   # Skills: before vs after
-npm run demo2   # Plugins: autonomous tool use
-npm run demo3   # Combined: skills + plugins + REPL
-```
-
-</div>
-
-<div style="margin-top: 2rem; color: #888; font-size: 0.9rem;">
-  Questions?
-</div>
