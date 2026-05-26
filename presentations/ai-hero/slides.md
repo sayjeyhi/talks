@@ -1,5 +1,6 @@
 ---
 theme: seriph
+background: /openart-video_cf97c9b8_1759827505833.gif
 class: text-center
 highlighter: shiki
 lineNumbers: false
