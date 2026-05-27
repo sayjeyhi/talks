@@ -83,10 +83,8 @@ layout: center
 class: 'text-center'
 ---
 
-<p class="text-zinc-500 text-lg mb-4">But real AI users do:</p>
-<div class="text-3xl font-black" style="background: linear-gradient(to right, #BECF24, #95E6FF, #CF8377); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-  Goal → plan → tools → loop → result
-</div>
+# Bun re-write in Rust?
+Would it be doable?
 
 ---
 layout: section
@@ -332,55 +330,6 @@ class: 'text-center'
   <img src="/ctx-parallel-agents.png" class="rounded-2xl" style="max-height: 400px;" />
 </div>
 
----
-layout: section
----
-
-<div class="flex flex-col items-center justify-center h-full text-center">
-  <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-400/40 bg-orange-400/10 text-orange-300 text-xs font-mono tracking-widest mb-8 uppercase">
-    Section 02
-  </div>
-  <h1>Plugins & MCP</h1>
-  <p class="text-2xl text-zinc-400 italic mt-4">How Claude grows arms and legs</p>
-  <div class="mt-10 flex gap-3">
-    <div class="w-2 h-2 rounded-full bg-orange-400" style="opacity:0.7"></div>
-    <div class="w-2 h-2 rounded-full bg-orange-400" style="opacity:0.4"></div>
-    <div class="w-2 h-2 rounded-full bg-orange-400" style="opacity:0.2"></div>
-  </div>
-</div>
-
----
-
-
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-orange-400/30 bg-orange-400/10 text-orange-300 text-xs font-mono mb-5">02 · Plugins & MCP</div>
-
-## The description is a prompt
-
-<div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
-    <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
-      <span class="text-red-300 font-semibold text-sm">Vague description</span>
-    </div>
-    <pre class="font-mono text-sm bg-black/50 rounded-xl px-4 py-3 text-red-200/80 border border-red-500/20 mb-4">"Post a comment"</pre>
-    <p class="text-zinc-400 text-sm leading-relaxed">Claude will call this mid-reasoning, with half-formed thoughts.</p>
-  </div>
-  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
-    <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
-      <span class="text-green-300 font-semibold text-sm">Precise description</span>
-    </div>
-    <pre class="font-mono text-xs bg-black/50 rounded-xl px-4 py-3 text-green-200/80 border border-green-500/20 mb-4 leading-relaxed">"Post a review comment on a pull
-request. Only call this once you
-have completed your full analysis.
-Do NOT call for intermediate findings."</pre>
-    <p class="text-zinc-400 text-sm leading-relaxed">Claude waits until it has a complete answer.</p>
-  </div>
-</div>
-
-<div class="mt-4 px-5 py-2.5 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-200 text-sm text-center">
-  ⚠️ Bad tool descriptions → bad tool use. It's a prompt engineering problem.
-</div>
 
 ---
 layout: section
@@ -388,7 +337,7 @@ layout: section
 
 <div class="flex flex-col items-center justify-center h-full text-center">
   <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 text-amber-300 text-xs font-mono tracking-widest mb-8 uppercase">
-    Section 03
+    Section 02
   </div>
   <h1>Skills</h1>
   <p class="text-2xl text-zinc-400 italic mt-4">Structured knowledge injection at scale</p>
@@ -401,7 +350,7 @@ layout: section
 
 ---
 
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 text-xs font-mono mb-4">03 · Skills</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 text-xs font-mono mb-4">02 · Skills</div>
 
 ## What a skill is
 
@@ -440,7 +389,7 @@ const skill = fs.readFileSync(
 
 ---
 
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 text-xs font-mono mb-4">03 · Skills</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 text-xs font-mono mb-4">02 · Skills</div>
 
 ## A real skill file
 
@@ -457,44 +406,68 @@ Ask the questions one at a time.
 If a question can be answered by exploring the codebase, explore the codebase instead.
 ```
 
+
+---
+layout: section
 ---
 
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 text-xs font-mono mb-4">03 · Skills</div>
-
-## Skills compose
-
-<div class="mt-3">
-
-```js
-const systemPrompt = [
-  readSkill('senior-engineer'),   // persona + standards
-  readSkill('python'),            // language-specific rules
-  readSkill('code-review'),       // output format + process
-].join('\n\n---\n\n')
-```
-
+<div class="flex flex-col items-center justify-center h-full text-center">
+  <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-400/40 bg-orange-400/10 text-orange-300 text-xs font-mono tracking-widest mb-8 uppercase">
+    Section 03
+  </div>
+  <h1>Plugins & MCP</h1>
+  <p class="text-2xl text-zinc-400 italic mt-4">How Claude grows arms and legs</p>
+  <div class="mt-10 flex gap-3">
+    <div class="w-2 h-2 rounded-full bg-orange-400" style="opacity:0.7"></div>
+    <div class="w-2 h-2 rounded-full bg-orange-400" style="opacity:0.4"></div>
+    <div class="w-2 h-2 rounded-full bg-orange-400" style="opacity:0.2"></div>
+  </div>
 </div>
 
-<div class="grid grid-cols-3 gap-4 mt-5">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5 text-center">
-    <div class="text-3xl mb-2">🧠</div>
-    <div class="text-white font-semibold text-sm">senior-engineer</div>
-    <div class="text-zinc-500 text-xs mt-1">Persona & values</div>
+---
+
+
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-orange-400/30 bg-orange-400/10 text-orange-300 text-xs font-mono mb-5">03 · Plugins & MCP</div>
+
+## The description is a prompt
+
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+    <div class="flex items-center gap-2 mb-4">
+      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
+      <span class="text-red-300 font-semibold text-sm">Vague description</span>
+    </div>
+    <pre class="font-mono text-sm bg-black/50 rounded-xl px-4 py-3 text-red-200/80 border border-red-500/20 mb-4">"Post a comment"</pre>
+    <p class="text-zinc-400 text-sm leading-relaxed">Claude will call this mid-reasoning, with half-formed thoughts.</p>
   </div>
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5 text-center">
-    <div class="text-3xl mb-2">🐍</div>
-    <div class="text-white font-semibold text-sm">python</div>
-    <div class="text-zinc-500 text-xs mt-1">Language rules</div>
-  </div>
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5 text-center">
-    <div class="text-3xl mb-2">🔍</div>
-    <div class="text-white font-semibold text-sm">code-review</div>
-    <div class="text-zinc-500 text-xs mt-1">Process & format</div>
+  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
+    <div class="flex items-center gap-2 mb-4">
+      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
+      <span class="text-green-300 font-semibold text-sm">Precise description</span>
+    </div>
+    <pre class="font-mono text-xs bg-black/50 rounded-xl px-4 py-3 text-green-200/80 border border-green-500/20 mb-4 leading-relaxed">"Post a review comment on a pull
+request. Only call this once you
+have completed your full analysis.
+Do NOT call for intermediate findings."</pre>
+    <p class="text-zinc-400 text-sm leading-relaxed">Claude waits until it has a complete answer.</p>
   </div>
 </div>
 
 <div class="mt-4 px-5 py-2.5 rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-200 text-sm text-center">
-  Specialized agent. No fine-tuning. Just composed Markdown.
+  ⚠️ Bad tool descriptions → bad tool use. It's a prompt engineering problem.
+</div>
+
+
+
+---
+layout: center
+class: 'text-center'
+---
+
+<div class="text-zinc-500 text-lg">Back to our initial chart:</div>
+<div class="text-zinc-500 text-lg mb-8"> real AI users do:</div>
+<div class="text-4xl font-black text-zinc-300 tracking-tight">
+  Goal → plan → tools → loop → result
 </div>
 
 ---
