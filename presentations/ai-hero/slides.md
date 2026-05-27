@@ -73,28 +73,37 @@ layout: center
 class: 'text-center'
 ---
 
-90% devs do :
+<p class="text-zinc-500 text-lg mb-4">90% of devs do:</p>
+<div class="text-4xl font-black text-zinc-300 tracking-tight">
+  Chat → answer → done
+</div>
 
-# Chat → answer → done<br>
- 
 ---
 layout: center
 class: 'text-center'
 ---
 
-But, real AI users do:
-
-# Goal → plan → tools → loop → result
-
-
+<p class="text-zinc-500 text-lg mb-4">But real AI users do:</p>
+<div class="text-3xl font-black" style="background: linear-gradient(to right, #BECF24, #95E6FF, #CF8377); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+  Goal → plan → tools → loop → result
+</div>
 
 ---
 layout: section
 ---
 
-# The REPL Loop
-
-*Read → Eval → Print → Loop*
+<div class="flex flex-col items-center justify-center h-full text-center">
+  <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-400/40 bg-teal-400/10 text-teal-300 text-xs font-mono tracking-widest mb-8 uppercase">
+    Section 01
+  </div>
+  <h1>The REPL Loop</h1>
+  <p class="text-2xl text-zinc-400 italic mt-4">Read → Eval → Print → Loop</p>
+  <div class="mt-10 flex gap-3">
+    <div class="w-2 h-2 rounded-full bg-teal-400" style="opacity:0.7"></div>
+    <div class="w-2 h-2 rounded-full bg-teal-400" style="opacity:0.4"></div>
+    <div class="w-2 h-2 rounded-full bg-teal-400" style="opacity:0.2"></div>
+  </div>
+</div>
 
 <!--
 "You all know the REPL from your terminals. Turns out it's also the right mental model for everything agentic."
@@ -102,35 +111,40 @@ layout: section
 
 ---
 
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
+
 ## What single-shot looks like
 
-<div class="code-label">One prompt, one answer, done</div>
-
-```
-You → [prompt] → Claude → [answer]
-```
-
-<div style="margin-top: 2rem;">
-<div class="code-label">Works for:</div>
-
-- Explain this function
-- Write a regex
-- Summarize this doc
-
-</div>
-
-<div class="callout" style="margin-top: 1.5rem;">
-  ⚠️ Single-shot can't pursue a goal. It answers a question.
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+    <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">One prompt, one answer, done</p>
+    <div class="px-5 py-4 rounded-xl bg-black/50 border border-zinc-700 font-mono text-sm text-zinc-300 text-center leading-loose">
+      You → [prompt] → Claude → [answer]
+    </div>
+    <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Works for:</div>
+    <ul class="space-y-2 text-sm text-zinc-400">
+      <li class="flex items-center gap-2"><span class="text-teal-500">→</span> Explain this function</li>
+      <li class="flex items-center gap-2"><span class="text-teal-500">→</span> Write a regex</li>
+      <li class="flex items-center gap-2"><span class="text-teal-500">→</span> Summarize this doc</li>
+    </ul>
+  </div>
+  <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 flex flex-col justify-center">
+    <div class="text-4xl mb-4 text-center">⚡</div>
+    <p class="text-amber-200 text-center text-base font-semibold leading-relaxed">
+      Single-shot can't pursue a goal.
+    </p>
+    <p class="text-zinc-500 text-center text-sm mt-2">It answers a question — then stops.</p>
+  </div>
 </div>
 
 ---
 
-<div class="tag tag-teal">01 · REPL Loop</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
 ## What a loop looks like
 
-<div class="flex items-center justify-center mt-8">
-<img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanN0empwdnh1b3RuaHdmZDRhMm9xYnd2MGdpM3U1N2djNmdvYXV6NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zrWADpFDfsrRLhdPSy/giphy.gif" />
+<div class="flex items-center justify-center mt-6">
+  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExanN0empwdnh1b3RuaHdmZDRhMm9xYnd2MGdpM3U1N2djNmdvYXV6NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zrWADpFDfsrRLhdPSy/giphy.gif" class="rounded-2xl" style="max-height: 360px;" />
 </div>
 
 ---
@@ -138,101 +152,85 @@ layout: center
 class: 'text-center'
 ---
 
-<div class="callout callout-teal" style="margin-top: 1.5rem;">
-  <h2>AI agent reads accumulated context, reasons, outputs, feeds back.</h2>
-</div>
-
-
-----
-
-<div class="tag tag-teal">01 · REPL Loop</div>
-
-## Context fills up fast
-
-<div class="grid-2" style="margin-top: 4rem;">
-<div>
-
-**0–40%**
-
-Most chat usage stays here. Fresh context, full attention, low cost.
-
-</div>
-<div>
-
-**A full agentic session**
-
-Tool calls, results, and reasoning stack up — the window fills quickly.
-
-</div>
+<div class="max-w-2xl mx-auto px-8 py-6 rounded-2xl border border-teal-500/30 bg-teal-500/5">
+  <h2 class="text-2xl font-bold text-teal-200 leading-relaxed">
+    AI agent reads accumulated context,<br>reasons, outputs, feeds back.
+  </h2>
 </div>
 
 ---
 
-<div class="tag tag-teal">01 · REPL Loop</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
 ## Context fills up fast
-<div class="flex items-center justify-center mt-8">
 
-<img src="/ctx-full-conversation.png" style="border-radius: 8px; max-height: 340px;" />
-
+<div class="grid grid-cols-2 gap-5 mt-6">
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-6 flex flex-col justify-center">
+    <div class="text-5xl font-black text-teal-400/80 mb-3">0–40%</div>
+    <p class="text-zinc-300 text-sm leading-relaxed">Most chat usage stays here. Fresh context, full attention, low cost.</p>
+  </div>
+  <div class="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-6 flex flex-col justify-center">
+    <div class="text-2xl font-black text-orange-300 mb-3">A full agentic session</div>
+    <p class="text-zinc-400 text-sm leading-relaxed">Tool calls, results, and reasoning stack up — the window fills quickly.</p>
+  </div>
 </div>
-
-
 
 ---
 
-<div class="tag tag-teal">01 · REPL Loop</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
 ## Context fills up fast
 
-<div class="flex items-center justify-center mt-8">
-
-<img src="/ctx-40pct.png" style="border-radius: 8px; max-height: 340px;" />
-
+<div class="flex items-center justify-center mt-6">
+  <img src="/ctx-full-conversation.png" class="rounded-2xl" style="max-height: 340px;" />
 </div>
 
---- 
+---
 
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
-<div class="tag tag-teal">01 · REPL Loop</div>
+## Context fills up fast
+
+<div class="flex items-center justify-center mt-6">
+  <img src="/ctx-40pct.png" class="rounded-2xl" style="max-height: 340px;" />
+</div>
+
+---
+
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
 ## Compaction vs. overflow
 
-<div class="grid-2" style="margin-top: 1rem;">
-<div>
-
-**Compaction** — Claude summarizes history to free space. Signal survives.
-
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="rounded-2xl border border-teal-500/30 bg-teal-500/5 p-6">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-teal-500/20 flex items-center justify-center text-teal-400 font-bold text-sm">✓</div>
+      <span class="text-teal-300 font-semibold">Compaction</span>
+    </div>
+    <p class="text-zinc-300 text-sm leading-relaxed">Claude summarizes history to free space. Signal survives.</p>
+  </div>
+  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-6">
+    <div class="flex items-center gap-3 mb-3">
+      <div class="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 font-bold text-sm">✗</div>
+      <span class="text-red-300 font-semibold">Overflow</span>
+    </div>
+    <p class="text-zinc-300 text-sm leading-relaxed">No compaction, no guards. Context rots. Goals drift.</p>
+  </div>
 </div>
-<div>
 
-**Overflow** — no compaction, no guards. Context rots. Goals drift.
-
-</div>
-</div>
-
-<div class="callout" style="margin-top: 1.5rem;">
+<div class="mt-4 px-5 py-3 rounded-xl border border-teal-500/30 bg-teal-500/10 text-teal-200 text-sm text-center">
   Principle of Least Context: sub-agents isolate work so the orchestrator stays lean.
 </div>
 
 ---
 
-<div class="tag tag-teal">01 · REPL Loop</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
 ## Compaction vs. overflow
 
-<div class="gap-3 grid grid-cols-2" style="margin-top: 1.5rem;">
-<div>
-
-<img  src="/ctx-compacted.png" style="border-radius: 8px; max-height: 340px;" />
-
-</div>
-
-<div>
-
-<img   src="/ctx-overloaded.png" style="border-radius: 8px; max-height: 340px;" />
-
-</div>
+<div class="grid grid-cols-2 gap-4 mt-5">
+  <img src="/ctx-compacted.png" class="rounded-2xl" style="max-height: 340px;" />
+  <img src="/ctx-overloaded.png" class="rounded-2xl" style="max-height: 340px;" />
 </div>
 
 ---
@@ -307,27 +305,31 @@ Tool calls, results, and reasoning stack up — the window fills quickly.
   </div>
 </div>
 
-
 ---
 
-<div class="tag tag-teal">01 · REPL Loop</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
 ## Parallel agents eat context fast
 
-Each sub-agent spawns its own window. Without isolation, the orchestrator pays for all of it.
-
-<div class="callout callout-teal" style="margin-top: 2rem;">
-  Three explorer agents × ~60k tokens each = 180k tokens before orchestrator does any work.
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-6 flex flex-col justify-center">
+    <p class="text-zinc-300 text-sm leading-relaxed">Each sub-agent spawns its own window. Without isolation, the orchestrator pays for all of it.</p>
+  </div>
+  <div class="rounded-2xl border border-teal-500/30 bg-teal-500/5 p-6 flex flex-col justify-center text-center">
+    <div class="text-3xl font-black text-teal-300 mb-2">3 × 60k</div>
+    <div class="text-zinc-400 text-sm">explorer agents = <span class="text-white font-semibold">180k tokens</span></div>
+    <div class="text-zinc-600 text-xs mt-2">before the orchestrator does any work</div>
+  </div>
 </div>
 
 ---
 
-<div class="tag tag-teal">01 · REPL Loop</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-5">01 · REPL Loop</div>
 
 ## Parallel agents eat context fast
 
-<div style="text-align: center; margin-top: 2rem;">
-  <img src="/ctx-parallel-agents.png" style="border-radius: 8px; max-height: 400px; margin: 0 auto;" />
+<div class="flex items-center justify-center mt-4">
+  <img src="/ctx-parallel-agents.png" class="rounded-2xl" style="max-height: 400px;" />
 </div>
 
 ---
