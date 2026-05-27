@@ -86,7 +86,7 @@ export const TALKS = [
       "A talk about how to optimize enterprise CI/CD pipelines, covering best practices, tools, and strategies.",
     link: "/ci-cd/",
     tags: ["Kubernetes", "Docker", "CI/CD", "DevOps"],
-    image: "./talks/enterprise-ci-cd.jpg",
+    image: "./talks/1776962436595.jpeg",
     date: "April 2026",
   },
   {
@@ -96,7 +96,7 @@ export const TALKS = [
       "A talk about how to use AI to power your development, covering best practices, tools, and strategies.",
     link: "/ai-hero/",
     tags: ["AI", "development", "tools", "strategies"],
-    image: "./talks/ai-hero.webp",
+    image: "./talks/ai-hero.jpeg",
     date: "May 2026",
   }
 ];

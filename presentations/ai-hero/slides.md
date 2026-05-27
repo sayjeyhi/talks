@@ -4,7 +4,7 @@ class: text-center
 highlighter: shiki
 lineNumbers: false
 info: |
-  ## AI Hero: Building Systems, Not Prompts
+  ## AI Super User: Building Systems, Not Prompts
   From single-shot answers to autonomous agents
 drawings:
   persist: false
@@ -12,9 +12,9 @@ css: unocss
 colorSchema: dark
 ---
 
-# AI Hero
+# AI super user
 
-Building Systems, Not Prompts
+Using AI in its real speed and value
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -73,7 +73,7 @@ layout: center
 class: 'text-center'
 ---
 
-Most devs do:
+90% devs do :
 
 # Chat → answer → done<br>
  
@@ -82,7 +82,7 @@ layout: center
 class: 'text-center'
 ---
 
-A good AI dev use case would be:
+But, real AI users do:
 
 # Goal → plan → tools → loop → result
 
@@ -171,6 +171,19 @@ Tool calls, results, and reasoning stack up — the window fills quickly.
 <div class="tag tag-teal">01 · REPL Loop</div>
 
 ## Context fills up fast
+<div class="flex items-center justify-center mt-8">
+
+<img src="/ctx-full-conversation.png" style="border-radius: 8px; max-height: 340px;" />
+
+</div>
+
+
+
+---
+
+<div class="tag tag-teal">01 · REPL Loop</div>
+
+## Context fills up fast
 
 <div class="flex items-center justify-center mt-8">
 
@@ -180,17 +193,6 @@ Tool calls, results, and reasoning stack up — the window fills quickly.
 
 --- 
 
-
-<div class="tag tag-teal">01 · REPL Loop</div>
-
-## Context fills up fast
-<div class="flex items-center justify-center mt-8">
-
-<img src="/ctx-full-conversation.png" style="border-radius: 8px; max-height: 340px;" />
-
-</div>
-
----
 
 <div class="tag tag-teal">01 · REPL Loop</div>
 
@@ -219,15 +221,16 @@ Tool calls, results, and reasoning stack up — the window fills quickly.
 
 ## Compaction vs. overflow
 
-<div class="grid-2" style="margin-top: 1.5rem;">
+<div class="gap-3 grid grid-cols-2" style="margin-top: 1.5rem;">
 <div>
 
-<img src="/ctx-compacted.png" style="border-radius: 8px; max-height: 340px;" />
+<img  src="/ctx-compacted.png" style="border-radius: 8px; max-height: 340px;" />
 
 </div>
+
 <div>
 
-<img src="/ctx-overloaded.png" style="border-radius: 8px; max-height: 340px;" />
+<img   src="/ctx-overloaded.png" style="border-radius: 8px; max-height: 340px;" />
 
 </div>
 </div>
@@ -346,70 +349,6 @@ layout: section
 
 ---
 
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-orange-400/30 bg-orange-400/10 text-orange-300 text-xs font-mono mb-4">02 · Plugins & MCP</div>
-
-## The architecture
-
-<div class="flex flex-col items-center gap-1 mt-4">
-  <div class="px-8 py-2.5 rounded-xl border border-blue-400/40 bg-blue-500/10 text-blue-300 font-mono text-sm text-center min-w-56">
-    Your App / Claude.ai / Claude Code
-  </div>
-  <div class="text-zinc-500 text-xl leading-none">↓</div>
-  <div class="px-8 py-2.5 rounded-xl border border-orange-400/40 bg-orange-500/10 text-orange-300 font-mono text-sm text-center min-w-56">
-    MCP Host <span class="text-orange-200/50 text-xs">(orchestrates)</span>
-  </div>
-  <div class="text-zinc-500 text-xl leading-none">↓</div>
-  <div class="flex gap-10 items-start">
-    <div class="flex flex-col items-center gap-1">
-      <div class="px-6 py-2.5 rounded-xl border border-purple-400/40 bg-purple-500/10 text-purple-300 font-mono text-sm text-center min-w-36">
-        Claude<br><span class="text-purple-200/50 text-xs">(reasons)</span>
-      </div>
-    </div>
-    <div class="flex flex-col items-center gap-1">
-      <div class="px-6 py-2.5 rounded-xl border border-green-400/40 bg-green-500/10 text-green-300 font-mono text-sm text-center min-w-36">
-        MCP Server<br><span class="text-green-200/50 text-xs">(executes tools)</span>
-      </div>
-    </div>
-  </div>
-  <div class="flex items-center gap-3 mt-1">
-    <div class="text-zinc-600 text-sm">↙</div>
-    <div class="px-3 py-1 rounded-lg border border-zinc-700 bg-zinc-900/70 text-zinc-400 font-mono text-xs">tool_use</div>
-    <div class="text-zinc-600 text-sm">↘</div>
-  </div>
-</div>
-
-<div class="mt-4 px-5 py-2.5 rounded-xl border border-zinc-700/60 bg-zinc-900/50 font-mono text-xs text-zinc-400 text-center">
-  Claude sends: <span class="text-orange-300">&#123; name: "search_jira", input: &#123; query: "..." &#125; &#125;</span> → Your server does the actual work.
-</div>
-
----
-
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-orange-400/30 bg-orange-400/10 text-orange-300 text-xs font-mono mb-4">02 · Plugins & MCP</div>
-
-## Tool anatomy
-
-```js
-{
-  name: "search_codebase",
-  
-  description:
-    "Search the codebase for files or functions matching a keyword. " +
-    "Use this when you need to find where something is implemented. " +
-    "Returns a list of matching file paths and line numbers.",
-    //  ↑ This is a prompt. Write it like one.
-  
-  input_schema: {
-    type: "object",
-    properties: {
-      query:     { type: "string", description: "Keyword to search" },
-      file_type: { type: "string", enum: ["js", "ts", "py", "any"] }
-    },
-    required: ["query"]
-  }
-}
-```
-
----
 
 <div class="inline-flex items-center px-3 py-1 rounded-full border border-orange-400/30 bg-orange-400/10 text-orange-300 text-xs font-mono mb-5">02 · Plugins & MCP</div>
 
@@ -504,26 +443,16 @@ const skill = fs.readFileSync(
 ## A real skill file
 
 ```md
-# Code Review Skill
+---
+name: grill-me
+description: Interview the user relentlessly about a plan or design until reaching shared understanding, resolving each branch of the decision tree. Use when user wants to stress-test a plan, get grilled on their design, or mentions "grill me".
+---
 
-You are a senior engineer conducting a code review. 
-Apply these rules strictly:
+Interview me relentlessly about every aspect of this plan until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.
 
-## Rules
-- Flag any function longer than 20 lines
-- Flag missing error handling on async calls
-- Flag hardcoded secrets or API keys
-- Never say "looks good" — always find one improvement
+Ask the questions one at a time.
 
-## Output format
-
-**VERDICT:** [APPROVED / NEEDS CHANGES / BLOCKED]
-
-**Issues found:**
-- [CRITICAL] ...
-- [WARNING]  ...
-
-Keep responses under 200 words. Be blunt, not mean.
+If a question can be answered by exploring the codebase, explore the codebase instead.
 ```
 
 ---
@@ -665,35 +594,6 @@ layout: section
   </div>
 </div>
 
----
-
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-xs font-mono mb-4">04 · AFK Systems</div>
-
-## Human-in-the-loop checkpoints
-
-```js
-async function executeAction(action, input) {
-  // Reversible actions → run autonomously
-  if (action.reversible) {
-    return await runTool(action, input)
-  }
-  
-  // Irreversible actions → require approval
-  // e.g. send email, push to prod, charge card
-  const approval = await requestHumanApproval({
-    action,
-    input,
-    reasoning: action.reasoning,
-  })
-  
-  if (!approval.granted) return { skipped: true }
-  return await runTool(action, input)
-}
-```
-
-<div class="mt-4 px-5 py-2.5 rounded-xl border border-purple-500/30 bg-purple-500/10 text-purple-200 text-sm text-center">
-  Define "irreversible" for your domain. Be conservative at first.
-</div>
 
 ---
 layout: section
@@ -864,30 +764,146 @@ layout: section
 
 ---
 
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-xs font-mono mb-5">The mental model</div>
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-xs font-mono mb-4">05 · DevM8</div>
 
-## Three questions to build any agent
+## Install — prerequisites & one command
 
-<div class="mt-4 space-y-3">
-  <div class="flex items-start gap-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-    <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-2xl font-black text-purple-400 flex-shrink-0">1</div>
-    <div>
-      <div class="text-white font-semibold">What does it know?</div>
-      <div class="text-zinc-400 text-sm mt-1">→ Write a SKILL.md. Domain knowledge, rules, output format.</div>
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+    <div class="text-xs font-mono text-amber-300 mb-4 uppercase tracking-widest">You need these first</div>
+    <ul class="space-y-4 text-sm">
+      <li class="flex items-start gap-3">
+        <span class="text-blue-400 mt-0.5 text-base">✦</span>
+        <div><span class="text-zinc-200 font-semibold">Telegram bot token</span><br><span class="text-zinc-500 text-xs font-mono">@BotFather → /newbot</span></div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-orange-400 mt-0.5 text-base">✦</span>
+        <div><span class="text-zinc-200 font-semibold">Jira Cloud API token</span><br><span class="text-zinc-500 text-xs font-mono">id.atlassian.com → API tokens</span></div>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-purple-400 mt-0.5 text-base">✦</span>
+        <div><span class="text-zinc-200 font-semibold">Claude Code CLI</span><br><span class="text-zinc-500 text-xs font-mono">claude.ai/code → install + login</span></div>
+      </li>
+    </ul>
+    <div class="mt-5 px-4 py-2 rounded-xl border border-zinc-700 bg-zinc-800/40 text-zinc-500 text-xs font-mono text-center">
+      macOS 12+ · Linux x64 glibc
     </div>
   </div>
-  <div class="flex items-start gap-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-    <div class="w-12 h-12 rounded-xl bg-teal-500/20 flex items-center justify-center text-2xl font-black text-teal-400 flex-shrink-0">2</div>
-    <div>
-      <div class="text-white font-semibold">What can it access?</div>
-      <div class="text-zinc-400 text-sm mt-1">→ Define tools. APIs, databases, file system, other services.</div>
+  <div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">1</div>
+      <span class="text-zinc-200 font-semibold">Run the installer</span>
+    </div>
+    <pre class="font-mono text-xs bg-black/60 rounded-xl px-4 py-3 text-green-300 border border-zinc-700 leading-loose">curl -fsSL https://raw.githubusercontent.com/sayjeyhi/DevM8/main/install.sh | bash</pre>
+    <ul class="mt-4 space-y-2 text-xs text-zinc-500">
+      <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Detects platform (macOS / Linux)</li>
+      <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Verifies SHA-256 checksum</li>
+      <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Registers launchd / systemd service</li>
+      <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Provisions bubblewrap sandbox (Linux)</li>
+    </ul>
+  </div>
+</div>
+
+---
+
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-xs font-mono mb-4">05 · DevM8</div>
+
+## Configure & go
+
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="space-y-4">
+    <div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">2</div>
+        <span class="text-zinc-200 font-semibold">Run the config wizard</span>
+      </div>
+      <pre class="font-mono text-sm bg-black/60 rounded-xl px-4 py-3 text-green-300 border border-zinc-700">devm8 config</pre>
+      <p class="text-zinc-500 text-xs mt-2">Interactive wizard — fills in <span class="font-mono text-zinc-400">~/.config/devm8/config.toml</span></p>
+    </div>
+    <div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-4">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold">3</div>
+        <span class="text-zinc-200 font-semibold">Authenticate Claude Code</span>
+      </div>
+      <pre class="font-mono text-sm bg-black/60 rounded-xl px-4 py-3 text-green-300 border border-zinc-700">claude login</pre>
+      <p class="text-zinc-500 text-xs mt-2">One-time auth — DevM8 calls the Claude binary you authenticated.</p>
     </div>
   </div>
-  <div class="flex items-start gap-5 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-5">
-    <div class="w-12 h-12 rounded-xl bg-orange-500/20 flex items-center justify-center text-2xl font-black text-orange-400 flex-shrink-0">3</div>
-    <div>
-      <div class="text-white font-semibold">What does "done" look like?</div>
-      <div class="text-zinc-400 text-sm mt-1">→ Define stop conditions. This is the hardest one.</div>
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+    <div class="text-xs font-mono text-zinc-500 mb-3">~/.config/devm8/config.toml</div>
+    <pre v-pre class="font-mono text-xs bg-black/60 rounded-xl px-4 py-4 text-zinc-300 border border-zinc-800 leading-relaxed">[telegram]
+  bot_token = "YOUR_TOKEN"
+  allowed_user_ids = [123456789]
+[jira]
+  base_url = "https://co.atlassian.net"
+  api_token = "YOUR_JIRA_TOKEN"
+  project_keys = ["PROJ"]
+[repos]
+  PROJ = ["/home/you/myrepo"]</pre>
+    <div class="mt-3 px-4 py-2 rounded-xl border border-green-500/20 bg-green-500/5 text-green-300 text-xs text-center font-mono">
+      Done — message your bot to test it
+    </div>
+  </div>
+</div>
+
+---
+
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-purple-400/30 bg-purple-400/10 text-purple-300 text-xs font-mono mb-5">05 · DevM8</div>
+
+## Run it on a $150 home server
+
+<div class="grid grid-cols-2 gap-5 mt-3">
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+    <div class="flex items-center gap-3 mb-4">
+      <div class="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-xl">🖥️</div>
+      <div>
+        <div class="text-white font-semibold">Dell OptiPlex 5060 Micro</div>
+        <div class="text-zinc-500 text-xs font-mono">~$150 used · eBay / Facebook Marketplace</div>
+      </div>
+    </div>
+    <div class="space-y-2 text-sm mb-4">
+      <div class="flex justify-between px-3 py-1.5 rounded-lg bg-zinc-800/60">
+        <span class="text-zinc-400">CPU</span><span class="text-zinc-200 font-mono text-xs">Intel Core i5/i7 8th gen</span>
+      </div>
+      <div class="flex justify-between px-3 py-1.5 rounded-lg bg-zinc-800/60">
+        <span class="text-zinc-400">RAM</span><span class="text-zinc-200 font-mono text-xs">16–32 GB DDR4 (upgradable)</span>
+      </div>
+      <div class="flex justify-between px-3 py-1.5 rounded-lg bg-zinc-800/60">
+        <span class="text-zinc-400">Power</span><span class="text-zinc-200 font-mono text-xs">~10–35 W idle</span>
+      </div>
+      <div class="flex justify-between px-3 py-1.5 rounded-lg bg-zinc-800/60">
+        <span class="text-zinc-400">Size</span><span class="text-zinc-200 font-mono text-xs">Fits in your palm</span>
+      </div>
+      <div class="flex justify-between px-3 py-1.5 rounded-lg bg-zinc-800/60">
+        <span class="text-zinc-400">OS</span><span class="text-zinc-200 font-mono text-xs">Ubuntu 22.04 LTS · Linux x64 ✓</span>
+      </div>
+    </div>
+    <div class="px-4 py-2.5 rounded-xl border border-green-500/20 bg-green-500/5 text-green-300 text-xs text-center font-mono">
+      Always-on · 24/7 · ~$3/month electricity
+    </div>
+  </div>
+  <div class="rounded-2xl border border-purple-500/30 bg-purple-500/5 p-5">
+    <div class="text-xs font-mono text-purple-300 mb-4 uppercase tracking-widest">What you get</div>
+    <div class="space-y-2.5 text-sm">
+      <div class="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-900/60 px-3 py-2.5">
+        <span class="text-purple-400 mt-0.5">→</span>
+        <div><span class="text-zinc-200">DevM8 runs as a systemd service</span><br><span class="text-zinc-500 text-xs">Starts on boot, restarts on crash</span></div>
+      </div>
+      <div class="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-900/60 px-3 py-2.5">
+        <span class="text-purple-400 mt-0.5">→</span>
+        <div><span class="text-zinc-200">Your repos live on the box</span><br><span class="text-zinc-500 text-xs">Claude Code has real filesystem access</span></div>
+      </div>
+      <div class="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-900/60 px-3 py-2.5">
+        <span class="text-purple-400 mt-0.5">→</span>
+        <div><span class="text-zinc-200">bubblewrap sandbox active</span><br><span class="text-zinc-500 text-xs">Each Claude subprocess is isolated</span></div>
+      </div>
+      <div class="flex items-start gap-3 rounded-xl border border-zinc-800 bg-zinc-900/60 px-3 py-2.5">
+        <span class="text-purple-400 mt-0.5">→</span>
+        <div><span class="text-zinc-200">No cloud dependency for the runner</span><br><span class="text-zinc-500 text-xs">Only Claude API calls leave your network</span></div>
+      </div>
+    </div>
+    <div class="mt-3 px-4 py-2.5 rounded-xl border border-amber-500/20 bg-amber-500/5 text-amber-200 text-xs text-center">
+      One-time $150 + Claude API usage. Zero subscriptions.
     </div>
   </div>
 </div>
@@ -901,36 +917,12 @@ class: 'text-center'
 
 <div class="text-3xl font-black leading-tight max-w-xl mx-auto mb-8">
   Stop asking<br>
-  <span class="text-zinc-500 font-normal text-2xl">"what can I ask Claude?"</span>
+  <span class="text-zinc-500 font-normal text-2xl">"what can I ask AI Agent?"</span>
 </div>
 
 <div class="text-3xl font-black leading-tight max-w-xl mx-auto">
   Start asking<br>
-  <span style="background: linear-gradient(to right, #BECF24, #95E6FF, #CF8377); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">"what system can I build<br>that uses Claude?"</span>
-</div>
-
----
-layout: center
-class: 'text-center'
----
-
-<div class="inline-flex items-center px-3 py-1 rounded-full border border-teal-400/30 bg-teal-400/10 text-teal-300 text-xs font-mono mb-8">Your action</div>
-
-<h1 class="mb-8">This week</h1>
-
-<div class="max-w-md mx-auto text-left space-y-3">
-  <div class="flex items-start gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-    <div class="px-2 py-1 rounded bg-teal-500/20 text-teal-300 font-mono text-xs flex-shrink-0">STEP 1</div>
-    <div class="text-zinc-300 text-sm">Pick one repetitive task you do every week</div>
-  </div>
-  <div class="flex items-start gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-    <div class="px-2 py-1 rounded bg-teal-500/20 text-teal-300 font-mono text-xs flex-shrink-0">STEP 2</div>
-    <div class="text-zinc-300 text-sm">Answer the 3 questions: know / access / done</div>
-  </div>
-  <div class="flex items-start gap-4 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-    <div class="px-2 py-1 rounded bg-teal-500/20 text-teal-300 font-mono text-xs flex-shrink-0">STEP 3</div>
-    <div class="text-zinc-300 text-sm">Write the SKILL.md and one tool. Even a draft teaches you what to build.</div>
-  </div>
+  <span style="background: linear-gradient(to right, #BECF24, #95E6FF, #CF8377); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">"what system can I build<br>that uses AI Agent?"</span>
 </div>
 
 ---
@@ -949,3 +941,20 @@ class: 'text-center'
   </div>
 </div>
 
+---
+
+
+<div class="flex align-center flex-col items-center mt-12">
+<img class="w-32 mb-12" src="https://em-content.zobj.net/source/microsoft-teams/363/cowboy-hat-face_1f920.png" />
+
+# Thank You!
+
+<span class="text-xs -mt-4">
+
+Slides: <a href="https://talks.catshoulder.dev/ai-hero" class="text-blue-400">talks.catshoulder.dev/ai-hero</a>
+
+</span>
+
+[GitHub](https://github.com/sayjeyhi) · [My Website](https://sayjeyhi.com)
+
+</div>
