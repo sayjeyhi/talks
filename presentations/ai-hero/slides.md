@@ -47,7 +47,7 @@ Using AI in its real speed and value
 <div>
 <div class="text-base text-gray-300">
 
-<span class="text-base text-green-400">By day</span>, I'm Squad Lead at Lyreco, e-commerce platform for launching in 25+ countries.
+<span class="text-base text-green-400">By day</span>, I'm Senior Software Engineer at HEMA, e-commerce platform for launching in 25+ countries.
 
 <br/> 
 

@@ -48,12 +48,26 @@ layout: center
 class: 'text-center'
 ---
 
-<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/mirror_1fa9e.png" />
-<p class="text-zinc-500 text-lg mb-4">But often the real problem is:</p>
+<p class="text-zinc-500 text-lg mb-4">Sometimes the real problem is:</p>
 <div class="text-4xl font-black text-zinc-300 tracking-tight">
   Your codebase isn't AI-friendly
 </div>
-<p class="text-zinc-500 text-base mt-6">AI reads your code the same way a new hire does — except it has no tribal knowledge.</p>
+
+---
+layout: center
+class: 'text-center'
+---
+
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/hatching-chick_1f423.png" />
+
+<div class="max-w-2xl mx-auto px-8 py-6 rounded-sm border border-teal-500/30 bg-teal-500/5">
+
+<p class="text-zinc-400 text-xl leading-relaxed max-w-2xl mx-auto">
+<strong class="text-white">AI</strong> reads your code the same way a <strong class="text-white">New Hire</strong> does
+
+except it has <strong class="text-red-400">no tribal knowledge</strong>.
+</p>
+</div>
 
 ---
 layout: center
@@ -62,8 +76,8 @@ class: 'text-center'
 
 <img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/light-bulb_1f4a1.png" />
 <div class="max-w-2xl mx-auto px-8 py-6 rounded-sm border border-teal-500/30 bg-teal-500/5">
-  <h2 class="text-2xl font-bold text-teal-200 leading-relaxed">
-    The better your code is structured,<br>the better AI can help you.
+  <h2 class="text-xl! font-bold text-teal-200 leading-relaxed">
+    The <strong class="text-blue-400">Better</strong> your code is structured,<br>the better AI can help you
   </h2>
 </div>
 
@@ -176,7 +190,7 @@ src/
   utils.js
   helpers.ts
   data/
-  components/Item.vue
+  components/Item.vuei
   handleClick()
   process()
 ```
@@ -209,6 +223,7 @@ src/
 
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
+    <img class="w-10 mx-auto mb-3" src="https://em-content.zobj.net/source/microsoft-teams/400/robot_1f916.png" />
     <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">AI prompt context</p>
     <div class="px-5 py-4 rounded-xl bg-black/50 border border-zinc-700 font-mono text-xs text-zinc-300 leading-loose">
       "I need to add tax calculation.<br>
@@ -219,6 +234,7 @@ src/
     </div>
   </div>
   <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
+    <img class="w-10 mx-auto mb-3" src="https://em-content.zobj.net/source/microsoft-teams/400/person-shrugging_light-skin-tone_1f937-1f3fb_1f3fb.png" />
     <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">With vague names</p>
     <div class="px-5 py-4 rounded-xl bg-black/50 border border-zinc-700 font-mono text-xs text-zinc-300 leading-loose">
       "I need to add tax calculation.<br>
@@ -632,7 +648,7 @@ layout: section
     </ul>
   </div>
   <div class="rounded-sm border border-rose-500/30 bg-rose-500/5 p-5 flex flex-col justify-center">
-    <div class="text-4xl mb-4 text-center">🧟</div>
+    <div class="text-6xl mb-4 text-center">🧟</div>
     <p class="text-rose-200 text-center text-base font-semibold leading-relaxed">
       AI may generate code following old, dead patterns it found in your repo.
     </p>
@@ -816,18 +832,18 @@ class: 'text-center'
 <div class="flex flex-col items-center justify-center">
   <img class="w-20 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/folded-hands_1f64f.png" />
   <h1 class="text-5xl font-black mb-6">Thank you!</h1>
-  <p class="text-zinc-400 text-lg mb-8">Structure your code for humans and machines alike.</p>
+  <p class="text-zinc-400 text-sm mb-8">Structure your code for humans and machines alike.</p>
 
-  <div class="avtar rounded-full flex align-center justify-center">
-    <img class="w-16 h-16 rounded-full grayscale" src="https://avatars.githubusercontent.com/u/6254009?v=4" />
+  <div class="avtar rounded-full flex align-center justify-center mt-24">
+    <img class="w-14 h-14 rounded-full grayscale" src="https://avatars.githubusercontent.com/u/6254009?v=4" />
     <div class="text-left ml-4 mt-1">
       <strong class="text-xl">Jafar Rezaei</strong> <br/>
-      <span class="text-gray-400 text-sm">Squad Lead at Lyreco</span>
+      <span class="text-gray-400 text-xs">Senior Software Engineer at HEMA</span>
     </div>
   </div>
 
   <div class="mt-8 flex gap-6 text-sm text-zinc-500">
-    <a href="https://github.com/sayjeyhi" class="hover:text-zinc-300 transition-colors">
+    <a href="https://github.com/sayjeyhi" class="text-sm hover:text-zinc-300 transition-colors">
       <carbon:logo-github class="inline mr-1"/> sayjeyhi
     </a>
   </div>
