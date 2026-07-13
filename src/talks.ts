@@ -107,6 +107,6 @@ export const TALKS = [
     link: "/ai-friendly-codebase/",
     tags: ["AI", "codebase", "architecture", "best-practices"],
     image: "./talks/ai-freindly-codecase.png",
-    date: "July 2025",
+    date: "July 2026",
   }
 ];

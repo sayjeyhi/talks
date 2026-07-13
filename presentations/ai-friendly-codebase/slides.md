@@ -3,6 +3,8 @@ theme: seriph
 class: text-center
 highlighter: shiki
 lineNumbers: false
+shiki:
+  theme: dracula
 info: |
   ## AI Friendly Codebase
   Structure your code for the age of AI assistants
@@ -37,6 +39,7 @@ layout: center
 class: 'text-center'
 ---
 
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/face-with-steam-from-nose_1f624.png" />
 <p class="text-zinc-500 text-lg mb-4">When AI generates bad code, most devs say:</p>
 <div class="text-4xl font-black text-zinc-300 tracking-tight">
   "AI is not good enough yet"
@@ -47,6 +50,7 @@ layout: center
 class: 'text-center'
 ---
 
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/mirror_1fa9e.png" />
 <p class="text-zinc-500 text-lg mb-4">But often the real problem is:</p>
 <div class="text-4xl font-black text-zinc-300 tracking-tight">
   Your codebase isn't AI-friendly
@@ -58,6 +62,7 @@ layout: center
 class: 'text-center'
 ---
 
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/light-bulb_1f4a1.png" />
 <div class="max-w-2xl mx-auto px-8 py-6 rounded-2xl border border-teal-500/30 bg-teal-500/5">
   <h2 class="text-2xl font-bold text-teal-200 leading-relaxed">
     The better your code is structured,<br>the better AI can help you.
@@ -66,10 +71,24 @@ class: 'text-center'
 
 
 ---
+layout: center
+class: 'text-center'
+---
+
+<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/thinking-face_1f914.png" />
+<p class="text-zinc-500 text-lg mb-6">But what does</p>
+<div class="text-5xl font-black text-teal-300 tracking-tight mb-6">
+  "Better"
+</div>
+<p class="text-zinc-500 text-lg">actually mean?</p>
+
+
+---
 layout: section
 ---
 
 <div class="flex flex-col items-center justify-center h-full text-center">
+  <img class="w-16 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/label_1f3f7-fe0f.png" />
   <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-400/40 bg-teal-400/10 text-teal-300 text-xs font-mono tracking-widest mb-8 uppercase">
     Section 01
   </div>
@@ -117,7 +136,7 @@ layout: section
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
+      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Vague names</span>
     </div>
 
@@ -134,7 +153,7 @@ src/
   </div>
   <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
+      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Descriptive names</span>
     </div>
 
@@ -185,6 +204,7 @@ layout: section
 ---
 
 <div class="flex flex-col items-center justify-center h-full text-center">
+  <img class="w-16 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/triangular-ruler_1f4d0.png" />
   <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-400/40 bg-amber-400/10 text-amber-300 text-xs font-mono tracking-widest mb-8 uppercase">
     Section 02
   </div>
@@ -231,7 +251,7 @@ layout: section
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
+      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">One giant file</span>
     </div>
     <div class="space-y-1">
@@ -248,7 +268,7 @@ layout: section
   </div>
   <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
+      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Focused modules</span>
     </div>
     <div class="space-y-1">
@@ -306,6 +326,7 @@ layout: section
 ---
 
 <div class="flex flex-col items-center justify-center h-full text-center">
+  <img class="w-16 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/magnifying-glass-tilted-left_1f50d.png" />
   <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-400/40 bg-orange-400/10 text-orange-300 text-xs font-mono tracking-widest mb-8 uppercase">
     Section 03
   </div>
@@ -329,10 +350,10 @@ layout: section
     <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI traces code by following <span class="text-white font-semibold">explicit references</span>. When behavior is hidden behind magic, the model can't follow the trail.</p>
     <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Hard for AI to trace:</div>
     <ul class="space-y-2 text-sm text-zinc-400">
-      <li class="flex items-center gap-2"><span class="text-orange-500">✗</span> Barrel exports (index.ts re-exports)</li>
-      <li class="flex items-center gap-2"><span class="text-orange-500">✗</span> Dynamic requires / imports</li>
-      <li class="flex items-center gap-2"><span class="text-orange-500">✗</span> Magic numbers / unexplained literals</li>
-      <li class="flex items-center gap-2"><span class="text-orange-500">✗</span> Implicit global state</li>
+      <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Barrel exports (index.ts re-exports)</li>
+      <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Dynamic requires / imports</li>
+      <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Magic numbers / unexplained literals</li>
+      <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Implicit global state</li>
     </ul>
   </div>
   <div class="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-5 flex flex-col justify-center">
@@ -353,7 +374,7 @@ layout: section
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
+      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Magic & implicit</span>
     </div>
 
@@ -371,7 +392,7 @@ const mod = require(`./${name}`)
   </div>
   <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
+      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Explicit & traceable</span>
     </div>
 
@@ -401,7 +422,7 @@ import { ShippingModule }
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
+      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Untyped</span>
     </div>
 
@@ -415,7 +436,7 @@ function processOrder(data: any) {
   </div>
   <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
+      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Typed interface</span>
     </div>
 
@@ -447,6 +468,7 @@ layout: section
 ---
 
 <div class="flex flex-col items-center justify-center h-full text-center">
+  <img class="w-16 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/recycling-symbol_267b-fe0f.png" />
   <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-400/40 bg-purple-400/10 text-purple-300 text-xs font-mono tracking-widest mb-8 uppercase">
     Section 04
   </div>
@@ -500,7 +522,7 @@ layout: section
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-3">
-      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
+      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Same logic in 3 places</span>
     </div>
 
@@ -518,7 +540,7 @@ if (!email.includes('@') || email.length < 5)
   </div>
   <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-3">
-      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
+      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Shared utility</span>
     </div>
 
@@ -547,6 +569,7 @@ layout: section
 ---
 
 <div class="flex flex-col items-center justify-center h-full text-center">
+  <img class="w-16 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/broom_1f9f9.png" />
   <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-rose-400/40 bg-rose-400/10 text-rose-300 text-xs font-mono tracking-widest mb-8 uppercase">
     Section 05
   </div>
@@ -596,7 +619,7 @@ layout: section
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
+      <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Cluttered file</span>
     </div>
 
@@ -622,7 +645,7 @@ export function login(user: string) {
   </div>
   <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
-      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
+      <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Clean file</span>
     </div>
 
@@ -727,6 +750,7 @@ class: 'text-center'
 ---
 
 <div class="max-w-3xl mx-auto">
+  <img class="w-14 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/clipboard_1f4cb.png" />
   <h1 class="text-3xl font-black mb-8">The AI-Friendly Codebase Checklist</h1>
 
   <div class="text-left space-y-4">
@@ -759,6 +783,7 @@ class: 'text-center'
 ---
 
 <div class="flex flex-col items-center justify-center">
+  <img class="w-20 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/folded-hands_1f64f.png" />
   <h1 class="text-5xl font-black mb-6">Thank you!</h1>
   <p class="text-zinc-400 text-lg mb-8">Structure your code for humans and machines alike.</p>
 
