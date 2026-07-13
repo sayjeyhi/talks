@@ -165,7 +165,7 @@ layout: section
   <div class="rounded-sm border border-teal-500/30 bg-teal-500/5 p-5 flex flex-col justify-center">
     <div class="text-4xl mb-4 text-center">🏷️</div>
     <p class="text-teal-200 text-center text-base font-semibold leading-relaxed">
-      Expressive naming = less hallucination
+      Expressive naming tends to reduce hallucination
     </p>
     <p class="text-zinc-500 text-center text-sm mt-2">Generic names force AI to guess.</p>
   </div>
@@ -268,23 +268,23 @@ layout: section
 
 <div class="inline-flex items-center px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 text-xs font-mono mb-5">02 · Small & Focused Files</div>
 
-## The context window is finite
+## Large files dilute AI attention
 
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
-    <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI models have a <span class="text-white font-semibold">limited context window</span>. A 2000-line file eats a huge chunk of it.</p>
-    <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Practical range:</div>
+    <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI accuracy drops when it must sift through unrelated code. A 2000-line file forces the model to spread its attention across logic that has nothing to do with the task.</p>
+    <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Signal-to-noise sweet spot:</div>
     <div class="px-5 py-4 rounded-xl bg-black/50 border border-amber-500/20 font-mono text-2xl text-amber-300 text-center">
       50 – 150 lines per file
     </div>
-    <p class="text-zinc-500 text-xs mt-3 text-center">Sweet spot for AI comprehension</p>
+    <p class="text-zinc-500 text-xs mt-3 text-center">Keeps the model focused on what matters</p>
   </div>
   <div class="rounded-sm border border-amber-500/30 bg-amber-500/5 p-5 flex flex-col justify-center">
     <div class="text-4xl mb-4 text-center">📐</div>
     <p class="text-amber-200 text-center text-base font-semibold leading-relaxed">
-      Smaller files = more focused context
+      Smaller files = higher signal-to-noise
     </p>
-    <p class="text-zinc-500 text-center text-sm mt-2">The model can hold the full picture without losing details.</p>
+    <p class="text-zinc-500 text-center text-sm mt-2">The model's attention stays concentrated on relevant logic instead of sifting through noise.</p>
   </div>
 </div>
 
@@ -293,7 +293,7 @@ layout: section
 
 <div class="inline-flex items-center px-3 py-1 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 text-xs font-mono mb-5">02 · Small & Focused Files</div>
 
-## Context window: big file vs focused modules
+## Attention: big file vs focused modules
 
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
@@ -311,7 +311,7 @@ layout: section
       <div class="h-3 rounded bg-zinc-800 w-full"></div>
       <div class="h-3 rounded bg-zinc-800 w-full"></div>
     </div>
-    <p class="text-zinc-500 text-xs mt-3 text-center">2000 lines → context full, details lost</p>
+    <p class="text-zinc-500 text-xs mt-3 text-center">2000 lines → signal buried in noise, edits drift</p>
   </div>
   <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
@@ -328,7 +328,7 @@ layout: section
       <div class="h-3 rounded bg-zinc-800/50 w-full"></div>
       <div class="h-3 rounded bg-zinc-800/50 w-full"></div>
     </div>
-    <p class="text-zinc-500 text-xs mt-3 text-center">Only load the module you need → context stays lean</p>
+    <p class="text-zinc-500 text-xs mt-3 text-center">Only the relevant module → attention stays sharp, edits stay scoped</p>
   </div>
 </div>
 
@@ -397,7 +397,7 @@ layout: section
     <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI traces code by following <span class="text-white font-semibold">explicit references</span>. When behavior is hidden behind magic, the model can't follow the trail.</p>
     <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Hard for AI to trace:</div>
     <ul class="space-y-2 text-sm text-zinc-400">
-      <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Barrel exports (index.ts re-exports)</li>
+      <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Barrel exports (useful for public APIs, but obscure file origins for AI)</li>
       <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Dynamic requires / imports</li>
       <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Magic numbers / unexplained literals</li>
       <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Implicit global state</li>
@@ -419,25 +419,33 @@ layout: section
 ## Bad vs Good: imports & constants
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm bg-red-500/5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Magic & implicit</span>
     </div>
 
 ```ts
-// Barrel re-export — where does it live?
-import { validate } from '@/utils'
+// validators/index.ts (barrel file)
+export * from './validate-email'
+export * from './validate-phone'
+export * from './validate-address'
+
+
+// consumer — which file defines validateEmail?
+import { validateEmail } from './validators'
+
 
 // Magic number — what is 86400?
 setTimeout(cleanup, 86400 * 1000)
+
 
 // Dynamic require — AI can't trace
 const mod = require(`./${name}`)
 ```
 
   </div>
-  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm bg-green-500/5 ">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Explicit & traceable</span>
@@ -448,9 +456,11 @@ const mod = require(`./${name}`)
 import { validateEmail }
   from '@/validators/validate-email'
 
+
 // Named constant — self-documenting
 const ONE_DAY_MS = 86_400_000
 setTimeout(cleanup, ONE_DAY_MS)
+
 
 // Static import — AI can follow
 import { ShippingModule }
@@ -467,7 +477,7 @@ import { ShippingModule }
 ## Typed interfaces over `any`
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm bg-red-500/5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Untyped</span>
@@ -481,7 +491,7 @@ function processOrder(data: any) {
 ```
 
   </div>
-  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm bg-green-500/5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Typed interface</span>
@@ -500,8 +510,8 @@ interface Order {
   currency: string
 }
 
-function calculateTotal(order: Order) {
-  return order.items
+function processOrder(data: Order) {
+  return data.items
     .reduce((sum, i) => sum + i.price * i.qty, 0)
 }
 ```
@@ -567,7 +577,7 @@ layout: section
 ## Duplicated vs shared utility
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm bg-red-500/5">
     <div class="flex items-center gap-2 mb-3">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Same logic in 3 places</span>
@@ -578,14 +588,19 @@ layout: section
 if (!email.includes('@') || email.length < 5)
   throw new Error('Invalid email')
 
+
 // checkout.ts  — same check copy-pasted
+...
+
+
 // invite.ts    — same check copy-pasted
+...
 ```
 
 <p class="text-zinc-500 text-xs mt-3">AI fixes one, forgets the other two.</p>
 
   </div>
-  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm bg-green-500/5">
     <div class="flex items-center gap-2 mb-3">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Shared utility</span>
@@ -664,7 +679,7 @@ layout: section
 ## Example: commented code confuses generation
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm bg-red-500/5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Cluttered file</span>
@@ -672,6 +687,7 @@ layout: section
 
 ```ts
 import { oldAuth } from './legacy-auth' // unused
+
 // import { newAuth } from './auth-v2'
 
 export function login(user: string) {
@@ -690,7 +706,7 @@ export function login(user: string) {
 ```
 
   </div>
-  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm bg-green-500/5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Clean file</span>
@@ -769,10 +785,12 @@ export function login(user: string) {
       <li class="flex items-center gap-3">
         <span class="text-rose-400 font-mono text-xs font-bold">deadcode</span>
         <span class="text-zinc-400">— Python dead code detector</span>
+        <!-- ⚠️ VERIFY: confirm "deadcode" exists on PyPI before presenting -->
       </li>
       <li class="flex items-center gap-3">
         <span class="text-rose-400 font-mono text-xs font-bold">unused</span>
         <span class="text-zinc-400">— Rust crate for unused code</span>
+        <!-- ⚠️ VERIFY: confirm "unused" exists on crates.io before presenting -->
       </li>
       <li class="flex items-center gap-3">
         <span class="text-rose-400 font-mono text-xs font-bold">IDE inspections</span>
@@ -800,7 +818,7 @@ class: 'text-center'
   <img class="w-14 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/clipboard_1f4cb.png" />
   <h1 class="text-3xl font-black mb-8">The AI-Friendly Codebase Checklist</h1>
 
-  <div class="text-left space-y-4">
+  <div class="text-left space-y-2 mt-12">
     <div class="flex items-center gap-4 px-6 py-3 rounded-xl border border-teal-500/30 bg-teal-500/5">
       <span class="text-teal-400 font-bold text-lg">01</span>
       <span class="text-zinc-200 text-sm">Use <strong>descriptive names</strong> — files, folders, functions, variables</span>
