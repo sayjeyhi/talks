@@ -499,31 +499,25 @@ layout: section
 
 <div class="grid grid-cols-2 gap-5 mt-4">
   <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
-    <div class="flex items-center gap-2 mb-4">
+    <div class="flex items-center gap-2 mb-3">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">✗</div>
       <span class="text-red-300 font-semibold text-sm">Same logic in 3 places</span>
     </div>
 
 ```ts
 // signup.ts
-if (!email.includes('@') || email.length < 5) {
+if (!email.includes('@') || email.length < 5)
   throw new Error('Invalid email')
-}
 
-// checkout.ts
-if (!email.includes('@') || email.length < 5) {
-  throw new Error('Invalid email')
-}
-
-// invite.ts
-if (!email.includes('@') || email.length < 5) {
-  throw new Error('Invalid email')
-}
+// checkout.ts  — same check copy-pasted
+// invite.ts    — same check copy-pasted
 ```
+
+<p class="text-zinc-500 text-xs mt-3">AI fixes one, forgets the other two.</p>
 
   </div>
   <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
-    <div class="flex items-center gap-2 mb-4">
+    <div class="flex items-center gap-2 mb-3">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✓</div>
       <span class="text-green-300 font-semibold text-sm">Shared utility</span>
     </div>
@@ -531,18 +525,13 @@ if (!email.includes('@') || email.length < 5) {
 ```ts
 // validate-email.ts
 export function validateEmail(email: string) {
-  if (!email.includes('@') || email.length < 5) {
+  if (!email.includes('@') || email.length < 5)
     throw new Error('Invalid email')
-  }
 }
 
-// signup.ts
-import { validateEmail }
-  from './validate-email'
+// signup.ts / checkout.ts / invite.ts
+import { validateEmail } from './validate-email'
 validateEmail(input.email)
-
-// checkout.ts — same import
-// invite.ts — same import
 ```
 
   </div>
@@ -673,6 +662,62 @@ export function login(user: string) {
     <h3 class="text-white font-semibold text-sm mb-1">Prune unused deps</h3>
     <p class="text-zinc-400 text-xs leading-relaxed">Unused imports and packages add confusion to AI analysis.</p>
   </div>
+</div>
+
+
+---
+
+<div class="inline-flex items-center px-3 py-1 rounded-full border border-rose-400/30 bg-rose-400/10 text-rose-300 text-xs font-mono mb-5">05 · Remove Dead Code</div>
+
+## Tools to find dead code
+
+<div class="grid grid-cols-2 gap-5 mt-4">
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+    <div class="text-xs font-mono text-rose-300 mb-3 uppercase tracking-widest">JavaScript / TypeScript</div>
+    <ul class="space-y-2.5 text-sm text-zinc-300">
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">knip</span>
+        <span class="text-zinc-400">— find unused files, exports, deps</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">ts-prune</span>
+        <span class="text-zinc-400">— find unused TS exports</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">depcheck</span>
+        <span class="text-zinc-400">— find unused npm packages</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">eslint</span>
+        <span class="text-zinc-400">— no-unused-vars, no-unused-imports</span>
+      </li>
+    </ul>
+  </div>
+  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+    <div class="text-xs font-mono text-rose-300 mb-3 uppercase tracking-widest">General / Multi-language</div>
+    <ul class="space-y-2.5 text-sm text-zinc-300">
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">deadcode</span>
+        <span class="text-zinc-400">— Python dead code detector</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">unused</span>
+        <span class="text-zinc-400">— Rust crate for unused code</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">IDE inspections</span>
+        <span class="text-zinc-400">— IntelliJ, VS Code grayed-out hints</span>
+      </li>
+      <li class="flex items-center gap-3">
+        <span class="text-rose-400 font-mono text-xs font-bold">git log</span>
+        <span class="text-zinc-400">— files not touched in 6+ months</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="mt-4 px-5 py-2.5 rounded-xl border border-rose-500/30 bg-rose-500/10 text-rose-200 text-sm text-center">
+  💡 Tip: Run <span class="font-mono">npx knip</span> in CI to catch dead code before it lands.
 </div>
 
 

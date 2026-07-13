@@ -155,7 +155,7 @@ n8n is the **best balance** for teams who want the **freedom of code with visual
 </div>
 
 <div>
-<img src="/n8n.png" class="h-60 rounded shadow" />
+<img src="./public/n8n.png" class="h-60 rounded shadow" />
 </div>
 </div>
 
@@ -201,7 +201,7 @@ n8n is the **best balance** for teams who want the **freedom of code with visual
 
 ---
 
-<img src="/sample-n8n.png">
+<img src="./public/sample-n8n.png">
 
 ---
 

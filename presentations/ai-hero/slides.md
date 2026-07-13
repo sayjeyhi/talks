@@ -62,7 +62,7 @@ Using AI in its real speed and value
 
 </div>
 <div>
-  <img class="absolute top-10 right-20 w-24 h-24 rounded-full grayscale" src="/openart-video_cf97c9b8_1759827505833.gif" />
+  <img class="absolute top-10 right-20 w-24 h-24 rounded-full grayscale" src="./public/openart-video_cf97c9b8_1759827505833.gif" />
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdhYWZ2eDM4ZHdzeG5jYXllNGh3ZnMzeWF1d2kwNXo3M3dzMTE0YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JTTAjM197sku8MgrRa/giphy.gif" />
 </div>
 </div>
@@ -180,7 +180,7 @@ class: 'text-center'
 ## Context fills up fast
 
 <div class="flex items-center justify-center mt-6">
-  <img src="/ctx-full-conversation.png" class="rounded-2xl" style="max-height: 340px;" />
+  <img src="./public/ctx-full-conversation.png" class="rounded-2xl" style="max-height: 340px;" />
 </div>
 
 ---
@@ -190,7 +190,7 @@ class: 'text-center'
 ## Context fills up fast
 
 <div class="flex items-center justify-center mt-6">
-  <img src="/ctx-40pct.png" class="rounded-2xl" style="max-height: 340px;" />
+  <img src="./public/ctx-40pct.png" class="rounded-2xl" style="max-height: 340px;" />
 </div>
 
 ---
@@ -227,8 +227,8 @@ class: 'text-center'
 ## Compaction vs. overflow
 
 <div class="grid grid-cols-2 gap-4 mt-5">
-  <img src="/ctx-compacted.png" class="rounded-2xl" style="max-height: 340px;" />
-  <img src="/ctx-overloaded.png" class="rounded-2xl" style="max-height: 340px;" />
+  <img src="./public/ctx-compacted.png" class="rounded-2xl" style="max-height: 340px;" />
+  <img src="./public/ctx-overloaded.png" class="rounded-2xl" style="max-height: 340px;" />
 </div>
 
 ---
@@ -327,7 +327,7 @@ class: 'text-center'
 ## Parallel agents eat context fast
 
 <div class="flex items-center justify-center mt-4">
-  <img src="/ctx-parallel-agents.png" class="rounded-2xl" style="max-height: 400px;" />
+  <img src="./public/ctx-parallel-agents.png" class="rounded-2xl" style="max-height: 400px;" />
 </div>
 
 

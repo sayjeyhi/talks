@@ -63,7 +63,7 @@ Techniques That Worked for Us
 
 </div>
 <div>
-  <img class="absolute top-10 right-20 w-24 h-24 rounded-full grayscale" src="/openart-video_cf97c9b8_1759827505833.gif" />
+  <img class="absolute top-10 right-20 w-24 h-24 rounded-full grayscale" src="./public/openart-video_cf97c9b8_1759827505833.gif" />
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdhYWZ2eDM4ZHdzeG5jYXllNGh3ZnMzeWF1d2kwNXo3M3dzMTE0YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JTTAjM197sku8MgrRa/giphy.gif" />
 </div>
 </div>
@@ -150,7 +150,7 @@ layout: center
 ---
 
 <div class="p-8 bg-white rounded-2xl">
-<img class="w-screen" src="/ci-cd.jpeg" />
+<img class="w-screen" src="./public/ci-cd.jpeg" />
 </div>
 
 
@@ -182,7 +182,7 @@ class: text-center
 # Not exactly
 
 <div class="bg-white p-5 rounded-2xl">
-<img src="/devops-loop.png" />
+<img src="./public/devops-loop.png" />
 </div>
 
 
@@ -245,7 +245,7 @@ The problem is real and we are involved.
 
 <div class="border-2 border-gray-600 p-10 rounded-2xl">
 <div class="flex items-center justify-center">
-<img class="w-40 relative bg-white p-2 rounded-2xl " src="/Lyreco_Logotype_RGB_positive.png" />
+<img class="w-40 relative bg-white p-2 rounded-2xl " src="./public/Lyreco_Logotype_RGB_positive.png" />
 </div>
 
 
@@ -326,7 +326,7 @@ standard set of metrics used for evaluating process performance and maturity
 <h2 class="mb-2">Datadog DORA dashboard</h2>
 
 <div class="bg-white p-2 ">
-<img class="w-screen" src="/dora.webp" />
+<img class="w-screen" src="./public/dora.webp" />
 </div>
 
 
@@ -517,7 +517,7 @@ based on DORA
 ---
 
 <div class="bg-black p-2 rounded-2xl">
-<img class="w-screen" src="/old-jenkins.png" />
+<img class="w-screen" src="./public/old-jenkins.png" />
 </div>
 
 
@@ -884,7 +884,7 @@ image: https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg?auto
 CI CD
 
 
-<img src="/drawing.png">
+<img src="./public/drawing.png">
 
 ---
 
@@ -892,7 +892,7 @@ CI CD
 
 monorepo
 
-<img src="/draw-2.png">
+<img src="./public/draw-2.png">
 
 ---
 
@@ -900,7 +900,7 @@ monorepo
 
 repeated flows
 
-<img src="/draw-jenkins-ci.png">
+<img src="./public/draw-jenkins-ci.png">
 
 ---
 
@@ -908,7 +908,7 @@ repeated flows
 
 improved jenkins
 
-<img src="/draw-3.png">
+<img src="./public/draw-3.png">
 
 ---
 
@@ -917,12 +917,12 @@ improved jenkins
 no build and quality check
 
 
-<img src="/draw-one-flow.png">
+<img src="./public/draw-one-flow.png">
 
 
 ---
 
-<img src="/full-flow.png">
+<img src="./public/full-flow.png">
 
 no build and quality check
 
@@ -930,7 +930,7 @@ no build and quality check
 
 Real CI flow:
 
-<img src="/github-ci.png">
+<img src="./public/github-ci.png">
 
 ---
 
@@ -1033,7 +1033,7 @@ steps:
 
 <h1 class="text-lg!">#4 — Docker BuildX & Registry Cache</h1>
 
-<img src="/single-stage-go.webp" />
+<img src="./public/single-stage-go.webp" />
 
 ---
 
@@ -1120,7 +1120,7 @@ steps:
 
 <h1 class="text-lg!">#6 — Prepare CD artifacts on CI</h1>
 
-<img src="/docker-share-image.png">
+<img src="./public/docker-share-image.png">
 
 ---
 layout: center

@@ -67,7 +67,7 @@ background: linear-gradient(to right, #BECF24 0%, #95E6FF 50%, #CF8377 100%);
 
 </div>
 <div>
-  <img class="absolute top-10 right-20 w-24 h-24 rounded-full grayscale" src="/openart-video_cf97c9b8_1759827505833.gif" />
+  <img class="absolute top-10 right-20 w-24 h-24 rounded-full grayscale" src="./public/openart-video_cf97c9b8_1759827505833.gif" />
   <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdhYWZ2eDM4ZHdzeG5jYXllNGh3ZnMzeWF1d2kwNXo3M3dzMTE0YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/JTTAjM197sku8MgrRa/giphy.gif" />
 </div>
 </div>
@@ -194,7 +194,7 @@ layout: center
 <div class="text-gray-400 flex gap-2 items-center w-full justify-between">Is it related to Container Query (CSS)? <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 12 12"><!-- Icon from Dinkie Icons by atelierAnchor - https://github.com/atelier-anchor/dinkie-icons/blob/main/LICENSE --><path fill="currentColor" d="M3 11h5V9H7v1H4V9H3Zm-2 1h1v-1H1Zm-1-1h1V5H0Zm2-3h1V7H2Zm2 1h3V8H4ZM1 5h1V4H1Zm8 7h1v-1H9ZM1 3h1V2H1ZM0 2h1V1H0Zm2 4h7V5H2Zm6 2h1V7H8ZM4 4h1V3H4ZM3 3h1V2H3Zm7 8h1V5h-1ZM6 4h1V3H6ZM5 3h1V1H5Zm4 2h1V4H9ZM7 2h1V1H7Zm2 1h1V2H9Zm1-1h1V1h-1Zm0 0"/></svg></div>
 
 <div class="rounded-full mt-10 flex w-full align-center justify-center ">
-<img class="w-[60%]" src="/css-container.jpg" />
+<img class="w-[60%]" src="./public/css-container.jpg" />
 </div>
 
 
@@ -208,7 +208,7 @@ layout: center
 
 
 <div class="rounded-full mt-10 flex w-full align-center justify-center ">
-<img class="w-[60%]" src="/media-container.jpg" />
+<img class="w-[60%]" src="./public/media-container.jpg" />
 </div>
 
 
@@ -223,7 +223,7 @@ layout: center
 
 
 <div class="rounded-full mt-10 flex w-full align-center justify-center ">
-<img class="w-[60%]" src="/docker-container.png" />
+<img class="w-[60%]" src="./public/docker-container.png" />
 </div>
 
 <!--
@@ -678,7 +678,7 @@ They let you look into the box and interpret what’s inside
 
 ---
 
-<img src="/02%2007.webp">
+<img src="./public/02%2007.webp">
 
 ---
 
@@ -718,7 +718,7 @@ Main Thread                                                       Worker Thread
 <div class="grid grid-cols-2 gap-4 text-left text-sm text-gray-400">
 
 
-<img src="/img.png" class="w-full mx-auto my-8"/>
+<!-- img.png was missing from public/ -->
 
 <div>
 <br/>
@@ -781,7 +781,7 @@ Main Thread                                                      Worker Thread
 # Spectre attack
 SharedArrayBuffer was removed from all browsers in 2018
 
-<img src="/spectre-attack.gif" class="w-3/4 mx-auto my-8"/>
+<img src="./public/spectre-attack.gif" class="w-3/4 mx-auto my-8"/>
 
 <!--
 SharedArrayBuffer was removed from all browsers in 2018 because of the Spectre and Meltdown attacks. The Chrome feature known as Site Isolation allowed it to return, as long as the site requesting to use SharedArrayBuffer is in state known as crossOriginIsolated.
@@ -797,9 +797,9 @@ SharedArrayBuffer was removed from all browsers in 2018 because of the Spectre a
 <div>
 Cloud flare and side channel attack on workers
 
-<img src="/workers-cloudflare.52.14.png" />
+<img src="./public/workers-cloudflare.52.14.png" />
 </div>
-<img src="/theo-fight.41.30.png" />
+<img src="./public/theo-fight.41.30.png" />
 
 </div>
 
@@ -1165,7 +1165,7 @@ WASI interface allows WebAssembly to run outside the browser.
 
 <v-click>
 
-<img src="/Wasi%209.png" class="w-[60%] mx-auto mt-8"/>
+<img src="./public/Wasi%209.png" class="w-[60%] mx-auto mt-8"/>
 
 </v-click>
 
@@ -1178,7 +1178,7 @@ Or worse:
 
 ---
 
-<img src="/Wasi%2010.png" class="w-[60%] mx-auto"/>
+<img src="./public/Wasi%2010.png" class="w-[60%] mx-auto"/>
 
 
 ---
@@ -1210,19 +1210,19 @@ Or worse:
   Released September 2025
   
   <div>
-  <img class="w-[70%]" src="/wasm3_0.png" />
+  <img class="w-[70%]" src="./public/wasm3_0.png" />
   </div>
   </div>
 
   <div>
-  <img class="w-[70%]" src="/docker-wasi-wasm.51.08.png" />
+  <img class="w-[70%]" src="./public/docker-wasi-wasm.51.08.png" />
   </div>
 
   <div>
   
   **DockerCon 2023**
 
-  <img class="w-[70%]" src="/docker-web-assembly.59.21.png" />
+  <img class="w-[70%]" src="./public/docker-web-assembly.59.21.png" />
   </div>
 
   <div>
@@ -1279,7 +1279,7 @@ class: text-center
 ---
 
 <div class="flex items-center justify-center mb-12">
-<img class=" w-24 h-24 rounded-full grayscale" src="/openart-video_cf97c9b8_1759827505833.gif" />
+<img class=" w-24 h-24 rounded-full grayscale" src="./public/openart-video_cf97c9b8_1759827505833.gif" />
 </div>
 
 # Thank y'all!

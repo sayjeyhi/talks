@@ -102,7 +102,7 @@ ISO standardized locale codes are a combination of a language code and a country
 </span>
 
   <span>
-<img src="/locale.png" class="w-64"/>
+<img src="./public/locale.png" class="w-64"/>
 {LANGUAGE}-{COUNTRY}
 </span>
 </div>
@@ -146,7 +146,7 @@ ISO standardized locale codes are a combination of a language code and a country
 
 
 <div class="flex items-center gap-4 justify-center mt-12">
-<img class="rounded-xl w-128" src="/What%20is%20Localization%20Image%201.jpeg" />
+<img class="rounded-xl w-128" src="./public/What%20is%20Localization%20Image%201.jpeg" />
 </div>
 
 ---
@@ -355,7 +355,7 @@ B --> D[./locales/fr.json]
 </div>
 
 <div v-click class="flex align-center justify-center mt-5">
-  <img class="rounded-xl h-48" src="/cms-field-locales.png" />
+  <img class="rounded-xl h-48" src="./public/cms-field-locales.png" />
 </div>
 
 ---
@@ -503,13 +503,13 @@ A(local) --> | migration | B(dev) --> |migration| C(qual) --> |migration| D(mast
 
 # Key Model
 
-<img class="rounded-xl" src="/translation-key-type.png" />
+<img class="rounded-xl" src="./public/translation-key-type.png" />
 
 ---
 
 # Key content
 
-<img class="rounded-xl" src="/key-content.png" />
+<img class="rounded-xl" src="./public/key-content.png" />
 
 ---
 
@@ -594,13 +594,13 @@ A **UserInterface** to allow managing **Translation Values**.
 
 # Our current app
 
-<img class="rounded-xl h-full w-auto" src="/app-config.png" />
+<img class="rounded-xl h-full w-auto" src="./public/app-config.png" />
 
 ---
 
 # Our current app
 
-<img class="rounded-xl h-full w-auto" src="/values.png" />
+<img class="rounded-xl h-full w-auto" src="./public/values.png" />
 
 ---
 

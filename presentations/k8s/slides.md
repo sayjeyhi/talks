@@ -75,7 +75,7 @@ Steps we have
 
 <div class="flex flex-col">
   <h4 class="text-lg font-semibold">Lunch Break 12:00 - 12:45</h4>
-  <img src="/public/lunch.png" class="max-w-full h-auto rounded-lg mt-2" alt="Lunch Break" />
+  <img src="./public/lunch.png" class="max-w-full h-auto rounded-lg mt-2" alt="Lunch Break" />
 </div>
 
 
@@ -640,7 +640,7 @@ sudo ufw status
 # Base network
 
 
-<img src="/public/route-trace.png" />
+<img src="./public/route-trace.png" />
 
 
 ---
@@ -859,7 +859,7 @@ Let's connect to it locally and check it from your local machine.
 
 https://k8slens.dev/
 
-<img src="/public/lens.png">
+<img src="./public/lens.png">
 
 ---
 
@@ -1406,7 +1406,7 @@ Time to deploy our app to the cluster!
 https://kubernetes.io/
 
 <div class="flex items-center justify-center flex-col">
-  <img src="/public/k8s.png" />
+  <img src="./public/k8s.png" />
 </div>
 
 
@@ -1565,7 +1565,7 @@ Notes:
 Starting with Kubernetes v1.24 (May 2022), Docker as a runtime is officially removed.
 
 <div class="flex items-center justify-center gap-4">
-  <img class="w-1/2" src="/public/k8s-container-runtime.png" />
+  <img class="w-1/2" src="./public/k8s-container-runtime.png" />
 </div>
 
 <!--
@@ -1594,7 +1594,7 @@ Most of the distributions are using containerd
 ---
 
 <div class="flex items-center justify-center">
-  <img src="/public/containerd.png" />
+  <img src="./public/containerd.png" />
 </div>
 
 <!--
