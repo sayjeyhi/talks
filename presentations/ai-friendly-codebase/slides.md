@@ -3,8 +3,6 @@ theme: seriph
 class: text-center
 highlighter: shiki
 lineNumbers: false
-shiki:
-  theme: dracula
 info: |
   ## AI Friendly Codebase
   Structure your code for the age of AI assistants
@@ -63,7 +61,7 @@ class: 'text-center'
 ---
 
 <img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/light-bulb_1f4a1.png" />
-<div class="max-w-2xl mx-auto px-8 py-6 rounded-2xl border border-teal-500/30 bg-teal-500/5">
+<div class="max-w-2xl mx-auto px-8 py-6 rounded-sm border border-teal-500/30 bg-teal-500/5">
   <h2 class="text-2xl font-bold text-teal-200 leading-relaxed">
     The better your code is structured,<br>the better AI can help you.
   </h2>
@@ -81,6 +79,39 @@ class: 'text-center'
   "Better"
 </div>
 <p class="text-zinc-500 text-lg">actually mean?</p>
+
+
+---
+layout: center
+---
+
+<div class="max-w-2xl mx-auto">
+  <img class="w-14 mx-auto mb-4" src="https://em-content.zobj.net/source/microsoft-teams/400/direct-hit_1f3af.png" />
+  <div class="text-xl font-bold text-center text-zinc-200 mb-8">5 Principles for an AI-Friendly Codebase</div>
+
+  <ul class="text-left space-y-4 border-t-2 pt-12 border-gray-400/20">
+    <li class="flex items-center gap-4 border-teal-500/30 bg-teal-500/5">
+      <img class="w-7" src="https://em-content.zobj.net/source/microsoft-teams/400/label_1f3f7-fe0f.png" />
+      <span class="text-zinc-200 text-base"><strong class="text-teal-300">Descriptive Names</strong> — files, folders, functions</span>
+    </li>
+    <li class="flex items-center gap-4 border-amber-500/30 bg-amber-500/5">
+      <img class="w-7" src="https://em-content.zobj.net/source/microsoft-teams/400/triangular-ruler_1f4d0.png" />
+      <span class="text-zinc-200 text-base"><strong class="text-amber-300">Small & Focused Files</strong> — one responsibility per file</span>
+    </li>
+    <li class="flex items-center gap-4 border-orange-500/30 bg-orange-500/5">
+      <img class="w-7" src="https://em-content.zobj.net/source/microsoft-teams/400/magnifying-glass-tilted-left_1f50d.png" />
+      <span class="text-zinc-200 text-base"><strong class="text-orange-300">Explicit Over Magic</strong> — direct imports, named constants, types</span>
+    </li>
+    <li class="flex items-center gap-4 border-purple-500/30 bg-purple-500/5">
+      <img class="w-7" src="https://em-content.zobj.net/source/microsoft-teams/400/recycling-symbol_267b-fe0f.png" />
+      <span class="text-zinc-200 text-base"><strong class="text-purple-300">Reduce Duplication</strong> — single source of truth</span>
+    </li>
+    <li class="flex items-center gap-4 border-rose-500/30 bg-rose-500/5">
+      <img class="w-7" src="https://em-content.zobj.net/source/microsoft-teams/400/broom_1f9f9.png" />
+      <span class="text-zinc-200 text-base"><strong class="text-rose-300">Remove Dead Code</strong> — clean repo, better output</span>
+    </li>
+  </ul>
+</div>
 
 
 ---
@@ -108,7 +139,7 @@ layout: section
 ## Names are the first thing AI reads
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI tools scan your <span class="text-white font-semibold">file tree</span> before reading any code. Names are the primary signal for:</p>
     <ul class="space-y-2 text-sm text-zinc-400">
       <li class="flex items-center gap-2"><span class="text-teal-500">→</span> Inferring domain intent</li>
@@ -117,7 +148,7 @@ layout: section
       <li class="flex items-center gap-2"><span class="text-teal-500">→</span> Generating accurate new code</li>
     </ul>
   </div>
-  <div class="rounded-2xl border border-teal-500/30 bg-teal-500/5 p-5 flex flex-col justify-center">
+  <div class="rounded-sm border border-teal-500/30 bg-teal-500/5 p-5 flex flex-col justify-center">
     <div class="text-4xl mb-4 text-center">🏷️</div>
     <p class="text-teal-200 text-center text-base font-semibold leading-relaxed">
       Expressive naming = less hallucination
@@ -134,7 +165,7 @@ layout: section
 ## Bad vs Good naming
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Vague names</span>
@@ -151,7 +182,7 @@ src/
 ```
 
   </div>
-  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Descriptive names</span>
@@ -177,7 +208,7 @@ src/
 ## What AI sees in your file tree
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">AI prompt context</p>
     <div class="px-5 py-4 rounded-xl bg-black/50 border border-zinc-700 font-mono text-xs text-zinc-300 leading-loose">
       "I need to add tax calculation.<br>
@@ -187,7 +218,7 @@ src/
       inside <span class="text-teal-300">customer-invoices/</span>"
     </div>
   </div>
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
     <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">With vague names</p>
     <div class="px-5 py-4 rounded-xl bg-black/50 border border-zinc-700 font-mono text-xs text-zinc-300 leading-loose">
       "I need to add tax calculation.<br>
@@ -224,7 +255,7 @@ layout: section
 ## The context window is finite
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI models have a <span class="text-white font-semibold">limited context window</span>. A 2000-line file eats a huge chunk of it.</p>
     <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Practical range:</div>
     <div class="px-5 py-4 rounded-xl bg-black/50 border border-amber-500/20 font-mono text-2xl text-amber-300 text-center">
@@ -232,7 +263,7 @@ layout: section
     </div>
     <p class="text-zinc-500 text-xs mt-3 text-center">Sweet spot for AI comprehension</p>
   </div>
-  <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 flex flex-col justify-center">
+  <div class="rounded-sm border border-amber-500/30 bg-amber-500/5 p-5 flex flex-col justify-center">
     <div class="text-4xl mb-4 text-center">📐</div>
     <p class="text-amber-200 text-center text-base font-semibold leading-relaxed">
       Smaller files = more focused context
@@ -249,7 +280,7 @@ layout: section
 ## Context window: big file vs focused modules
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">One giant file</span>
@@ -266,7 +297,7 @@ layout: section
     </div>
     <p class="text-zinc-500 text-xs mt-3 text-center">2000 lines → context full, details lost</p>
   </div>
-  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Focused modules</span>
@@ -292,7 +323,7 @@ layout: section
 ## Single Responsibility = AI alignment
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <p class="text-zinc-500 text-xs font-mono uppercase tracking-widest mb-4">Why it matters for AI</p>
     <ul class="space-y-2.5 text-sm text-zinc-300">
       <li class="flex items-center gap-3">
@@ -313,7 +344,7 @@ layout: section
       </li>
     </ul>
   </div>
-  <div class="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-5 flex flex-col justify-center text-center">
+  <div class="rounded-sm border border-amber-500/30 bg-amber-500/5 p-5 flex flex-col justify-center text-center">
     <div class="text-3xl font-black text-amber-300 mb-2">SRP</div>
     <div class="text-zinc-400 text-sm">Single Responsibility Principle</div>
     <div class="text-zinc-600 text-xs mt-2">Good for humans. Essential for AI.</div>
@@ -346,7 +377,7 @@ layout: section
 ## Magic is invisible to AI
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI traces code by following <span class="text-white font-semibold">explicit references</span>. When behavior is hidden behind magic, the model can't follow the trail.</p>
     <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">Hard for AI to trace:</div>
     <ul class="space-y-2 text-sm text-zinc-400">
@@ -356,7 +387,7 @@ layout: section
       <li class="flex items-center gap-2"><span class="text-orange-500">❎</span> Implicit global state</li>
     </ul>
   </div>
-  <div class="rounded-2xl border border-orange-500/30 bg-orange-500/5 p-5 flex flex-col justify-center">
+  <div class="rounded-sm border border-orange-500/30 bg-orange-500/5 p-5 flex flex-col justify-center">
     <div class="text-4xl mb-4 text-center">🪄</div>
     <p class="text-orange-200 text-center text-base font-semibold leading-relaxed">
       If a human needs tribal knowledge to understand it, AI will hallucinate.
@@ -372,7 +403,7 @@ layout: section
 ## Bad vs Good: imports & constants
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Magic & implicit</span>
@@ -390,7 +421,7 @@ const mod = require(`./${name}`)
 ```
 
   </div>
-  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Explicit & traceable</span>
@@ -420,7 +451,7 @@ import { ShippingModule }
 ## Typed interfaces over `any`
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Untyped</span>
@@ -434,7 +465,7 @@ function processOrder(data: any) {
 ```
 
   </div>
-  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Typed interface</span>
@@ -488,7 +519,7 @@ layout: section
 ## Why duplication hurts AI
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <p class="text-zinc-300 text-sm leading-relaxed mb-4">When the same logic exists in <span class="text-white font-semibold">multiple places</span>, AI faces a consistency problem:</p>
     <ul class="space-y-2.5 text-sm text-zinc-400">
       <li class="flex items-center gap-3">
@@ -505,7 +536,7 @@ layout: section
       </li>
     </ul>
   </div>
-  <div class="rounded-2xl border border-purple-500/30 bg-purple-500/5 p-5 flex flex-col justify-center text-center">
+  <div class="rounded-sm border border-purple-500/30 bg-purple-500/5 p-5 flex flex-col justify-center text-center">
     <div class="text-5xl font-black text-purple-400/80 mb-3">3×</div>
     <p class="text-zinc-300 text-sm">Same validation in 3 files</p>
     <p class="text-zinc-500 text-xs mt-1">= 3× chance of inconsistent AI edits</p>
@@ -520,7 +551,7 @@ layout: section
 ## Duplicated vs shared utility
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-3">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Same logic in 3 places</span>
@@ -538,7 +569,7 @@ if (!email.includes('@') || email.length < 5)
 <p class="text-zinc-500 text-xs mt-3">AI fixes one, forgets the other two.</p>
 
   </div>
-  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-3">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Shared utility</span>
@@ -589,7 +620,7 @@ layout: section
 ## Dead code poisons AI output
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <p class="text-zinc-300 text-sm leading-relaxed mb-4">AI models treat <span class="text-white font-semibold">all code equally</span>. They can't tell what's dead vs active.</p>
     <div class="mt-4 text-xs font-mono text-zinc-500 uppercase tracking-widest mb-3">What misleads AI:</div>
     <ul class="space-y-2 text-sm text-zinc-400">
@@ -600,7 +631,7 @@ layout: section
       <li class="flex items-center gap-2"><span class="text-rose-500">→</span> Legacy patterns in test fixtures</li>
     </ul>
   </div>
-  <div class="rounded-2xl border border-rose-500/30 bg-rose-500/5 p-5 flex flex-col justify-center">
+  <div class="rounded-sm border border-rose-500/30 bg-rose-500/5 p-5 flex flex-col justify-center">
     <div class="text-4xl mb-4 text-center">🧟</div>
     <p class="text-rose-200 text-center text-base font-semibold leading-relaxed">
       AI may generate code following old, dead patterns it found in your repo.
@@ -617,7 +648,7 @@ layout: section
 ## Example: commented code confuses generation
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5">
+  <div class="rounded-sm border border-red-500/30 bg-red-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-red-500/20 flex items-center justify-center text-red-400 text-xs font-bold">❎</div>
       <span class="text-red-300 font-semibold text-sm">Cluttered file</span>
@@ -643,7 +674,7 @@ export function login(user: string) {
 ```
 
   </div>
-  <div class="rounded-2xl border border-green-500/30 bg-green-500/5 p-5">
+  <div class="rounded-sm border border-green-500/30 bg-green-500/5 p-5">
     <div class="flex items-center gap-2 mb-4">
       <div class="w-7 h-7 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400 text-xs font-bold">✅</div>
       <span class="text-green-300 font-semibold text-sm">Clean file</span>
@@ -670,17 +701,17 @@ export function login(user: string) {
 ## Keep your repo clean
 
 <div class="grid grid-cols-3 gap-4 mt-4">
-  <div class="rounded-2xl bg-zinc-900/60 p-5" style="border-top: 3px solid #f43f5e; border-left: 1px solid rgba(244,63,94,0.2); border-right: 1px solid rgba(244,63,94,0.2); border-bottom: 1px solid rgba(244,63,94,0.2);">
+  <div class="rounded-sm bg-zinc-900/60 p-5" style="border-top: 3px solid #f43f5e; border-left: 1px solid rgba(244,63,94,0.2); border-right: 1px solid rgba(244,63,94,0.2); border-bottom: 1px solid rgba(244,63,94,0.2);">
     <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center text-xl mb-4">🗑️</div>
     <h3 class="text-white font-semibold text-sm mb-1">Delete dead files</h3>
     <p class="text-zinc-400 text-xs leading-relaxed">If it's not imported anywhere, it shouldn't exist. Git has history.</p>
   </div>
-  <div class="rounded-2xl bg-zinc-900/60 p-5" style="border-top: 3px solid #f43f5e; border-left: 1px solid rgba(244,63,94,0.2); border-right: 1px solid rgba(244,63,94,0.2); border-bottom: 1px solid rgba(244,63,94,0.2);">
+  <div class="rounded-sm bg-zinc-900/60 p-5" style="border-top: 3px solid #f43f5e; border-left: 1px solid rgba(244,63,94,0.2); border-right: 1px solid rgba(244,63,94,0.2); border-bottom: 1px solid rgba(244,63,94,0.2);">
     <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center text-xl mb-4">🧹</div>
     <h3 class="text-white font-semibold text-sm mb-1">Remove comments</h3>
     <p class="text-zinc-400 text-xs leading-relaxed">Commented-out code is noise. Let version control be your archive.</p>
   </div>
-  <div class="rounded-2xl bg-zinc-900/60 p-5" style="border-top: 3px solid #f43f5e; border-left: 1px solid rgba(244,63,94,0.2); border-right: 1px solid rgba(244,63,94,0.2); border-bottom: 1px solid rgba(244,63,94,0.2);">
+  <div class="rounded-sm bg-zinc-900/60 p-5" style="border-top: 3px solid #f43f5e; border-left: 1px solid rgba(244,63,94,0.2); border-right: 1px solid rgba(244,63,94,0.2); border-bottom: 1px solid rgba(244,63,94,0.2);">
     <div class="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center text-xl mb-4">📦</div>
     <h3 class="text-white font-semibold text-sm mb-1">Prune unused deps</h3>
     <p class="text-zinc-400 text-xs leading-relaxed">Unused imports and packages add confusion to AI analysis.</p>
@@ -695,7 +726,7 @@ export function login(user: string) {
 ## Tools to find dead code
 
 <div class="grid grid-cols-2 gap-5 mt-4">
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <div class="text-xs font-mono text-rose-300 mb-3 uppercase tracking-widest">JavaScript / TypeScript</div>
     <ul class="space-y-2.5 text-sm text-zinc-300">
       <li class="flex items-center gap-3">
@@ -716,7 +747,7 @@ export function login(user: string) {
       </li>
     </ul>
   </div>
-  <div class="rounded-2xl border border-zinc-700/60 bg-zinc-900/50 p-5">
+  <div class="rounded-sm border border-zinc-700/60 bg-zinc-900/50 p-5">
     <div class="text-xs font-mono text-rose-300 mb-3 uppercase tracking-widest">General / Multi-language</div>
     <ul class="space-y-2.5 text-sm text-zinc-300">
       <li class="flex items-center gap-3">
