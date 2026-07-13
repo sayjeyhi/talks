@@ -98,5 +98,15 @@ export const TALKS = [
     tags: ["AI", "development", "tools", "strategies"],
     image: "./talks/ai-hero.jpeg",
     date: "May 2026",
+  },
+  {
+    title: "AI Friendly Codebase",
+    subtitle: "Structure your code for the age of AI assistants",
+    description:
+      "How to structure your codebase so AI tools work effectively — descriptive naming, small focused files, explicit imports, DRY principles, and removing dead code.",
+    link: "/ai-friendly-codebase/",
+    tags: ["AI", "codebase", "architecture", "best-practices"],
+    image: "./talks/ai-freindly-codecase.png",
+    date: "July 2025",
   }
 ];
