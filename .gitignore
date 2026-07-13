@@ -46,3 +46,5 @@ stats.html
 # Environment Variables
 *.env*
 !.env.example
+
+.kiro/specs
