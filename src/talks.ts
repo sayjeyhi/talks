@@ -108,5 +108,15 @@ export const TALKS = [
     tags: ["AI", "codebase", "architecture", "best-practices"],
     image: "./talks/ai-freindly-codecase.png",
     date: "July 2026",
+  },
+  {
+    title: "Unit Testing Best Practices",
+    subtitle: "Writing reliable, maintainable tests",
+    description:
+      "A talk about unit testing best practices, covering the AAA pattern, testing behavior over implementation, mocking strategies, edge cases, and test doubles.",
+    link: "/unit-testing/",
+    tags: ["testing", "unit-testing", "best-practices", "TDD"],
+    image: "./talks/microscope_1f52c.png",
+    date: "July 2026",
   }
 ];
