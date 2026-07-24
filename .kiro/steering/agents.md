@@ -5,3 +5,6 @@ When adding emojis to any file in this project, always use `emojis.json` at the 
 - Look up the emoji by name in `emojis.json`
 - Use the `url` field from the matching entry to render the emoji as an image (e.g. `<img>` tag or markdown image)
 - Only fall back to native unicode emojis if the desired emoji is not found in `emojis.json`
+- If there is code example more than 4 lines, move it into new slide to after current slide content to have one slide with only that code block
+
+ 

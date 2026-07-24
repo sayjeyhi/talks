@@ -38,3 +38,8 @@ th:not(:first-child), td:not(:first-child) {
   border-color: rgba(255, 216, 121, 0.75) !important;
   border-style: dashed !important;
 }
+
+.slidev-layout code:not(pre code) {
+  color: #e2e8f0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}

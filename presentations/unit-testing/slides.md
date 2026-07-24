@@ -12,7 +12,7 @@ css: unocss
 colorSchema: dark
 ---
 
-# Unit Testing Best Practices
+# Unit Testing Best Practices <img class="w-10 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/smiling-face-with-smiling-eyes_1f60a.png" />
 
 Writing reliable, maintainable tests
 
@@ -48,12 +48,12 @@ class: 'text-center'
 
 ---
 
-# The Testing Pyramid
+# The Testing Pyramid <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/direct-hit_1f3af.png" />
 
 <br />
 
 ```
-        ╱╲
+        ╱  ╲
        ╱ E2E ╲        ← Slow, expensive, brittle
       ╱────────╲
      ╱Integration╲    ← Moderate speed, real interactions
@@ -71,7 +71,7 @@ class: 'text-center'
 
 ---
 
-# What Makes a Good Unit Test?
+# What Makes a Good Unit Test? <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/thinking-face_1f914.png" />
 
 <br />
 
@@ -90,9 +90,9 @@ class: 'text-center'
 
 ---
 
-# Tools to Enforce F.I.R.S.T
+# Tools to Enforce F.I.R.S.T <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/wrench_1f527.png" />
 
-<br />
+<div class="text-sm">
 
 | Principle | Tool / Technique | What it detects |
 |-----------|-----------------|-----------------|
@@ -102,13 +102,19 @@ class: 'text-center'
 | **Self-validating** | `eslint-plugin-jest` (`no-conditional-expect`, `expect-expect`) | Tests without assertions, conditional logic in tests |
 | **Timely** | Coverage gating in CI (`--coverage --threshold`) | Untested new code |
 
+</div>
+
 <br />
 
 > Automate these checks in CI — don't rely on code review to catch bad tests
 
+
+---
+
+
 <br />
 
-**Quick wins:**
+**Quick wins:** <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/grinning-face-with-smiling-eyes_1f604.png" />
 - Add `"jest/expect-expect": "error"` to catch assertion-free tests
 - Run tests in **random order** to surface hidden dependencies
 - Set a **per-test timeout** (e.g., 5s) to flag slow tests early
@@ -119,78 +125,357 @@ layout: center
 class: 'text-center'
 ---
 
-<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/detective_light-skin-tone_1f575-1f3fb_1f3fb.png" />
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/test-tube_1f9ea.png" />
 
 <div class="text-4xl font-black text-zinc-300 tracking-tight">
-  Best Practice #1
+  Test Recommendations
 </div>
 
-<p class="text-zinc-500 text-lg mt-4">Arrange, Act, Assert (AAA Pattern)</p>
+<p class="text-zinc-500 text-lg mt-4">Guidelines and conventions for writing tests</p>
 
 
 ---
 
-# AAA Pattern
+# 1. Use the AAA Pattern <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/memo_1f4dd.png" />
 
-<br />
+<br/>
 
-```typescript
-describe('calculateDiscount', () => {
-  it('should apply 10% discount for orders above $100', () => {
-    // Arrange
-    const order = { total: 150, items: 3 };
+Every test should be structured with clearly separated phases marked by comments. This makes tests readable, predictable, and easy to review.
 
-    // Act
-    const result = calculateDiscount(order);
-
-    // Assert
-    expect(result).toBe(135);
-  });
-});
-```
-
-<br />
+<br/>
 
 - **Arrange** — Set up the test data and preconditions
 - **Act** — Execute the code under test
 - **Assert** — Verify the expected outcome
 
+<br/>
+
+> **Note:** If a test only has Act + Assert (no setup needed), the `// Arrange` comment can be omitted, but always separate Act from Assert.
+
 
 ---
 
-# Best Practice #2: Test Behavior, Not Implementation
+# AAA Pattern Example
+
+```typescript
+it('should return the formatted price', () => {
+  // Arrange
+  const price = 10.5;
+  const currency = 'EUR';
+
+  // Act
+  const result = formatPrice(price, currency);
+
+  // Assert
+  expect(result).toBe('€10.50');
+});
+```
+
+
+---
+
+# 2. Prefer `jest.spyOn` Over `jest.mock` <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/eyes_1f440.png" />
 
 <br />
 
+Use `jest.spyOn` instead of `jest.mock` when you want to stub a single export from a module. It is more explicit, keeps the module's remaining exports intact, and automatically restores in `afterEach` (our config has `restoreMocks: true`).
+
+
+---
+
+# `jest.spyOn` vs `jest.mock` — Example
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> **Avoid**
+
 ```typescript
-// ❌ Bad — tests implementation details
-it('should call internal _processItems method', () => {
-  const spy = jest.spyOn(cart, '_processItems');
-  cart.checkout();
-  expect(spy).toHaveBeenCalled();
+jest.mock('../services/CartService', () => ({
+  fetchCart: jest.fn().mockResolvedValue({ items: [] }),
+}));
+```
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark_2714-fe0f.png" /> **Prefer**
+
+```typescript
+import * as CartServiceModule from '../services/CartService';
+
+beforeEach(() => {
+  jest.spyOn(CartServiceModule, 'fetchCart').mockResolvedValue({ items: [] });
+});
+```
+
+
+---
+
+# When `jest.mock` Is Acceptable
+
+<br />
+
+- Mocking an entire **third-party library** (e.g., `next/navigation`, `server-only`)
+- Mocking **Node built-in modules** (e.g., `fs`, `path`, `crypto`) whose exports are often non-configurable and cannot be spied on
+- Mocking a **React component** to replace it with a stub JSX (preventing child rendering)
+- When `jest.spyOn` is technically not possible (default exports, non-configurable properties)
+
+
+---
+
+# 3. Always Start `it()` Blocks With `'should'` <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/light-bulb_1f4a1.png" />
+
+Test descriptions must start with the word **`should`** to read as a sentence when combined with the surrounding `describe`.
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> **Avoid**
+
+```typescript
+it('returns a value', () => { ... });
+it('When rerendering the hook again, the total value should persist', () => { ... });
+it('renders the component', () => { ... });
+```
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark_2714-fe0f.png" /> **Prefer**
+
+```typescript
+it('should return a value', () => { ... });
+it('should persist the total value after rerendering', () => { ... });
+it('should render the component', () => { ... });
+```
+
+> Reading the full path: `describe('When rerendering') → it('should persist the total value')` produces clear documentation.
+
+
+---
+
+# 4. Make Tests a Living Document <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/books_1f4da.png" />
+
+Tests serve as **living documentation** of the feature's behavior. Use nested `describe` blocks prefixed with `When` to group scenarios logically. A reader should be able to understand what the feature does just by reading the test structure.
+
+
+---
+
+# Living Document — <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> Flat Tests
+
+```typescript
+describe('CartService', () => {
+  it('should return empty cart when user is not logged in', () => { ... });
+  it('should return items when user is logged in', () => { ... });
+  it('should add item to cart', () => { ... });
+  it('should show error when product is out of stock', () => { ... });
+});
+```
+
+
+---
+
+# Living Document — <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark_2714-fe0f.png" /> Nested Describes
+
+```typescript
+describe('CartService', () => {
+  describe('When the user is not logged in', () => {
+    it('should return an empty cart', () => { ... });
+  });
+
+  describe('When the user is logged in', () => {
+    it('should return the cart items', () => { ... });
+
+    describe('When adding an item to the cart', () => {
+      it('should include the new item', () => { ... });
+
+      describe('When the product is out of stock', () => {
+        it('should show an error message', () => { ... });
+      });
+    });
+  });
+});
+```
+
+
+---
+
+# Living Document — Test Output
+
+The test output reads like a specification:
+
+```
+CartService
+  When the user is logged in
+    When adding an item to the cart
+      ✓ should include the new item
+      When the product is out of stock
+        ✓ should show an error message
+```
+
+
+---
+
+# 5. Avoid Adding `When` in `it()` — Use `describe` Instead <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/warning_26a0-fe0f.png" />
+
+Conditions and scenarios belong in `describe` blocks. The `it` block should only express the **expected outcome**.
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> **Avoid**
+
+```typescript
+it('when theres no data in cache', async () => { ... });
+it('When rerendering the hook again, the total value should persist', () => { ... });
+```
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark_2714-fe0f.png" /> **Prefer**
+
+```typescript
+describe('When there is no data in cache', () => {
+  it('should not render the component', async () => { ... });
 });
 
-// ✅ Good — tests observable behavior
-it('should empty the cart after checkout', () => {
-  cart.addItem({ id: 1, name: 'Widget', price: 10 });
+describe('When rerendering the hook', () => {
+  it('should persist the total value', () => { ... });
+});
+```
+
+
+---
+
+# 6. Create Reusable Mocked Services <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/package_1f4e6.png" />
+
+When a service or dependency is mocked frequently across tests, create a **shared mock utility** in `packages/utils/src/testing/`. Check that directory before writing a new one.
+
+<br />
+
+| Utility | Purpose |
+|---------|---------|
+| `mockCookieService()` | Mocks both server and client cookie services |
+| `mockTranslations()` | Mocks all translation hooks and services |
+| `mockHeadersService()` | Mocks Next.js headers |
+| `mockUseAppConfig()` | Mocks app config context |
+| `useFakeSanitizedSearchParams()` | Mocks URL search params |
+| `useFakeRouter()` | Mocks Next.js router |
+| `useFakePrices()` | Mocks pricing hook |
+| `mockCacheService()` | Mocks cache service |
+| `fakeHttpClient` | Provides a fake HTTP client |
+
+
+---
+
+# Naming Convention for Mocks <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/sparkles_2728.png" />
+
+<br />
+
+| Prefix | Usage |
+|--------|-------|
+| **`mock*`** | Functions that call `jest.spyOn` internally (side-effectful, call in `beforeEach`) |
+| **`fake*`** / **`createFake*`** | Pure factory functions that return mock data or service instances |
+| **`useFake*`** | Utilities that set up spies targeting React hooks or their return values |
+
+<br />
+
+### When to create a new shared mock
+
+- The same module is mocked in **3+ test files** with the same setup
+- The mock requires **complex setup** (e.g., fake state management)
+- The mock represents a **core domain concern** (auth, analytics, navigation)
+
+
+---
+
+# Reusable Mock — Example
+
+```typescript
+// packages/utils/src/testing/mockAnalyticsService.ts
+import * as AnalyticsServiceModule from '../services/analytics/AnalyticsService';
+
+export function mockAnalyticsService() {
+  const pushAddToCartEventSpy = jest.fn();
+  const pushRemoveFromCartEventSpy = jest.fn();
+  const pushViewItemEventSpy = jest.fn();
+
+  jest.spyOn(AnalyticsServiceModule, 'AnalyticsService', 'get').mockReturnValue({
+    getInstance: () => ({
+      pushAddToCartEvent: pushAddToCartEventSpy,
+      pushRemoveFromCartEvent: pushRemoveFromCartEventSpy,
+      pushViewItemEvent: pushViewItemEventSpy,
+    }),
+  } as never);
+
+  return {
+    pushAddToCartEventSpy,
+    pushRemoveFromCartEventSpy,
+    pushViewItemEventSpy,
+  };
+}
+```
+
+
+---
+
+# 7. Test Behavior, Not Implementation <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/smiling-face-with-sunglasses_1f60e.png" />
+
+Tests should verify **observable outcomes** (return values, rendered output, side effects visible to the user) rather than internal mechanics.
+
+> Tests coupled to implementation break when you refactor — even if the behavior is still correct.
+
+
+---
+
+# Test Behavior — Example
+-
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> **Bad — tests implementation details**
+
+```typescript
+it('should call internal _processItems method', () => {
+  // Arrange
+  const spy = jest.spyOn(cart, '_processItems');
+
+  // Act
   cart.checkout();
+
+  // Assert
+  expect(spy).toHaveBeenCalled();
+});
+```
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark_2714-fe0f.png" /> **Good — tests observable behavior**
+
+```typescript
+it('should empty the cart after checkout', () => {
+  // Arrange
+  cart.addItem({ id: 1, name: 'Widget', price: 10 });
+
+  // Act
+  cart.checkout();
+
+  // Assert
   expect(cart.items).toHaveLength(0);
 });
 ```
 
+
+---
+
+# What to Assert Instead
+
 <br />
 
-> Tests coupled to implementation break when you refactor — even if the behavior is still correct
+| Instead of testing... | Test this... |
+|---|---|
+| Internal method was called | The public output/state changed correctly |
+| Component state variable changed | The rendered UI reflects the change |
+| A private helper returned a value | The parent function returns the expected result |
+| An internal event was emitted | The user-visible side effect occurred |
 
 
 ---
 
-# Best Practice #3: One Assertion Per Concept
+# 8. One Assertion Per Concept <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/puzzle-piece_1f9e9.png" />
 
-<br />
+Each `it` block should test **one concept**. Multiple `expect` calls are fine when they verify different aspects of the **same concept**, but avoid testing multiple unrelated behaviors in a single `it`.
+
+> When a test fails, a focused assertion tells you **exactly** what broke. A multi-concern test forces you to investigate which of several unrelated things went wrong.
+
+
+---
+
+# One Assertion — Example
+
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> **Bad — testing multiple unrelated things**
 
 ```typescript
-// ❌ Bad — testing multiple unrelated things
 it('should handle user registration', () => {
   const user = registerUser('john@example.com', 'pass123');
   expect(user.email).toBe('john@example.com');
@@ -198,8 +483,11 @@ it('should handle user registration', () => {
   expect(sendEmailMock).toHaveBeenCalled();
   expect(database.users).toHaveLength(1);
 });
+```
 
-// ✅ Good — focused on one concept
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark_2714-fe0f.png" /> **Good — focused on one concept**
+
+```typescript
 it('should create an active user with the given email', () => {
   const user = registerUser('john@example.com', 'pass123');
   expect(user.email).toBe('john@example.com');
@@ -215,35 +503,20 @@ it('should send a welcome email after registration', () => {
 
 ---
 
-# Best Practice #4: Use Descriptive Test Names
+# 9. Tests Must Be Independent <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/shield_1f6e1-fe0f.png" />
 
-<br />
+Each test must be **self-contained** and never depend on the execution order or state left behind by another test. Shared mutable state between tests creates flaky failures.
 
-```typescript
-// ❌ Bad
-it('test1', () => { /* ... */ });
-it('works', () => { /* ... */ });
-it('should work correctly', () => { /* ... */ });
-
-// ✅ Good — describes scenario and expected outcome
-it('should return 0 when cart is empty', () => { /* ... */ });
-it('should throw InvalidEmailError for malformed addresses', () => { /* ... */ });
-it('should retry failed requests up to 3 times', () => { /* ... */ });
-```
-
-<br />
-
-> A failing test name should tell you **what broke** without reading the code
+> If you need shared setup, use `beforeEach` — it runs fresh before **every** test. Never rely on `let` variables mutated by a previous `it` block.
 
 
 ---
 
-# Best Practice #5: Avoid Test Interdependence
+# Independent Tests — Example
 
-<br />
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> **Bad — tests depend on execution order**
 
 ```typescript
-// ❌ Bad — tests depend on execution order
 let sharedUser;
 
 it('should create user', () => {
@@ -256,11 +529,19 @@ it('should update user', () => {
   updateUser(sharedUser.id, { name: 'Updated' });
   expect(sharedUser.name).toBe('Updated');
 });
+```
 
-// ✅ Good — each test is self-contained
+<img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark_2714-fe0f.png" /> **Good — each test is self-contained**
+
+```typescript
 it('should update user name', () => {
+  // Arrange
   const user = createUser('test@example.com');
+
+  // Act
   updateUser(user.id, { name: 'Updated' });
+
+  // Assert
   expect(user.name).toBe('Updated');
 });
 ```
@@ -268,37 +549,14 @@ it('should update user name', () => {
 
 ---
 
-# Best Practice #6: Mock External Dependencies
+# 10. Test Edge Cases <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/bug_1f41b.png" />
 
-<br />
-
-```typescript
-// ✅ Mock API calls, databases, file systems
-import { fetchUserData } from './api';
-jest.mock('./api');
-
-const mockedFetch = fetchUserData as jest.MockedFunction<typeof fetchUserData>;
-
-it('should display user name from API', async () => {
-  mockedFetch.mockResolvedValue({ name: 'Alice', email: 'alice@test.com' });
-
-  const result = await getUserDisplayName(1);
-
-  expect(result).toBe('Alice');
-  expect(mockedFetch).toHaveBeenCalledWith(1);
-});
-```
-
-<br />
-
-> Mock at the **boundary** — don't mock what you own internally
+Don't just test the happy path. Edge cases are where most bugs hide. Think about: empty inputs, null/undefined, boundary values, negative numbers, very large values, and error conditions.
 
 
 ---
 
-# Best Practice #7: Test Edge Cases
-
-<br />
+# Edge Cases — Example
 
 ```typescript
 describe('divide', () => {
@@ -326,9 +584,170 @@ describe('divide', () => {
 
 
 ---
+
+# Common Edge Cases to Consider <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/fire_1f525.png" />
+
+<br />
+
+| Type | Edge cases |
+|------|-----------|
+| Strings | Empty `''`, whitespace `'  '`, special chars, unicode, very long strings |
+| Numbers | `0`, negative, `NaN`, `Infinity`, `Number.MAX_SAFE_INTEGER` |
+| Arrays | Empty `[]`, single element, duplicates, very large arrays |
+| Objects | Empty `{}`, missing keys, `null`, `undefined` |
+| Async | Timeout, rejection, concurrent calls, empty responses |
+
+
+---
+
+# Property-Based Testing with `fast-check` <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
+
+For functions with clear mathematical or logical properties, consider using [fast-check](https://github.com/dubzzz/fast-check) to automatically generate hundreds of edge cases you'd never think of manually.
+
+<br />
+
+### Where fast-check shines
+
+- **Parsers/serializers** — `decode(encode(x)) === x`
+- **Sorting** — result is sorted and contains the same elements
+- **String manipulation** — length invariants, character preservation
+- **Math functions** — commutativity, associativity, identity
+- **Date/time calculations** — round-trip conversions
+- **Validation logic** — valid inputs always pass, invalid always fail
+
+> `fast-check` doesn't replace example-based tests — it complements them.
+
+
+---
+
+# fast-check — Sort Example
+
+```typescript
+import fc from 'fast-check';
+
+describe('sortNumbers', () => {
+  it('should sort numbers in ascending order', () => {
+    // Arrange
+    const input = [3, 1, 4, 1, 5];
+
+    // Act
+    const result = sortNumbers(input);
+
+    // Assert
+    expect(result).toEqual([1, 1, 3, 4, 5]);
+  });
+
+  it('should always return the same length as the input', () => {
+    fc.assert(
+      fc.property(fc.array(fc.integer()), (input) => {
+        const result = sortNumbers(input);
+        expect(result).toHaveLength(input.length);
+      }),
+    );
+  });
+});
+```
+
+
+---
+
+# fast-check — More Examples
+
+```typescript
+import fc from 'fast-check';
+
+describe('capitalizeWhenAllUppercase', () => {
+  it('should be idempotent for already-capitalized strings', () => {
+    fc.assert(
+      fc.property(
+        fc.string({ minLength: 1 }).filter((s) => s.trim().length > 0),
+        (input) => {
+          // Arrange
+          const capitalized = capitalizeWhenAllUppercase(input);
+
+          // Act
+          const result = capitalizeWhenAllUppercase(capitalized);
+
+          // Assert
+          expect(result).toBe(capitalized);
+        },
+      ),
+    );
+  });
+});
+
+describe('JSON serialization round-trip', () => {
+  it('should preserve data through encode/decode', () => {
+    fc.assert(
+      fc.property(fc.jsonValue(), (value) => {
+        const result = JSON.parse(JSON.stringify(value));
+        expect(result).toEqual(value);
+      }),
+    );
+  });
+});
+```
+
+
+---
+
+# 11. Additional Guidelines <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" />
+
+### Use `createFake*` factories for test data
+
+Place fake data factories in `/specs/mocks/` directories close to the tests that use them.
+
+```typescript
+// specs/mocks/fakeCartItem.ts
+export const createFakeCartItem = (overrides?: Partial<CartItem>): CartItem => ({
+  id: 'item-1',
+  name: 'Paper A4',
+  price: 10.5,
+  quantity: 1,
+  ...overrides,
+});
+```
+
+### Use `describe.each` for parameterized tests
+
+```typescript
+describe.each([
+  { input: 'UPPERCASE', expected: 'Uppercase' },
+  { input: 'lowercase', expected: 'lowercase' },
+  { input: 'Mixed', expected: 'Mixed' },
+])('When input is "$input"', ({ input, expected }) => {
+  it('should return the correctly cased string', () => {
+    expect(formatCase(input)).toBe(expected);
+  });
+});
+```
+
+
+---
+
+# Summary Checklist <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/clipboard_1f4cb.png" />
+
+| # | Rule | Quick Check |
+|---|------|-------------|
+| 1 | AAA pattern | Every test has `// Arrange`, `// Act`, `// Assert` |
+| 2 | `spyOn` over `mock` | `jest.mock` only for full modules or components |
+| 3 | `it('should ...')` | Every `it()` starts with `should` |
+| 4 | Living document | Nested `describe('When ...')` blocks group scenarios |
+| 5 | No `when` in `it()` | Conditions in `describe`, outcomes in `it` |
+| 6 | Shared mock services | Repeated mocks → `packages/utils/src/testing/` |
+| 7 | Test behavior | Assert observable outcomes, not internals |
+| 8 | One assertion per concept | Each `it` tests one concept |
+| 9 | Independent tests | No shared mutable state; use `beforeEach` |
+| 10 | Test edge cases | Cover boundaries, nulls, errors, large values |
+| 11 | `createFake*` factories | Test data via factories in `specs/mocks/` |
+
+
+---
 layout: center
 class: 'text-center'
 ---
+
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/face-with-monocle_1f9d0.png" />
 
 <div class="text-4xl font-black text-zinc-300 tracking-tight">
   Code Coverage ≠ Quality
@@ -349,7 +768,7 @@ class: 'text-center'
 
 ---
 
-# Test Doubles Cheat Sheet
+# Test Doubles Cheat Sheet <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/nerd-face_1f913.png" />
 
 <br />
 
@@ -364,7 +783,7 @@ class: 'text-center'
 
 ---
 
-# When NOT to Unit Test
+# When NOT to Unit Test <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/face-with-raised-eyebrow_1f928.png" />
 
 <br />
 
@@ -383,19 +802,23 @@ layout: center
 class: 'text-center'
 ---
 
-# Key Takeaways
+# Key Takeaways <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/star_2b50.png" />
 
 <br />
 
 <div class="text-left mx-auto max-w-lg text-zinc-300">
 
 1. Follow the **AAA pattern** for clarity
-2. Test **behavior**, not implementation
-3. Keep tests **independent** and **focused**
-4. Use **descriptive names** that document intent
-5. Mock at **boundaries**, not internally
-6. Cover **edge cases** and error paths
-7. Prefer **quality** over coverage percentage
+2. Prefer **`jest.spyOn`** over `jest.mock`
+3. Start `it()` blocks with **`should`**
+4. Use nested **`describe`** for living documentation
+5. Keep **`when`** out of `it()` — use `describe`
+6. Create **reusable mock services**
+7. Test **behavior**, not implementation
+8. One **assertion per concept**
+9. Keep tests **independent**
+10. Cover **edge cases** and error paths
+11. Use **`createFake*`** factories for test data
 
 </div>
 
@@ -405,13 +828,13 @@ layout: center
 class: 'text-center'
 ---
 
-# Thank You!
+# Thank You! <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/waving-hand_1f44b.png" />
 
 <br />
 
 <div class="text-zinc-400">
 
-Questions?
+Questions? <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/slightly-smiling-face_1f642.png" />
 
 </div>
 
