@@ -24,9 +24,27 @@ strong {
   color: #66a1ff
 }
 
-thead tr, tbody tr:not(:last-child) {
+table {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+thead tr {
+  border-bottom-width: 2px !important;
+  border-color: hsla(0, 0%, 100%, 0.37) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+tbody tr:not(:last-child) {
   border-bottom-width: 2px !important;
   border-color: rgb(255 255 255 / 37%) !important;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04) !important;
 }
 
 tbody tr:last-child {
@@ -35,8 +53,7 @@ tbody tr:last-child {
 
 th:not(:first-child), td:not(:first-child) {
   border-left-width: 1px !important;
-  border-color: rgba(255, 216, 121, 0.75) !important;
-  border-style: dashed !important;
+  border-color: rgba(255, 255, 255, 0.12)!important;
 }
 
 .slidev-layout code:not(pre code) {
