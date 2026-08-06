@@ -96,10 +96,10 @@ class: 'text-center'
 
 | Principle | Tool / Technique | What it detects |
 |-----------|-----------------|-----------------|
-| **Fast** | `jest --detectSlowTests`, `vitest --reporter=verbose` | Tests exceeding time thresholds |
-| **Isolated** | `jest --randomize`, `vitest --sequence.shuffle` | Order-dependent tests (shared state leaks) |
-| **Repeatable** | `eslint-plugin-no-only-tests`, `jest --forceExit` | Flaky tests, hanging async operations |
-| **Self-validating** | `eslint-plugin-jest` (`no-conditional-expect`, `expect-expect`) | Tests without assertions, conditional logic in tests |
+| **Fast** | `vitest --reporter=verbose`, `vitest bench` | Tests exceeding time thresholds |
+| **Isolated** | `vitest --sequence.shuffle`, `vitest --isolate` | Order-dependent tests (shared state leaks) |
+| **Repeatable** | `eslint-plugin-no-only-tests`, `vitest --bail` | Flaky tests, hanging async operations |
+| **Self-validating** | `eslint-plugin-vitest` (`no-conditional-expect`, `expect-expect`) | Tests without assertions, conditional logic in tests |
 | **Timely** | Coverage gating in CI (`--coverage --threshold`) | Untested new code |
 
 </div>
@@ -115,7 +115,7 @@ class: 'text-center'
 <br />
 
 **Quick wins:** <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/grinning-face-with-smiling-eyes_1f604.png" />
-- Add `"jest/expect-expect": "error"` to catch assertion-free tests
+- Add `"vitest/expect-expect": "error"` to catch assertion-free tests
 - Run tests in **random order** to surface hidden dependencies
 - Set a **per-test timeout** (e.g., 5s) to flag slow tests early
 
@@ -174,22 +174,22 @@ it('should return the formatted price', () => {
 
 ---
 
-# 2. Prefer `jest.spyOn` Over `jest.mock` <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/eyes_1f440.png" />
+# 2. Prefer `vi.spyOn` Over `vi.mock` <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/eyes_1f440.png" />
 
 <br />
 
-Use `jest.spyOn` instead of `jest.mock` when you want to stub a single export from a module. It is more explicit, keeps the module's remaining exports intact, and automatically restores in `afterEach` (our config has `restoreMocks: true`).
+Use `vi.spyOn` instead of `vi.mock` when you want to stub a single export from a module. It is more explicit, keeps the module's remaining exports intact, and automatically restores in `afterEach` (our config has `restoreMocks: true`).
 
 
 ---
 
-# `jest.spyOn` vs `jest.mock` — Example
+# `vi.spyOn` vs `vi.mock` — Example
 
 <img class="w-6 inline mr-2" src="https://em-content.zobj.net/source/microsoft-teams/400/cross-mark_274c.png" /> **Avoid**
 
 ```typescript
-jest.mock('../services/CartService', () => ({
-  fetchCart: jest.fn().mockResolvedValue({ items: [] }),
+vi.mock('../services/CartService', () => ({
+  fetchCart: vi.fn().mockResolvedValue({ items: [] }),
 }));
 ```
 
@@ -199,21 +199,21 @@ jest.mock('../services/CartService', () => ({
 import * as CartServiceModule from '../services/CartService';
 
 beforeEach(() => {
-  jest.spyOn(CartServiceModule, 'fetchCart').mockResolvedValue({ items: [] });
+  vi.spyOn(CartServiceModule, 'fetchCart').mockResolvedValue({ items: [] });
 });
 ```
 
 
 ---
 
-# When `jest.mock` Is Acceptable
+# When `vi.mock` Is Acceptable
 
 <br />
 
 - Mocking an entire **third-party library** (e.g., `next/navigation`, `server-only`)
 - Mocking **Node built-in modules** (e.g., `fs`, `path`, `crypto`) whose exports are often non-configurable and cannot be spied on
 - Mocking a **React component** to replace it with a stub JSX (preventing child rendering)
-- When `jest.spyOn` is technically not possible (default exports, non-configurable properties)
+- When `vi.spyOn` is technically not possible (default exports, non-configurable properties)
 
 
 ---
@@ -358,7 +358,7 @@ When a service or dependency is mocked frequently across tests, create a **share
 
 | Prefix | Usage |
 |--------|-------|
-| **`mock*`** | Functions that call `jest.spyOn` internally (side-effectful, call in `beforeEach`) |
+| **`mock*`** | Functions that call `vi.spyOn` internally (side-effectful, call in `beforeEach`) |
 | **`fake*`** / **`createFake*`** | Pure factory functions that return mock data or service instances |
 | **`useFake*`** | Utilities that set up spies targeting React hooks or their return values |
 
@@ -380,11 +380,11 @@ When a service or dependency is mocked frequently across tests, create a **share
 import * as AnalyticsServiceModule from '../services/analytics/AnalyticsService';
 
 export function mockAnalyticsService() {
-  const pushAddToCartEventSpy = jest.fn();
-  const pushRemoveFromCartEventSpy = jest.fn();
-  const pushViewItemEventSpy = jest.fn();
+  const pushAddToCartEventSpy = vi.fn();
+  const pushRemoveFromCartEventSpy = vi.fn();
+  const pushViewItemEventSpy = vi.fn();
 
-  jest.spyOn(AnalyticsServiceModule, 'AnalyticsService', 'get').mockReturnValue({
+  vi.spyOn(AnalyticsServiceModule, 'AnalyticsService', 'get').mockReturnValue({
     getInstance: () => ({
       pushAddToCartEvent: pushAddToCartEventSpy,
       pushRemoveFromCartEvent: pushRemoveFromCartEventSpy,
@@ -420,7 +420,7 @@ Tests should verify **observable outcomes** (return values, rendered output, sid
 ```typescript
 it('should call internal _processItems method', () => {
   // Arrange
-  const spy = jest.spyOn(cart, '_processItems');
+  const spy = vi.spyOn(cart, '_processItems');
 
   // Act
   cart.checkout();
@@ -730,7 +730,7 @@ describe.each([
 | # | Rule | Quick Check |
 |---|------|-------------|
 | 1 | AAA pattern | Every test has `// Arrange`, `// Act`, `// Assert` |
-| 2 | `spyOn` over `mock` | `jest.mock` only for full modules or components |
+| 2 | `spyOn` over `mock` | `vi.mock` only for full modules or components |
 | 3 | `it('should ...')` | Every `it()` starts with `should` |
 | 4 | Living document | Nested `describe('When ...')` blocks group scenarios |
 | 5 | No `when` in `it()` | Conditions in `describe`, outcomes in `it` |
@@ -776,7 +776,7 @@ class: 'text-center'
 |------|---------|---------|
 | **Stub** | Returns predefined data | `getUser() → { name: 'Test' }` |
 | **Mock** | Verifies interactions | `expect(mock).toHaveBeenCalled()` |
-| **Spy** | Wraps real implementation | `jest.spyOn(obj, 'method')` |
+| **Spy** | Wraps real implementation | `vi.spyOn(obj, 'method')` |
 | **Fake** | Simplified working implementation | In-memory database |
 | **Dummy** | Fills parameter lists | `null`, empty object |
 
@@ -809,7 +809,7 @@ class: 'text-center'
 <div class="text-left mx-auto max-w-lg text-zinc-300">
 
 1. Follow the **AAA pattern** for clarity
-2. Prefer **`jest.spyOn`** over `jest.mock`
+2. Prefer **`vi.spyOn`** over `vi.mock`
 3. Start `it()` blocks with **`should`**
 4. Use nested **`describe`** for living documentation
 5. Keep **`when`** out of `it()` — use `describe`
