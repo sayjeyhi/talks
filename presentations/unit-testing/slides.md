@@ -691,7 +691,81 @@ describe('JSON serialization round-trip', () => {
 
 ---
 
-# 11. Additional Guidelines <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" />
+# 11. Mock HTTP with MSW <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/globe-with-meridians_1f310.png" />
+
+<br />
+
+[MSW](https://mswjs.io/) (Mock Service Worker) intercepts requests at the **network level** instead of mocking `fetch`/`axios` calls directly. Your code makes a real request; MSW intercepts it before it leaves the process.
+
+<br />
+
+- Works the same in **tests, Storybook, and the browser** — one set of handlers everywhere
+- Components/hooks stay untouched — no need to mock the HTTP client itself
+- Handlers double as **living documentation** of the API contract
+
+<br />
+
+> Use MSW for anything that talks HTTP. Reserve `vi.spyOn` for mocking service *functions* directly.
+
+
+---
+
+# MSW — Example
+
+```typescript
+// specs/mocks/handlers.ts
+import { http, HttpResponse } from 'msw';
+
+export const handlers = [
+  http.get('/api/cart', () => {
+    return HttpResponse.json({ items: [] });
+  }),
+];
+```
+
+```typescript
+// CartService.spec.ts
+import { setupServer } from 'msw/node';
+import { handlers } from '../specs/mocks/handlers';
+
+const server = setupServer(...handlers);
+
+beforeAll(() => server.listen());
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
+
+it('should return an empty cart', async () => {
+  // Act
+  const cart = await fetchCart();
+
+  // Assert
+  expect(cart.items).toHaveLength(0);
+});
+```
+
+
+---
+
+# `hema-sdk` — Shared MSW Setup <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/package_1f4e6.png" />
+
+<br />
+
+We don't need to hand-roll MSW server setup, handlers, and lifecycle hooks per project — **`hema-sdk`** already provides this.
+
+<br />
+
+- Ships a preconfigured MSW server (`beforeAll`/`afterEach`/`afterAll` wiring included)
+- Comes with common handlers for shared/internal services out of the box
+- Same setup works across **all our projects** — no per-repo boilerplate
+
+<br />
+
+> Adopt `hema-sdk` in every project instead of reimplementing MSW plumbing from scratch.
+
+
+---
+
+# 12. Additional Guidelines <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" />
 
 ### Use `createFake*` factories for test data
 
@@ -739,7 +813,8 @@ describe.each([
 | 8 | One assertion per concept | Each `it` tests one concept |
 | 9 | Independent tests | No shared mutable state; use `beforeEach` |
 | 10 | Test edge cases | Cover boundaries, nulls, errors, large values |
-| 11 | `createFake*` factories | Test data via factories in `specs/mocks/` |
+| 11 | Mock HTTP with MSW | Intercept at the network level, not the client |
+| 12 | `createFake*` factories | Test data via factories in `specs/mocks/` |
 
 
 ---
@@ -818,7 +893,8 @@ class: 'text-center'
 8. One **assertion per concept**
 9. Keep tests **independent**
 10. Cover **edge cases** and error paths
-11. Use **`createFake*`** factories for test data
+11. Mock HTTP with **MSW** — and use **`hema-sdk`** for shared setup across projects
+12. Use **`createFake*`** factories for test data
 
 </div>
 
