@@ -118,5 +118,15 @@ export const TALKS = [
     tags: ["testing", "unit-testing", "best-practices", "TDD"],
     image: "./talks/testing-best-practices.png",
     date: "July 2026",
+  },
+  {
+    title: "GROQD: Locking down your Sanity types",
+    subtitle: "Type-safe GROQ query building with Zod",
+    description:
+      "A talk about using GROQD instead of manual query and schema creation — covering type-safe query building, runtime validation with Zod, auto-completion, fragments, and the GROQD playground.",
+    link: "/groqd/",
+    tags: ["Sanity", "GROQD", "TypeScript", "Zod", "GROQ"],
+    image: "./talks/groqd.png",
+    date: "August 2026",
   }
 ];
