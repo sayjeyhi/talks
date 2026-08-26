@@ -77,8 +77,6 @@ GROQ is Sanity's query language — think of it as **"SQL for JSON"**.
 
 # The Problem with Raw GROQ <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/face-with-spiral-eyes_1f635-200d-1f4ab.png" />
 
-<br />
-
 Writing GROQ queries as plain strings is flexible, but comes with pain:
 
 <br />
@@ -137,11 +135,10 @@ class: 'text-center'
 
 # What is GROQD? <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/package_1f4e6.png" />
 
-<br />
-
 **GROQD** is a schema-aware, strongly-typed GROQ query builder.
 
 <br />
+
 
 | Feature | Description |
 |---------|-------------|
@@ -153,7 +150,11 @@ class: 'text-center'
 
 <br />
 
-> Built by [Formidable Labs](https://github.com/FormidableLabs/groqd) (now NearForm)
+<span class="text-xs text-gray-400">
+
+Built by [Formidable Labs](https://github.com/FormidableLabs/groqd) (now NearForm)
+
+</span>
 
 
 ---
@@ -212,12 +213,6 @@ export const q = createGroqBuilder<SchemaConfig>({});
 ---
 
 # The `q` Builder API <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/hammer-and-wrench_1f6e0-fe0f.png" />
-
-<br />
-
-The `q` object is your entry point — everything chains from here:
-
-<br />
 
 | Method | GROQ equivalent | Purpose |
 |--------|----------------|---------|
@@ -296,13 +291,37 @@ The previous query generates this GROQ:
 - If `name` is missing from the response → Zod throws at runtime <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/shield_1f6e1-fe0f.png" />
 
 
+
 ---
 
-# References and Dereferencing <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" />
+# Array Fields & Nested Projections <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/puzzle-piece_1f9e9.png" />
 
 <br />
 
-Follow references with `.deref()` — fully typed:
+```typescript
+const blogQuery = (
+  q.star
+   .filterByType("post")
+   .project(sub => ({
+     title: z.string(),
+     publishedAt: z.string(),
+     tags: sub.field("tags[]", z.array(z.string())),
+     comments: sub.field("comments[]").project(c => ({
+       author: z.string(),
+       text: z.string(),
+       createdAt: z.string(),
+     })),
+   }))
+);
+```
+
+<br />
+
+> Every nested level is fully typed — no `any` leakage <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark-button_2705.png" />
+
+---
+
+# References and Dereferencing <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" />
 
 ```typescript
 const articlesQuery = (
@@ -332,37 +351,7 @@ Generates:
 
 ---
 
-# Array Fields & Nested Projections <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/puzzle-piece_1f9e9.png" />
-
-<br />
-
-```typescript
-const blogQuery = (
-  q.star
-   .filterByType("post")
-   .project(sub => ({
-     title: z.string(),
-     publishedAt: z.string(),
-     tags: sub.field("tags[]", z.array(z.string())),
-     comments: sub.field("comments[]").project(c => ({
-       author: z.string(),
-       text: z.string(),
-       createdAt: z.string(),
-     })),
-   }))
-);
-```
-
-<br />
-
-> Every nested level is fully typed — no `any` leakage <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/check-mark-button_2705.png" />
-
-
----
-
 # Conditional Projections <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/light-bulb_1f4a1.png" />
-
-<br />
 
 Handle different document shapes with type narrowing:
 
@@ -384,7 +373,7 @@ const contentQuery = (
 
 <br />
 
-TypeScript knows which fields exist based on `_type` — discriminated unions for free.
+> TypeScript knows which fields exist based on `_type` — discriminated unions for free.
 
 
 ---
@@ -403,9 +392,7 @@ class: 'text-center'
 
 ---
 
-# Fragments <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/jigsaw_1f9e9.png" />
-
-<br />
+# Fragments <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/hammer-and-wrench_1f6e0-fe0f.png" />
 
 Define reusable field selections and compose queries from them:
 
@@ -461,8 +448,6 @@ const pageQuery = q.star.filterByType("page").project(sub => ({
 ---
 
 # Runtime Validation with Zod <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/shield_1f6e1-fe0f.png" />
-
-<br />
 
 GROQD doesn't just type-check at build time — it validates at runtime:
 
@@ -618,7 +603,7 @@ class: 'text-center'
 
 # Comparison: Raw GROQ vs GROQD <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/face-with-monocle_1f9d0.png" />
 
-<br />
+<div class="text-sm mt-10">
 
 | Aspect | Raw GROQ + `sanity typegen` | GROQD |
 |--------|----------------------------|-------|
@@ -630,6 +615,8 @@ class: 'text-center'
 | **Error discovery** | Runtime / CI | Editor / build time |
 | **Learning curve** | Know GROQ syntax | Know the builder API |
 
+</div>
+
 <br />
 
 > `sanity typegen` works great for simple cases — GROQD shines at scale
@@ -637,25 +624,34 @@ class: 'text-center'
 
 ---
 
-# When to Use GROQD <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/bullseye_1f3af.png" />
+# When to Use GROQD <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/thought-balloon_1f4ad.png" />
 
-<br />
+<div class="mt-10" />
 
 **Use GROQD when:**
+
+<div class="text-sm">
+
+
 - Your project has many complex queries
 - Multiple developers touch the same queries
 - Schema changes happen frequently
 - You want runtime safety (catch broken data early)
 - You need reusable query fragments
 
-<br />
+</div>
+<br/>
 
 **Raw GROQ is fine when:**
+
+<div class="text-sm">
+
 - Simple, one-off queries
 - Prototyping / quick experiments
 - Small projects with stable schemas
 - You prefer the GROQ syntax directly
 
+</div>
 
 ---
 layout: center
@@ -762,8 +758,6 @@ src/
 ---
 
 # Migrating from Raw GROQ <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/hammer-and-wrench_1f6e0-fe0f.png" />
-
-<br />
 
 You can migrate incrementally — no big-bang rewrite needed:
 
