@@ -425,8 +425,10 @@ const productQuery = q.star.filterByType("product").project(sub => ({
 <br />
 
 ```typescript
-// Shared SEO fields fragment
-const seoFields = (sub) => ({
+import type { ProjectionMap } from 'groqd';
+
+// Shared SEO fields fragment — typed for auto-completion
+const seoFields = (sub: ProjectionMap<SanityTypes.Page>) => ({
   metaTitle: sub.field("seo.title", z.string().optional()),
   metaDescription: sub.field("seo.description", z.string().optional()),
   ogImage: sub.field("seo.image.asset").deref().field("url", z.string().optional()),
