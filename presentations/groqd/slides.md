@@ -63,7 +63,7 @@ GROQ is Sanity's query language — think of it as **"SQL for JSON"**.
 
 <br />
 
-```groq
+```js
 *[_type == "product" && price > 50] | order(price desc) [0...10] {
   name,
   price,
@@ -280,7 +280,7 @@ const products = await runQuery(productsQuery);
 
 The previous query generates this GROQ:
 
-```groq
+```js
 *[_type == "product"] | order(price desc) [0...10] {
   name,
   price,
@@ -320,7 +320,7 @@ const articlesQuery = (
 <br />
 
 Generates:
-```groq
+```js
 *[_type == "article"] {
   title,
   "authorName": author->name,
