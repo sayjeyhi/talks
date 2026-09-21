@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Inter:wght@300..700&family=JetBrains+Mono:wght@100..800&display=swap');
+
+:root {
+  --slidev-font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --slidev-font-serif: 'Space Grotesk', 'Inter', sans-serif;
+  --slidev-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+body, .dark .slidev-slide-content {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background-color: #000 !important;
+  letter-spacing: -0.01em;
+}
+
+/* Headings use the display font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  background: #BECF24;
+background: linear-gradient(to right, #BECF24 0%, #95E6FF 50%, #CF8377 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-weight: 600;
+  color: #e4e4e7;
+}
+
+/* Body copy: readable size and comfortable line-height */
+.slidev-layout li,
+.slidev-layout p {
+  line-height: 1.6;
+}
+
+blockquote {
+  font-style: normal;
+  color: #a1a1aa;
+}
+
+/* Code stays monospace everywhere */
+code, pre, .slidev-code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+}
+
+strong {
+  color: #66a1ff
+}
+
+table {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+thead tr {
+  border-bottom-width: 2px !important;
+  border-color: hsla(0, 0%, 100%, 0.37) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+tbody tr:not(:last-child) {
+  border-bottom-width: 2px !important;
+  border-color: rgb(255 255 255 / 37%) !important;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+tbody tr:last-child {
+  border: none !important;
+}
+
+th:not(:first-child), td:not(:first-child) {
+  border-left-width: 1px !important;
+  border-color: rgba(255, 255, 255, 0.12)!important;
+}
+
+.slidev-layout code:not(pre code) {
+  color: #e2e8f0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}

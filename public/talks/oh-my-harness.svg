@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480" font-family="'JetBrains Mono', monospace">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#BECF24"/>
+      <stop offset="50%" stop-color="#95E6FF"/>
+      <stop offset="100%" stop-color="#CF8377"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="#000"/>
+  <text x="50%" y="150" text-anchor="middle" font-size="120">🐴</text>
+  <text x="50%" y="250" text-anchor="middle" font-size="46" font-weight="900" fill="url(#g)">Oh My Harness!</text>
+  <text x="50%" y="300" text-anchor="middle" font-size="18" fill="#a1a1aa">The Missing Layer Between</text>
+  <text x="50%" y="326" text-anchor="middle" font-size="18" fill="#a1a1aa">You and Your AI Agent</text>
+  <text x="50%" y="400" text-anchor="middle" font-size="20" fill="#66a1ff">Agent = Model + Harness</text>
+</svg>
