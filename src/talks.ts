@@ -138,5 +138,15 @@ export const TALKS = [
     tags: ["AI", "agents", "harness", "LLM", "tooling"],
     image: "./talks/oh-my-harness.svg",
     date: "September 2026",
+  },
+  {
+    title: "Building AI Assistants for Real Work",
+    subtitle: "Lessons from DevM8",
+    description:
+      "Practical lessons from building DevM8, an AI assistant that lets engineers manage tickets — create, move, comment, and resolve issues — directly from their phone, without opening a browser. Real design decisions, trade-offs, and mistakes from making an LLM safe and useful in production.",
+    link: "/devm8/",
+    tags: ["AI", "agents", "LLM", "Rust", "Telegram"],
+    image: "./talks/devm8.png",
+    date: "October 2026",
   }
 ];

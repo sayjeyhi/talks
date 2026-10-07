@@ -61,10 +61,37 @@ We didn't get here overnight. Each step handed the machine more responsibility.
 | **Autocomplete** | Finished your line | Everything else |
 | **Chat** | Answered questions, drafted snippets | Copy, paste, wire it up |
 | **Agents** | Modify code, run commands, test, debug, ship | Decide *what* and *whether* |
+| **Fleets** (2026) | Agents spawn and orchestrate other agents | Set goals, review outcomes |
 
 <br />
 
 > The model went from suggesting text to **taking actions** in your repo <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" />
+
+
+---
+layout: center
+class: 'text-center'
+---
+
+# "Get ready." <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/exploding-head_1f92f.png" />
+
+<br />
+
+<div class="max-w-lg mx-auto">
+
+  <div class="border border-zinc-700 rounded-xl p-5 text-left bg-white bg-opacity-5">
+    <div class="text-sm text-zinc-400">OpenAI · X · Sept 2026</div>
+    <div class="text-2xl mt-2 font-bold text-zinc-100">"Get ready."</div>
+  </div>
+
+  <div class="border border-zinc-700 rounded-xl p-4 mt-3 text-left">
+    <div class="text-sm text-zinc-400">The replies:</div>
+    <div class="text-base mt-1 text-zinc-300">"20+ launches? What the hell you launching bros? Fortnite skins?" <img class="w-5 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/face-with-tears-of-joy_1f602.png" /></div>
+  </div>
+
+</div>
+
+<p class="text-zinc-500 text-lg mt-8">One DevDay. 20+ launches. The models are sprinting — so the difference has to come from somewhere else.</p>
 
 
 ---
@@ -137,8 +164,6 @@ Agents get powerful not from one clever answer, but from **repeating a loop**.
   Observe → Think → Act → Verify → Repeat
 </div>
 
-<br />
-
 | Step | What happens |
 |------|--------------|
 | **Observe** | Read the repo, the ticket, the last error |
@@ -175,8 +200,6 @@ class: 'text-center'
 <div class="text-center text-3xl font-black text-zinc-200 tracking-wide">
   Agent = Model + Harness
 </div>
-
-<br />
 
 A **harness** is the software infrastructure wrapped around an LLM that turns it into a working agent — not just something that responds to prompts.
 
@@ -324,6 +347,30 @@ More context is not better context. A flooded window is as useless as an empty o
 
 ---
 
+# A PR Comment Is a Context Bug <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/memo_1f4dd.png" />
+
+<br />
+
+That review comment isn't feedback for the author. It's a missing instruction the harness should have had **before** the agent ever started.
+
+<div class="text-sm mt-4">
+
+| The reviewer writes... | The harness should have... |
+|------------------------|----------------------------|
+| "Use the existing pagination helper" | Surfaced it as context up front |
+| "Follow our naming conventions" | Loaded them into the session |
+| "This needs a test" | Made verification a gate, not a favor |
+| "Why did you touch this file?" | Pointed code search at the right place |
+
+</div>
+
+<br />
+
+> Don't write the same comment twice. Write it **once** — into AGENTS.md, a skill, or a hook — and never again. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/memo_1f4dd.png" />
+
+
+---
+
 # Your Org Is Part of the Harness <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/office-building_1f3e2.png" />
 
 <br />
@@ -347,6 +394,34 @@ AI usage has to **flow through the whole company** — not live in one dev's edi
 "AI makes a good company better, a bad one worse." — see the transformation write-up in Resources.
 
 </span>
+
+
+---
+
+# Case Study: HEMA's "HAL" <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/department-store_1f3ec.png" />
+
+<br />
+
+A 100-year-old Dutch retailer (750+ stores) built an org-wide harness on Amazon Bedrock + MCP — [featured on the AWS blog](https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock/).
+
+<div class="text-sm mt-4">
+
+| | |
+|---|---|
+| **The problem** | Answers lived across 3–4 portals — "portal hopping" could eat an entire afternoon |
+| **The harness** | Bedrock Knowledge Bases (docs, API specs, Kafka schemas) + MCP gateway to live APIs and the service catalog |
+| **The surface** | In the IDE (Kiro) and in chat — used by devs, product owners, and business analysts |
+| **The result** | An afternoon of portal hopping → answers in **seconds** |
+
+</div>
+
+<br />
+
+> "The problem was never that the knowledge didn't exist. It was that the knowledge was hard to reach."
+
+<br />
+
+<span class="text-xs text-gray-400">Next step: an action layer — request a new AWS account from chat. "No new security model is required, only new, carefully scoped tools."</span>
 
 
 ---
@@ -569,15 +644,17 @@ This is the distinction that makes "Oh My Harness!" click.
 
 You don't always build a harness from scratch — many great ones exist.
 
-<div class="text-sm mt-2">
+<span class="text-xs text-gray-400">The market is moving: Codex adoption grew ~5× in six months (3% → 16%, JetBrains 2026) — and Claude Code still leads.</span>
+
+<div class="text-sm mt-4">
 
 | Harness | Optimized for |
 |---------|---------------|
-| **Claude Code / Codex** | Terminal-native, scriptable agents |
+| **Claude Code** | Terminal-native, skills & hooks (Anthropic) |
+| **OpenAI Codex** | Terminal + reusable cloud environments (DevDay '26) |
 | **Cursor** | In-editor, tight edit loop |
 | **Kiro** | Spec-driven, structured workflows |
-| **OpenCode** | Open, hackable, self-hosted |
-| **DeepSeek Harness** | Plug-in coding agent around the model |
+| **OpenCode + GLM (Z.ai)** | Open, hackable — run open-weight GLM-5 in any agent |
 | **Custom internal** | Your org's conventions & guardrails |
 
 </div>
@@ -585,6 +662,77 @@ You don't always build a harness from scratch — many great ones exist.
 <br />
 
 > Different harnesses optimize for different workflows — pick the loop that fits your team.
+
+
+---
+
+# Your Harness Is an Artifact <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/card-file-box_1f5c3-fe0f.png" />
+
+<br />
+
+Your conventions, reviewers, and memory can live in **one repo** and travel with you across Claude Code, Codex, Cursor, and Claude Desktop.
+
+Example — [myagents](https://github.com/RashadAnsari/myagents) (MIT):
+
+<div class="text-sm mt-2">
+
+- **One source of truth** — skills, commands, agents, hooks, AGENTS.md rules
+- **15 specialist review agents** — security, performance, API design, i18n, dead code…
+- `/reviewcrew` — parallel full-codebase audit → one report
+- `/enrich` — mines your last **100 merged PRs** for durable learnings
+- A stop-hook refuses to end the session until lessons are stored
+
+</div>
+
+<br />
+
+> An install script detects your tools and wires everything up. The harness became **portable**. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/card-file-box_1f5c3-fe0f.png" />
+
+
+---
+
+# The Harness That Learns <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/dna_1f9ec.png" />
+
+<br />
+
+[autoharness](https://github.com/tigerless-labs/autoharness) (MIT, 6k+ ⭐) distills Claude Code skills from your **real sessions** — and edits them as you work.
+
+<div class="text-sm mt-2">
+
+- **Distills** — a capture hook logs each turn; every ~50 tool calls, a reflection pass writes, merges, or patches a skill
+- **Survives by being used** — a skill's rank is its loads ÷ the requests it was available for. Not benchmarks.
+- **Prunes itself** — duplicates merge, idle skills get archived (never deleted)
+- **No daemon** — the lifecycle recomputes once, at session start
+
+</div>
+
+<br />
+
+> Same model, different harness: **42% → 78%** on CORE-Bench. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/chart-increasing_1f4c8.png" />
+
+
+---
+
+# 2026: Everyone Ships a Harness <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/chart-increasing_1f4c8.png" />
+
+<br />
+
+The model race is a weekly sprint. The harness race is the actual race.
+
+<div class="text-xs mt-4">
+
+| Who | Their latest move |
+|-----|-------------------|
+| **OpenAI** | DevDay '26: GPT-6.1 **Sol** for agentic coding, **Codex in the cloud**, always-on agents ("Dots"), an Agents API with computer use, ~300 tok/s **Ultrafast** |
+| **Anthropic** | Claude Code hit a **$1B run rate** in 6 months; 2026 report: AI is in ~60% of dev work — but only **0–20%** is fully delegated |
+| **Z.ai** | **GLM-5** — MIT-licensed open weights, 77.8% SWE-bench, ~16× cheaper — plugs straight into Claude Code, Codex, and OpenCode |
+| **Groq** | Speed as a harness ingredient: LPU inference, browser tooling (Anchor), MCP connectors — fast models expose slow harnesses |
+
+</div>
+
+<br />
+
+> Nobody competes on "a better brain" alone anymore. They compete on the **loop around it**.
 
 
 ---
@@ -598,12 +746,85 @@ The models are converging. The **harness** is where the edge is.
 <br />
 
 - Google's estimate: the LLM is ~**10%** of an agentic system — the harness is the other **90%**
+- Harness-only changes took a coding agent from **rank 30 → top 5** on Terminal-Bench 2.0 — same model
+- Microsoft's Azure SRE agent: mitigation went from **40.5 hours → 3 minutes**, across 35,000+ incidents
 - Stripe reportedly ships ~**1,300** AI-written PRs a week — the differentiator is the harness, not a secret model
 - "What model does it use?" is increasingly the **wrong question**
 
 <br />
 
 > The advantage shifts from *which* model you use → *how well* you orchestrate it. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/trophy_1f3c6.png" />
+
+
+---
+
+# Your Next User Is an Agent <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/keyboard_2328-fe0f.png" />
+
+<br />
+
+Agents don't read your wiki. They run commands.
+
+When code is no longer written manually, your company's real interface becomes:
+
+<div class="text-sm mt-4">
+
+- **CLIs over portals** — an agent can run `hal request aws-account`; it can't click through four portals
+- **MCP over prose** — expose internal APIs as tools; that's HAL's next step: from answers to actions
+- **Machine-readable everything** — schemas, exit codes, JSON output — this is what the harness consumes
+
+</div>
+
+<br />
+
+> Build the CLI your company's agents will use — before you write another wiki page. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/keyboard_2328-fe0f.png" />
+
+
+---
+layout: center
+class: 'text-center'
+---
+
+# How Many Lines Do You Write Now? <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/straight-ruler_1f4cf.png" />
+
+<br />
+
+<div class="text-left mx-auto max-w-2xl text-zinc-300 text-lg">
+
+Be honest about last week: how much did you **type**… versus **approve**?
+
+<br />
+
+- ~**41%** of code is now AI-generated (Anthropic, 2026)
+- AI touches **~60%** of dev work — yet we fully delegate only **0–20%**
+- The bottleneck moved: from *writing* code to *specifying* and *verifying* it
+
+</div>
+
+<br />
+
+> We're not paid per line anymore. We're paid per **decision**. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/straight-ruler_1f4cf.png" />
+
+
+---
+
+# Languages Will Merge <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/globe-with-meridians_1f310.png" />
+
+<br />
+
+Programming languages are converging into something **programmers won't need to care about** — but agents can execute precisely and cheaply.
+
+<div class="text-sm mt-4">
+
+- Python vs TypeScript vs Rust matters less when the agent writes, runs, and fixes the code
+- What stays human: **intent** — what should exist, and why
+- What becomes harness: **specs** — tests, schemas, constraints, review gates
+- Anthropic's 2026 shape of the loop: **define goals → orchestrate agents → review output**
+
+</div>
+
+<br />
+
+> The language of the future engineer isn't Python. It's a **good spec**. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/memo_1f4dd.png" />
 
 
 ---
@@ -620,7 +841,7 @@ class: 'text-center'
 - **Model** = the brain <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/brain_1f9e0.png" />
 - **Tools** = the hands <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/handshake_1f91d.png" />
 - **Context** = the knowledge <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/books_1f4da.png" />
-- **Harness** = the system that makes the agent actually useful <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/horse-face_1f434.png" />
+- **Harness** = the system that makes it all work <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/horse-face_1f434.png" />
 
 </div>
 
@@ -635,12 +856,36 @@ class: 'text-center'
 
 <br />
 
+<div class="text-sm grid grid-cols-2 gap-x-10 text-left">
+
+<div>
+
+**2026 — fresh**
+
+- **HEMA's HAL (AWS blog):** [From portal hopping to instant answers](https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock/)
+- **OpenAI DevDay 2026 recap:** [openai.com/index/devday-2026-recap](https://openai.com/index/devday-2026-recap)
+- **Anthropic 2026 Agentic Coding Trends:** [resources.anthropic.com](https://resources.anthropic.com/2026-agentic-coding-trends-report)
+- **AI coding agent adoption (JetBrains):** [blog.jetbrains.com](https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026)
+- **autoharness — the self-learning harness:** [github.com/tigerless-labs/autoharness](https://github.com/tigerless-labs/autoharness)
+- **myagents — a portable harness:** [github.com/RashadAnsari/myagents](https://github.com/RashadAnsari/myagents)
+- **Awesome harness engineering:** [github.com/ai-boost/awesome-harness-engineering](https://github.com/ai-boost/awesome-harness-engineering)
+
+</div>
+
+<div>
+
+**Foundations**
+
 - **AI transformation:** [dpereira.substack.com — Just Another Transformation](https://dpereira.substack.com/p/just-another-transformation)
 - **Harness engineering:** [martinfowler.com](https://martinfowler.com)
 - **DeepSeek Harness:** [github.com/deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
 - **DeepSeek Harness explained:** [mindstudio.ai/blog/deepseek-harness-agentic-coding](https://www.mindstudio.ai/blog/deepseek-harness-agentic-coding)
 - **Harness deep-dive (video):** [youtu.be/UsfCe5fJK6A](https://youtu.be/UsfCe5fJK6A)
 - **Skylos — catch AI mistakes before push:** [github.com/duriantaco/skylos](https://github.com/duriantaco/skylos)
+
+</div>
+
+</div>
 
 
 ---
