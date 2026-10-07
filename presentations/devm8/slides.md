@@ -750,9 +750,56 @@ class: 'text-center'
 
 ---
 
-# What does it mean?
+# Two kinds of harness <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" />
 
-<div class="text-sm text-left max-w-4xl mx-auto mt-8 leading-relaxed">
+<div class="grid grid-cols-2 gap-8 mt-8 text-left">
+
+<div class="border-2 border-[#95E6FF]/40 rounded-2xl p-6 bg-white/[0.02]">
+<div class="text-2xl font-black text-zinc-100 tracking-tight">
+<img class="w-8 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" /> Runtime harness
+</div>
+<p class="text-zinc-400 mt-4 leading-relaxed">
+    Everything that makes an LLM capable of operating as a <strong class="text-[#95E6FF]">coding agent</strong>.
+</p>
+<div class="text-sm text-zinc-500 mt-5 leading-relaxed">
+    Filesystem · shell · tools · context management · skills · sub-agents · permissions · hooks · MCP · compaction
+</div>
+<div class="text-xs text-zinc-600 mt-4">
+    Shipped (in different forms) by Claude Code, Codex, opencode…
+</div>
+</div>
+
+<div class="border-2 border-[#BECF24]/40 rounded-2xl p-6 bg-white/[0.02]">
+<div class="text-2xl font-black text-zinc-100 tracking-tight">
+<img class="w-8 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/building-construction_1f3d7-fe0f.png" /> Engineering harness
+</div>
+<p class="text-zinc-400 mt-4 leading-relaxed">
+    Everything that makes agents <strong class="text-[#BECF24]">reliable and scalable</strong> in an organization's development process.
+</p>
+<div class="text-sm text-zinc-500 mt-5 leading-relaxed">
+    Specs · orchestration · workers · validators · evals · guardrails · CI · observability · feedback loops
+</div>
+<div class="text-xs text-zinc-600 mt-4">
+    The part <em>you</em> build — often where your real edge lives <img class="w-4 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
+</div>
+</div>
+
+</div>
+
+<br/>
+
+> Agent = model + runtime harness. <strong>Production agent</strong> = all of it, wrapped in an engineering harness.
+
+<div class="text-xs text-zinc-500 mt-4 text-center">
+    The runtime gives the building blocks (hooks, permissions, sub-agents). The engineering harness uses them at team scale.
+</div>
+
+
+---
+
+# What did we want it?
+
+<div class="text-sm text-left max-w-4xl mx-auto leading-relaxed mt-20">
 <div class="grid grid-cols-2 gap-x-12 gap-y-3">
 
 <div>
@@ -772,7 +819,7 @@ class: 'text-center'
 </div>
 
 <div>
-  <img class="w-5 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/test-tube_1f9ea.png" /> <strong>Evals</strong> — output, trajectory, tool usage
+  <img class="w-5 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/test-tube_1f9ea.png" /> <strong>ACL</strong> — output, trajectory, tool usage
 </div>
 
 <div>
@@ -789,6 +836,12 @@ class: 'text-center'
 
 </div>
 </div>
+
+
+<div class="flex items-center justify-center text-2xl mt-20">
+  End to End - Secure - Up to date - Reliable
+</div>
+
 
 ---
 
@@ -846,9 +899,9 @@ class: 'text-center'
   + the right <strong class="text-[#95E6FF]">tools</strong> and good <strong class="text-[#95E6FF]">context</strong>, for sure
 </div>
 
-<div class="[>*[]stext-sm text-left max-w-2xl mx-auto mt-10 leading-loose">
+<div class="*:text-sm text-left max-w-2xl mx-auto mt-10 leading-loose">
 
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/inbox-tray_1f4e5.png" /> <strong>Gather inputs</strong> — meeting transcripts, docs, tickets, prior decisions, HAL MCP built in collaboration to AWS
+- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/inbox-tray_1f4e5.png" /> <strong>Inputs</strong> — meeting transcripts, docs, tickets, prior decisions, MCPs built in collaboration to AWS
 
 </div>
 
@@ -895,49 +948,6 @@ flowchart LR
 
 ---
 
-# Two kinds of harness <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" />
-
-<div class="grid grid-cols-2 gap-8 mt-8 text-left">
-
-<div class="border-2 border-[#95E6FF]/40 rounded-2xl p-6 bg-white/[0.02]">
-<div class="text-2xl font-black text-zinc-100 tracking-tight">
-<img class="w-8 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" /> Runtime harness
-</div>
-<p class="text-zinc-400 mt-4 leading-relaxed">
-    Everything that makes an LLM capable of operating as a <strong class="text-[#95E6FF]">coding agent</strong>.
-</p>
-<div class="text-sm text-zinc-500 mt-5 leading-relaxed">
-    Filesystem · shell · tools · context management · skills · sub-agents · permissions · hooks · MCP · compaction
-</div>
-<div class="text-xs text-zinc-600 mt-4">
-    Shipped (in different forms) by Claude Code, Codex, opencode…
-</div>
-</div>
-
-<div class="border-2 border-[#BECF24]/40 rounded-2xl p-6 bg-white/[0.02]">
-<div class="text-2xl font-black text-zinc-100 tracking-tight">
-<img class="w-8 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/building-construction_1f3d7-fe0f.png" /> Engineering harness
-</div>
-<p class="text-zinc-400 mt-4 leading-relaxed">
-    Everything that makes agents <strong class="text-[#BECF24]">reliable and scalable</strong> in an organization's development process.
-</p>
-<div class="text-sm text-zinc-500 mt-5 leading-relaxed">
-    Specs · orchestration · workers · validators · evals · guardrails · CI · observability · feedback loops
-</div>
-<div class="text-xs text-zinc-600 mt-4">
-    The part <em>you</em> build — often where your real edge lives <img class="w-4 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
-</div>
-</div>
-
-</div>
-
-<div class="text-xs text-zinc-500 mt-4 text-center">
-    The runtime gives the building blocks (hooks, permissions, sub-agents). The engineering harness uses them at team scale.
-</div>
-
-> Agent = model + runtime harness. <strong>Production agent</strong> = all of it, wrapped in an engineering harness.
-
----
 
 # Don't rebuild the runtime <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
 
