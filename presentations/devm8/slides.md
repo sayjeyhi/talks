@@ -43,7 +43,7 @@ Should we play an ice breaker game?
 ---
 
 # WHO AM I?
-> Jafar Rezaei **@sayjeyhi** 
+> Jafar Rezaei **@sayjeyhi**  -    Fullstack Software Engineer @HEMA
 
 
 <iframe class="mt-2" style="transform: scale(0.5, 0.5) translate(-50%, -50%); position: absolute; left: 10%; right: 50%; " src="https://sayjeyhi.com?v=2" width="160%" height="140%" />
@@ -684,6 +684,25 @@ SWARM
 Validation 
 -->
 
+
+
+---
+layout: center
+class: 'text-center'
+---
+
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/person-rowing-boat_medium-light-skin-tone_1f6a3-1f3fc_1f3fc.png" />
+
+<div class="text-4xl font-black text-zinc-200 tracking-tight leading-snug">
+  What model does it use? Or do you use?
+</div>
+
+<br />
+
+<div class="text-2xl text-zinc-400 leading-relaxed">
+  is increasingly the <a href="https://magnus919.com/2026/06/stop-picking-models.-start-building-harnesses./" class="bold text-[#CF8377]">wrong question</a>
+</div>
+
 ---
 layout: center
 class: 'text-center'
@@ -981,43 +1000,6 @@ flowchart LR
 <p class="text-zinc-500 text-sm mt-2">
   Spend your energy one layer up — on the <span class="text-[#BECF24]">engineering harness</span> you wrap around it <img class="w-5 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
 </p>
-
----
-layout: center
-class: 'text-center'
----
-
-<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/party-popper_1f389.png" />
-
-<div class="text-4xl font-black text-zinc-200 tracking-tight">
-  What to remember
-</div>
-
-<div class="text-lg text-zinc-400 mt-10 leading-loose text-left max-w-2xl mx-auto">
-
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/brain_1f9e0.png" /> The model is ~10% of an agentic system — <strong class="text-[#BECF24]">the harness is the 90%</strong>
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" /> Two harnesses: <strong class="text-[#95E6FF]">runtime</strong> makes an agent, <strong class="text-[#95E6FF]">engineering</strong> makes it production-grade
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/mobile-phone_1f4f1.png" /> Meet your agent where you are — <strong class="text-[#CF8377]">phone, terminal, anywhere</strong>
-
-</div>
-
-
----
-layout: center
-class: 'text-center'
----
-
-<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/question-mark_2753.png" />
-
-<div class="text-4xl font-black text-zinc-200 tracking-tight leading-snug">
-  What model does it use? Or do you use?
-</div>
-
-<br />
-
-<div class="text-2xl text-zinc-400 leading-relaxed">
-  is increasingly the <a href="https://magnus919.com/2026/06/stop-picking-models.-start-building-harnesses./" class="bold text-[#CF8377]">wrong question</a>
-</div>
 
 
 
