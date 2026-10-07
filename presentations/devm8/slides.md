@@ -37,6 +37,39 @@ Lessons from DevM8
 
 ---
 
+# WHO AM I?
+> Jafar Rezaei **@sayjeyhi** 
+
+
+<iframe class="mt-2" style="transform: scale(0.5, 0.5) translate(-50%, -50%); position: absolute; left: 10%; right: 50%; " src="https://sayjeyhi.com?v=2" width="160%" height="140%" />
+
+
+---
+
+
+<div class="absolute inset-0 flex items-center justify-center">
+  <img class="max-h-[92%] max-w-[94%] rounded-xl" src="./public/ai-evolve.png" />
+</div>
+
+
+---
+layout: center
+class: 'text-center'
+---
+
+
+<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/thinking-face_1f914.png" />
+
+<div class="text-3xl font-black text-zinc-300 tracking-tight leading-snug">
+  What was my main pain point when using AI?
+</div>
+
+<div class="text-sm font-black text-blue-500 mt-7 tracking-tight leading-snug">
+Both Personal and Enterprise
+</div>
+
+---
+
 <div class="absolute inset-0 flex items-center justify-center">
   <img class="max-h-[92%] max-w-[94%] rounded-xl" src="./public/meme-before-after-agents.png" />
 </div>
@@ -50,29 +83,6 @@ class: 'text-center'
 <div class="absolute inset-0 flex items-center justify-center">
   <video class="max-h-[92%] max-w-[94%] rounded-xl" autoplay loop muted playsinline src="./public/IMG_1868.MP4" />
 </div>
-
----
-layout: center
-class: 'text-center'
----
-
-<img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/thinking-face_1f914.png" />
-
-<div class="text-3xl font-black text-zinc-300 tracking-tight leading-snug">
-  "I didn't want to do this."
-</div>
-
-<br />
-
-<div class="text-2xl text-zinc-400 leading-relaxed">
-  I wanted to have my agent <strong class="text-[#BECF24]">ready for me</strong> —<br/>
-  when I want it, where I am.
-</div>
-
-<p class="text-zinc-500 text-lg mt-8">
-  Not glued to a terminal. Not "later, when I'm back at my desk."
-</p>
-
 
 ---
 layout: center
@@ -110,7 +120,8 @@ class: 'text-center'
 - <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/satellite-antenna_1f4e1.png" /> **Telling AI what to do** — remotely
 - <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/toolbox_1f9f0.png" /> Using the **right skill** for the AI, when it is needed
 - <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/speech-balloon_1f4ac.png" /> Making **Slack communication** easier
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" /> **Git branch management** integrated with Jira
+- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/gear_2699-fe0f.png" /> **Git branch management** integrated with **Jira**
+
 
 </div>
 
@@ -269,7 +280,8 @@ flowchart LR
         sandbox --> repo
     end
 
-    phone -->|"bot messages"| api
+    phone -->|"bot messages"| telegram["<span style='font-size:30px'>✈️<br/>Telegram</span>"]
+    api -->|"pulls"| telegram
     laptop ==>|"Tailscale"| api
     api -->|"create · move · comment"| jira["<span style='font-size:30px'>🎫<br/> Jira Cloud</span>"]
 
@@ -278,7 +290,7 @@ flowchart LR
     classDef ext fill:#141414,stroke:#66a1ff,color:#a1a1aa
     class phone,laptop you
     class api,sandbox,repo vpn
-    class jira ext
+    class jira,telegram ext
 ```
 
 <p class="text-zinc-500 text-sm mt-2">

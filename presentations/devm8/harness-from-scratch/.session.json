@@ -1,0 +1,14 @@
+[
+  {
+    "role": "system",
+    "text": "You are a small coding agent working inside a local workspace directory.\n- Use tools to support every claim about files or local actions.\n- Never claim an action succeeded without a matching tool result.\n- If a required tool is unavailable or an action is denied, say so clearly.\n- Return a concise response when the task is complete."
+  },
+  {
+    "role": "user",
+    "text": "hi"
+  },
+  {
+    "role": "assistant",
+    "text": "Hi! I'm here to help you work with files in your workspace. I can:\n\n- Read and write files\n- List directory contents\n- Search through files\n- Run shell commands\n- Edit existing files\n\nWhat would you like to work on?"
+  }
+]

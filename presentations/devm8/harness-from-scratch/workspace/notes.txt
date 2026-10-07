@@ -1,0 +1,2 @@
+hello agent
+this note exists so the agent has something to find and search for
