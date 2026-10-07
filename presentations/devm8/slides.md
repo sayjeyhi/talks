@@ -598,6 +598,10 @@ class: 'text-center'
   uses a <span class="text-[#BECF24]">different amount of tokens</span>
 </div>
 
+<div class="mt-20 text-sm font-black text-blue-200 opacity-30 tracking-tight leading-snug">
+  [system prompt]
+</div>
+
 <!--
 
 You can try 
@@ -1027,7 +1031,9 @@ class: 'text-center'
 
 <div>
 
-**2026 — fresh**
+## 2026 — fresh
+
+<br/>
 
 - **HEMA's HAL (AWS blog):** [From portal hopping to instant answers](https://aws.amazon.com/blogs/machine-learning/from-portal-hopping-to-instant-answers-hemas-journey-with-mcp-and-amazon-bedrock/)
 - **OpenAI DevDay 2026 recap:** [openai.com/index/devday-2026-recap](https://openai.com/index/devday-2026-recap)
@@ -1041,7 +1047,9 @@ class: 'text-center'
 
 <div>
 
-**Foundations**
+## Foundations
+
+<br/>
 
 - **AI transformation:** [dpereira.substack.com — Just Another Transformation](https://dpereira.substack.com/p/just-another-transformation)
 - **Harness engineering:** [martinfowler.com](https://martinfowler.com)
@@ -1060,21 +1068,25 @@ layout: center
 class: 'text-center'
 ---
 
-# Q&A <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/waving-hand_1f44b.png" />
+<div class="flex items-center justify-center">
+<img class="w-30 mb-12" src="https://em-content.zobj.net/source/microsoft-teams/400/waving-hand_1f44b.png" />
+</div>
+
+
+# Thank you! 
 
 <br />
 
-<div class="text-2xl font-bold text-zinc-200">
 
-<img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/thinking-face_1f914.png" /> So… what would you let <em>your</em> agent do?
-
+<div class="mt-10 text-lg flex gap-12">
+<a href="github.com/sayjeyhi" >
+<img class="w-4 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" /> github.com/sayjeyhi
+</a>
+<a href="https://sayjeyhi.com">
+<img class="w-4 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" /> sayjeyhi.com
+</a>
 </div>
 
-<div class="mt-10 text-lg">
-
-<img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" /> `github.com/sayjeyhi`
-
-</div>
 
 <div class="avtar mt-12 rounded-full flex w-full align-center justify-center ">
   <img class="w-18 h-18 rounded-full grayscale" src="https://avatars.githubusercontent.com/u/6254009?v=4" />
