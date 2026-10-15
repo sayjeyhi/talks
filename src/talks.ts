@@ -130,16 +130,6 @@ export const TALKS = [
     date: "August 2026",
   },
   {
-    title: "Oh My Harness!",
-    subtitle: "The Missing Layer Between You and Your AI Agent",
-    description:
-      "Why the harness — the layer of context, tools, permissions, and feedback loops around a model — matters more than the model itself. Agent = Model + Harness.",
-    link: "/oh-my-harness/",
-    tags: ["AI", "agents", "harness", "LLM", "tooling"],
-    image: "./talks/oh-my-harness.svg",
-    date: "September 2026",
-  },
-  {
     title: "Building AI Assistants for Real Work",
     subtitle: "Lessons from DevM8",
     description:
