@@ -1,0 +1,242 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "kiro-excalidraw-skill",
+  "elements": [
+    {
+      "type": "text",
+      "id": "text-118",
+      "x": 100,
+      "y": 45,
+      "width": 803.52,
+      "height": 60,
+      "text": "TWO PLANES AROUND THE MODEL",
+      "fontSize": 48,
+      "fontFamily": 3,
+      "strokeColor": "#BECF24",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "TWO PLANES AROUND THE MODEL",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "ellipse",
+      "id": "ellipse-119",
+      "x": 650,
+      "y": 325,
+      "width": 300,
+      "height": 250,
+      "backgroundColor": "#95E6FF",
+      "strokeColor": "#95E6FF",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "text-120",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-120",
+      "x": 666,
+      "y": 417.5,
+      "width": 268,
+      "height": 62.5,
+      "text": "LLM",
+      "fontSize": 50,
+      "fontFamily": 3,
+      "strokeColor": "#111827",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "LLM",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "ellipse-119"
+    },
+    {
+      "type": "rectangle",
+      "id": "rect-121",
+      "x": 90,
+      "y": 170,
+      "width": 420,
+      "height": 560,
+      "backgroundColor": "#18181b",
+      "strokeColor": "#BECF24",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "text-122",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-122",
+      "x": 106,
+      "y": 429.2,
+      "width": 388,
+      "height": 240,
+      "text": "TOOL PLANE\n\nfiles\nshell\neditor\nsub-agents",
+      "fontSize": 32,
+      "fontFamily": 3,
+      "strokeColor": "#BECF24",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "TOOL PLANE\n\nfiles\nshell\neditor\nsub-agents",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "rect-121"
+    },
+    {
+      "type": "rectangle",
+      "id": "rect-123",
+      "x": 1090,
+      "y": 170,
+      "width": 420,
+      "height": 560,
+      "backgroundColor": "#18181b",
+      "strokeColor": "#ffd8a8",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "text-124",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-124",
+      "x": 1106,
+      "y": 429.2,
+      "width": 388,
+      "height": 240,
+      "text": "DATA PLANE\n\nMCP\ndatabases\nanalytics\nother systems",
+      "fontSize": 32,
+      "fontFamily": 3,
+      "strokeColor": "#ffd8a8",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "DATA PLANE\n\nMCP\ndatabases\nanalytics\nother systems",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "rect-123"
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-125",
+      "x": 630,
+      "y": 405,
+      "width": 100,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -100,
+          0
+        ]
+      ],
+      "strokeColor": "#BECF24",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-126",
+      "x": 970,
+      "y": 405,
+      "width": 100,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          0
+        ]
+      ],
+      "strokeColor": "#ffd8a8",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "text",
+      "id": "text-127",
+      "x": 185,
+      "y": 770,
+      "width": 434,
+      "height": 31.25,
+      "text": "code runs inside the harness",
+      "fontSize": 25,
+      "fontFamily": 3,
+      "strokeColor": "#a1a1aa",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "code runs inside the harness",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "text",
+      "id": "text-128",
+      "x": 1130,
+      "y": 770,
+      "width": 387.5,
+      "height": 31.25,
+      "text": "bindings reach outside it",
+      "fontSize": 25,
+      "fontFamily": 3,
+      "strokeColor": "#a1a1aa",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "bindings reach outside it",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#000000",
+    "theme": "dark",
+    "exportBackground": true
+  },
+  "files": {}
+}

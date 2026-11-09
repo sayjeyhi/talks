@@ -1,0 +1,225 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "kiro-excalidraw-skill",
+  "elements": [
+    {
+      "type": "text",
+      "id": "text-98",
+      "x": 100,
+      "y": 55,
+      "width": 773.76,
+      "height": 60,
+      "text": "CLAUDE CODE HAS TWO LAYERS",
+      "fontSize": 48,
+      "fontFamily": 3,
+      "strokeColor": "#BECF24",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "CLAUDE CODE HAS TWO LAYERS",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "rect-99",
+      "x": 300,
+      "y": 180,
+      "width": 1000,
+      "height": 220,
+      "backgroundColor": "#95E6FF",
+      "strokeColor": "#95E6FF",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "text-100",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-100",
+      "x": 316,
+      "y": 262.7,
+      "width": 968,
+      "height": 105,
+      "text": "CLAUDE CODE CLI / APP\nINTERFACE",
+      "fontSize": 42,
+      "fontFamily": 3,
+      "strokeColor": "#111827",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "CLAUDE CODE CLI / APP\nINTERFACE",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "rect-99"
+    },
+    {
+      "type": "rectangle",
+      "id": "rect-101",
+      "x": 300,
+      "y": 500,
+      "width": 1000,
+      "height": 220,
+      "backgroundColor": "#d0bfff",
+      "strokeColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "text-102",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-102",
+      "x": 316,
+      "y": 582.7,
+      "width": 968,
+      "height": 105,
+      "text": "AGENT SDK + BINARY\nHARNESS",
+      "fontSize": 42,
+      "fontFamily": 3,
+      "strokeColor": "#111827",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "AGENT SDK + BINARY\nHARNESS",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "rect-101"
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-103",
+      "x": 800,
+      "y": 420,
+      "width": 0,
+      "height": 60,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          60
+        ]
+      ],
+      "strokeColor": "#f4f4f5",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "text",
+      "id": "text-104",
+      "x": 125,
+      "y": 245,
+      "width": 190.96,
+      "height": 70,
+      "text": "human\ninteraction",
+      "fontSize": 28,
+      "fontFamily": 3,
+      "strokeColor": "#95E6FF",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "human\ninteraction",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-105",
+      "x": 250,
+      "y": 300,
+      "width": 40,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "strokeColor": "#95E6FF",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "text",
+      "id": "text-106",
+      "x": 1325,
+      "y": 555,
+      "width": 104.16,
+      "height": 70,
+      "text": "model\naction",
+      "fontSize": 28,
+      "fontFamily": 3,
+      "strokeColor": "#BECF24",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "model\naction",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-107",
+      "x": 1310,
+      "y": 610,
+      "width": 115,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          115,
+          0
+        ]
+      ],
+      "strokeColor": "#BECF24",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#000000",
+    "theme": "dark",
+    "exportBackground": true
+  },
+  "files": {}
+}

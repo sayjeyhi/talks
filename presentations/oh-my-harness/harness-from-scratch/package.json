@@ -1,0 +1,27 @@
+{
+  "name": "custom-agent-harness",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A small TypeScript CLI agent harness: agent loop, bounded tool registry, approval gates, OpenRouter adapter.",
+  "engines": {
+    "node": ">=18.17"
+  },
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "dev:resume": "tsx src/index.ts --resume",
+    "smoke": "tsx scripts/smoke.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ink": "^5.2.0",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

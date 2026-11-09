@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&family=Inter:wght@300..700&family=JetBrains+Mono:wght@100..800&display=swap');
+
+:root {
+  --slidev-font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --slidev-font-serif: 'Space Grotesk', 'Inter', sans-serif;
+  --slidev-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+body, .dark .slidev-slide-content {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background-color: #000 !important;
+  letter-spacing: -0.01em;
+}
+
+/* Headings use the display font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  background: #BECF24;
+background: linear-gradient(to right, #BECF24 0%, #95E6FF 50%, #CF8377 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-weight: 600;
+  color: #e4e4e7;
+}
+
+/* Body copy: readable size and comfortable line-height */
+.slidev-layout li,
+.slidev-layout p {
+  line-height: 1.6;
+}
+
+blockquote {
+  font-style: normal;
+  color: #a1a1aa;
+}
+
+/* Code stays monospace everywhere */
+code, pre, .slidev-code {
+  font-family: 'JetBrains Mono', ui-monospace, monospace !important;
+}
+
+strong {
+  color: #66a1ff
+}
+
+table {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+}
+
+thead tr {
+  border-bottom-width: 2px !important;
+  border-color: hsla(0, 0%, 100%, 0.37) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+tbody tr:not(:last-child) {
+  border-bottom-width: 2px !important;
+  border-color: rgb(255 255 255 / 37%) !important;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+
+tbody tr:last-child {
+  border: none !important;
+}
+
+th:not(:first-child), td:not(:first-child) {
+  border-left-width: 1px !important;
+  border-color: rgba(255, 255, 255, 0.12)!important;
+}
+
+.slidev-layout code:not(pre code) {
+  color: #e2e8f0 !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Diagram kit: HTML diagrams used in slides.md.
+   Set a color per element with style="--c: #95E6FF".
+   Font sizes live here only, so every diagram uses the same sizes. */
+.dg {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  color: #f4f4f5;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+.dg-title {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: #BECF24;
+  text-align: center;
+}
+
+.dg-caption {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #d4d4d8;
+  text-align: center;
+}
+
+.dg-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.dg-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.dg-card {
+  --c: #95E6FF;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 16px;
+  border: 2px solid var(--c);
+  border-radius: 16px;
+  background: #18181b;
+  text-align: center;
+}
+
+.dg-card.fill {
+  background: var(--c);
+  color: #111827;
+}
+
+.dg-card.circle {
+  flex: 0 0 170px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  padding: 0 16px;
+}
+
+.dg-card.fill.circle {
+  background: var(--c);
+}
+
+.dg-name {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--c);
+}
+
+.dg-card.fill .dg-name {
+  color: #111827;
+}
+
+.dg-note {
+  font-size: 17px;
+  line-height: 1.35;
+  color: #a1a1aa;
+}
+
+.dg-card.fill .dg-note {
+  color: #27272a;
+}
+
+.dg-arrow {
+  --c: #95E6FF;
+  position: relative;
+  flex: 0 0 44px;
+  height: 2px;
+  background: var(--c);
+}
+
+.dg-arrow::after {
+  content: '';
+  position: absolute;
+  right: -2px;
+  top: -6px;
+  border-left: 10px solid var(--c);
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+}
+
+.dg-arrow.left::after {
+  right: auto;
+  left: -2px;
+  border-left: none;
+  border-right: 10px solid var(--c);
+}
+
+.dg-arrow.v {
+  flex: 0 0 36px;
+  width: 2px;
+  height: 36px;
+}
+
+.dg-arrow.v::after {
+  right: -6px;
+  top: auto;
+  bottom: -2px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 10px solid var(--c);
+  border-bottom: none;
+}
+
+.dg-bar {
+  --c: #95E6FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  border-radius: 14px;
+  background: var(--c);
+  color: #111827;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.dg-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--c);
+}
+
+.dg-rule {
+  width: 100%;
+  height: 2px;
+  background: #52525b;
+}
+
+.dg-dashed {
+  border-style: dashed !important;
+  background: transparent !important;
+}
+
+.dg-col > .dg-card {
+  flex: none;
+  width: 100%;
+}
+
+.dg-arrow.v.up::after {
+  top: -2px;
+  bottom: auto;
+  border-top: none;
+  border-bottom: 10px solid var(--c);
+}
+
+.dg-op {
+  font-size: 52px;
+  font-weight: 300;
+  color: #f4f4f5;
+}

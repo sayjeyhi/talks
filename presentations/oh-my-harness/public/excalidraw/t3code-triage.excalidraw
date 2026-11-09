@@ -1,0 +1,289 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "kiro-excalidraw-skill",
+  "elements": [
+    {
+      "type": "text",
+      "id": "text-281",
+      "x": 100,
+      "y": 45,
+      "width": 1118.48,
+      "height": 55,
+      "text": "TRIAGE WITH THE AGENT YOU ALREADY PAY FOR",
+      "fontSize": 44,
+      "fontFamily": 3,
+      "strokeColor": "#BECF24",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "TRIAGE WITH THE AGENT YOU ALREADY PAY FOR",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    },
+    {
+      "type": "rectangle",
+      "id": "rect-282",
+      "x": 90,
+      "y": 320,
+      "width": 260,
+      "height": 180,
+      "backgroundColor": "#18181b",
+      "strokeColor": "#CF8377",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "text-283",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-283",
+      "x": 106,
+      "y": 389.85,
+      "width": 228,
+      "height": 77.5,
+      "text": "T3 CODE\nPROBLEM",
+      "fontSize": 31,
+      "fontFamily": 3,
+      "strokeColor": "#CF8377",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "T3 CODE\nPROBLEM",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "rect-282"
+    },
+    {
+      "type": "rectangle",
+      "id": "rect-284",
+      "x": 470,
+      "y": 235,
+      "width": 320,
+      "height": 350,
+      "backgroundColor": "#ffd8a8",
+      "strokeColor": "#ffd8a8",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "text-285",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-285",
+      "x": 486,
+      "y": 394.4,
+      "width": 288,
+      "height": 150,
+      "text": "COLLECT\nlogs\nstate\nversion\nknown issues",
+      "fontSize": 24,
+      "fontFamily": 3,
+      "strokeColor": "#111827",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "COLLECT\nlogs\nstate\nversion\nknown issues",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "rect-284"
+    },
+    {
+      "type": "diamond",
+      "id": "diamond-286",
+      "x": 920,
+      "y": 275,
+      "width": 290,
+      "height": 290,
+      "backgroundColor": "#d0bfff",
+      "strokeColor": "#d0bfff",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "boundElements": [
+        {
+          "id": "text-287",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-287",
+      "x": 936,
+      "y": 400.5,
+      "width": 258,
+      "height": 112.5,
+      "text": "CLAUDE\nor\nCODEX",
+      "fontSize": 30,
+      "fontFamily": 3,
+      "strokeColor": "#111827",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "CLAUDE\nor\nCODEX",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "diamond-286"
+    },
+    {
+      "type": "rectangle",
+      "id": "rect-288",
+      "x": 1330,
+      "y": 320,
+      "width": 220,
+      "height": 180,
+      "backgroundColor": "#BECF24",
+      "strokeColor": "#BECF24",
+      "fillStyle": "solid",
+      "strokeWidth": 3,
+      "roughness": 1,
+      "opacity": 100,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "text-289",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "text-289",
+      "x": 1346,
+      "y": 392.45,
+      "width": 188,
+      "height": 67.5,
+      "text": "DIAGNOSIS\n+ NEXT STEP",
+      "fontSize": 27,
+      "fontFamily": 3,
+      "strokeColor": "#111827",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "DIAGNOSIS\n+ NEXT STEP",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100,
+      "containerId": "rect-288"
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-290",
+      "x": 370,
+      "y": 410,
+      "width": 80,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          80,
+          0
+        ]
+      ],
+      "strokeColor": "#CF8377",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-291",
+      "x": 810,
+      "y": 410,
+      "width": 90,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          90,
+          0
+        ]
+      ],
+      "strokeColor": "#ffd8a8",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "arrow",
+      "id": "arrow-292",
+      "x": 1230,
+      "y": 410,
+      "width": 80,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          80,
+          0
+        ]
+      ],
+      "strokeColor": "#BECF24",
+      "strokeWidth": 4,
+      "roughness": 1,
+      "opacity": 100,
+      "endArrowhead": "arrow"
+    },
+    {
+      "type": "text",
+      "id": "text-293",
+      "x": 430,
+      "y": 680,
+      "width": 1060.2,
+      "height": 37.5,
+      "text": "The agent asks before applying a fix or posting an issue.",
+      "fontSize": 30,
+      "fontFamily": 3,
+      "strokeColor": "#a1a1aa",
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "originalText": "The agent asks before applying a fix or posting an issue.",
+      "autoResize": true,
+      "lineHeight": 1.25,
+      "roughness": 1,
+      "opacity": 100
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#000000",
+    "theme": "dark",
+    "exportBackground": true
+  },
+  "files": {}
+}
