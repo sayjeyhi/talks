@@ -1167,6 +1167,28 @@ Source: https://github.com/pingdotgg/t3code
 
 ---
 
+# T3 Code is not a harness
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    t3["<b>🌌 T3 Code</b><br/><small>🚫 not a harness</small>"]
+    subgraph harnesses["<b>🧰 Harnesses</b>"]
+        direction LR
+        cc["👾 Claude Code"]
+        codex["⌨️ Codex"]
+        pi["π Pi"]
+        oc["⬜ OpenCode"]
+    end
+    t3 ~~~ harnesses
+
+    classDef t3 stroke:#e8a33d,stroke-width:3px
+    class t3 t3
+```
+
+
+---
+
 <div class="absolute inset-0 flex items-center justify-center bg-black">
   <img class="w-full h-full object-contain" src="./public/t3code-homepage.png" />
 </div>
@@ -1265,6 +1287,28 @@ This is one of the clearest points in 01.md. T3 Code is free, but it does not in
 <!--
 The official screenshot shows four sub-agents in one thread. 01.md also describes threads communicating with one another. The user starts with one task and delegates work to different models where useful.
 -->
+
+---
+
+# Threads connect through MCP
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    t1["🧵 fix login bug"] --- m1(["🔌 MCP"])
+    t2["🧵 write the tests"] --- m2(["🔌 MCP"])
+    t3["🧵 release notes"] --- m3(["🔌 MCP"])
+    t4["🧵 landing page"] --- m4(["🔌 MCP"])
+    m1 --> app["🌌 T3 Code"]
+    m2 --> app
+    m3 --> app
+    m4 --> app
+    t1 -.->|🔗 linked| t3
+
+    classDef active stroke:#e8a33d,stroke-width:3px
+    class t1 active
+```
+
 
 ---
 
@@ -1375,6 +1419,71 @@ Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md
 
 ---
 
+# Three machines, one client
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    client["<b>💻 laptop</b><br/><small>client</small>"]
+    client --- s1["<b>💻 laptop</b><br/><small>🌌 T3 server</small>"]
+    client --- s2["<b>🖥️ PC</b><br/><small>🌌 T3 server</small>"]
+    client --- s3["<b>🍎 Mac mini</b><br/><small>🌌 T3 server</small>"]
+
+    classDef client fill:#e8a33d,color:#000,stroke:#e8a33d
+    class client client
+```
+
+---
+
+# At home, the LAN is enough
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    subgraph home["<b>🏠 home</b>"]
+        direction LR
+        laptop["💻 laptop"] ---|🔌 LAN| pc["🖥️ PC"]
+    end
+```
+
+---
+
+# T3 Connect
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TB
+    connect["🌌 T3 Connect"]
+    connect --- laptop["💻 laptop"]
+    connect --- pc["🖥️ PC"]
+    connect --- mini["🍎 Mac mini"]
+    free(["🎁 3 machines free"])
+    pc ~~~ free
+
+    classDef free fill:#e8a33d,color:#000,stroke:#e8a33d
+    class free free
+```
+
+---
+
+# T3 Connect vs Tailscale
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    subgraph withConnect["<b>🌌 with T3 Connect</b>"]
+        direction LR
+        you1["💻 you"] --- relay["<b>📡 T3 relay</b><br/><small>☁️ on Cloudflare</small>"] --- m1["🖥️ your machine"]
+    end
+    subgraph withTailscale["<b>🔗 with Tailscale</b>"]
+        direction LR
+        you2["💻 you"] --- tailnet(("🕸️ your tailnet")) --- m2["🖥️ your machine"]
+    end
+```
+
+
+---
+
 <div class="absolute inset-0 flex items-center justify-center">
   <div class="dg">
 <div class="dg-title">Send work where capacity exists</div>
@@ -1397,6 +1506,62 @@ Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md
 When a draft needs a machine, T3 Code can examine eligible hosts and choose one with free capacity. After selection, the thread stays on that environment.
 Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md#balance-new-threads-across-machines
 -->
+
+---
+
+# Development life cycle
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    subgraph S01["<b>📥 01 Inputs</b>"]
+        direction TB
+        chat["<b>💬 Team chat</b><br/><small>Threads, DMs, and mentions</small>"]
+        issues["<b>🐙 Issues</b><br/><small>Bug reports and feature requests</small>"]
+        feedback["<b>🗣️ Customer feedback</b><br/><small>Support tickets and surveys</small>"]
+        meetings["<b>🎙️ Meetings</b><br/><small>Call notes and decisions</small>"]
+        monitoring["<b>🚨 Monitoring</b><br/><small>Errors, alerts, and incidents</small>"]
+        %% Invisible links keep the inputs stacked vertically
+        chat ~~~ issues ~~~ feedback ~~~ meetings ~~~ monitoring
+    end
+
+    subgraph PLAN["<b>📝 02 Plan</b>"]
+        direction TB
+        spec["<b>📝 Spec and design</b><br/><small>Requirements, architecture, tasks</small>"]
+        tracker["<b>🎯 Issue tracker</b><br/><small>Epics, stories, follow-ups</small>"]
+        spec --> tracker
+    end
+
+    subgraph S04["<b>🛠️ 03 Build</b>"]
+        direction TB
+        dev["<b>🖥️ Develop</b><br/><small>Branch, isolated environment<br/>✓ Reproduce<br/>✓ Smallest change<br/>✓ Tests and lint</small>"]
+        evidence["<b>📸 Evidence</b><br/><small>Proof the change works<br/>✓ Tests passed<br/>✓ Lint clean<br/>⏱️ Before / after metrics</small>"]
+        dev --> evidence
+    end
+
+    subgraph S05["<b>🔍 04 Review</b>"]
+        direction TB
+        pr["<b>🔃 Pull request</b><br/><small>Code review and discussion</small>"]
+        verify["<b>✅ CI verification</b><br/><small>Tests, security scans, quality gates</small>"]
+        human["<b>👤 Approval</b><br/><small>Owner or reviewer sign-off</small>"]
+        pr <-->|Push fixes| verify
+        verify --> human
+    end
+
+    subgraph S06["<b>🏭 05 Release and operate</b>"]
+        direction TB
+        deploy["<b>🚀 Merge and deploy</b><br/><small>Staging, then production</small>"]
+        obs["<b>📈 Observe</b><br/><small>Logs, metrics, and alerts</small>"]
+        deploy --> obs
+    end
+
+    S01 --> spec
+    tracker -->|Ready| dev
+    evidence -->|Open PR| pr
+    human -->|Merge| deploy
+    obs -.->|🔁 Feedback starts the next cycle| S01
+```
+
 
 ---
 
@@ -1528,6 +1693,93 @@ The mobile client is not a smaller editor. It is a remote operations interface f
 
 ---
 
+# Fleet skill: one HQ on every machine
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    hq[("📁 HQ")]
+    hq --- laptop["<b>💻 laptop</b><br/><small>📁 HQ</small>"]
+    hq --- pc["<b>🖥️ PC</b><br/><small>📁 HQ</small>"]
+    hq --- mini["<b>🍎 Mac mini</b><br/><small>📁 HQ</small>"]
+```
+
+---
+
+# Skills live in HQ
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    hq[("<b>📁 HQ</b><br/><small>🧩 skills/</small>")]
+    hq --- laptop["<b>💻 laptop</b><br/><small>📁 HQ</small>"]
+    hq --- pc["<b>🖥️ PC</b><br/><small>📁 HQ</small>"]
+    hq --- mini["<b>🍎 Mac mini</b><br/><small>📁 HQ</small>"]
+
+    classDef hq stroke:#e8a33d,stroke-width:3px
+    class hq hq
+```
+
+---
+
+# Linked servers
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    subgraph machines["<b>🗄️ machines</b>"]
+        direction LR
+        pc["🖥️ PC"] ===|🔗 linked| mini["🍎 Mac mini"]
+    end
+    subgraph threads["<b>💬 threads</b>"]
+        direction LR
+        t1["💬 thread"] --- t2["💬 thread"]
+    end
+    pc -.- t1
+    mini -.- t2
+```
+
+---
+
+# Subagents on other machines
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    pc["🖥️ PC"] ===|🔗 linked| mini["🍎 Mac mini"]
+    claude["✳️ Claude thread"] --> c1["⌨️ Codex subagent"]
+    claude --> c2["⌨️ Codex subagent"]
+    pc -.- claude
+    mini -.- c1
+    mini -.- c2
+    note(["✳️ Claude → ⌨️ ChatGPT Codex"])
+```
+
+---
+
+# Two kinds of links
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart TB
+    subgraph env["<b>🌐 Environments</b>"]
+        direction TB
+        app["💻 your app (client)"]
+        app --- s1[("🗄️ server")]
+        app --- s2[("🗄️ server")]
+    end
+    subgraph linked["<b>🔗 Linked environments</b>"]
+        direction LR
+        s3[("🗄️ server")] --- s4[("🗄️ server")]
+    end
+
+    classDef client fill:#e8a33d,color:#000,stroke:#e8a33d
+    class app client
+```
+
+
+---
+
 # Small tools remove workflow friction
 
 <div class="grid grid-cols-4 gap-4 mt-9 text-left">
@@ -1605,6 +1857,30 @@ class: 'text-center'
 ---
 layout: center
 class: 'text-center'
+---
+
+# A game changer
+
+```mermaid
+%%{init: {"theme": "dark"}}%%
+flowchart LR
+    subgraph replaced["<b>🗑️ Replaced</b>"]
+        direction TB
+        herdr["✗ 📚 herdr"]
+        cda["✗ ✳️ Claude desktop app"]
+        codex["✗ ⌨️ Codex"]
+        cav["✗ 👾 Claude agents view"]
+        tmux["✗ 🖥️ tmux + terminals"]
+    end
+    replaced ==> t3["🌌 T3 Code"]
+
+    classDef old fill:#222,color:#777,stroke:#444
+    classDef new stroke:#e8a33d,stroke-width:3px
+    class herdr,cda,codex,cav,tmux old
+    class t3 new
+```
+
+
 ---
 
 <div class="flex items-center justify-center gap-10">
