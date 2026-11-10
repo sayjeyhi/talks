@@ -1146,9 +1146,12 @@ The transcript names T3 Code an Agentic Development Environment, or ADE. It sits
   <div class="dg">
 <h1>T3 Code coordinates harnesses</h1>
 <div class="dg-row">
-<div class="dg-card circle fill" style="--c:#95E6FF"><div class="dg-name">Human</div></div>
+<div class="flex flex-col items-center justify-center gap-2" style="--c:#95E6FF">
+<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#95E6FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+<div class="dg-name">Human</div>
+</div>
 <div class="dg-arrow" style="--c:#95E6FF"></div>
-<div class="dg-card fill" style="--c:#BECF24;flex:0 0 230px"><div class="dg-name">T3 Code</div><div class="dg-note">ADE + MCP coordination</div></div>
+<div class="dg-card fill mr-10" style="--c:#BECF24;flex:0 0 230px"><div class="dg-name">T3 Code</div><div class="dg-note">ADE + MCP coordination</div></div>
 <div class="dg-col" style="flex:0 0 auto;gap:14px">
 <div class="dg-row" style="gap:12px;width:auto"><div class="dg-arrow" style="--c:#d0bfff;flex:0 0 40px"></div><div class="dg-card fill" style="--c:#d0bfff;flex:0 0 220px"><div class="dg-name">Claude Code</div></div></div>
 <div class="dg-row" style="gap:12px;width:auto"><div class="dg-arrow" style="--c:#95E6FF;flex:0 0 40px"></div><div class="dg-card fill" style="--c:#95E6FF;flex:0 0 220px"><div class="dg-name">Codex</div></div></div>
@@ -1247,9 +1250,9 @@ flowchart LR
 
 # The sidebar is an inbox for work
 
-<div class="grid grid-cols-[1.35fr_1fr] gap-8 mt-6 h-[72%]">
+<div class="grid grid-cols-[auto_1fr] gap-8 mt-6 h-[95%]">
   <div class="overflow-hidden rounded-2xl border border-zinc-800">
-    <img class="w-full h-full object-cover object-left" src="./public/t3code-app-desktop.webp" />
+    <img class="h-full " src="./public/sidebar.png" />
   </div>
   <div class="flex flex-col justify-center text-left gap-2.5">
     <div class="rounded-lg border border-[#a1a1aa]/40 bg-[#a1a1aa]/10 px-4 py-2">
@@ -1312,6 +1315,37 @@ Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md
 
 ---
 
+
+
+# Control a simulator from your phone!
+
+<div class="grid grid-cols-[auto_1fr] gap-8 mt-6 h-[95%]">
+  <div class="overflow-hidden rounded-2xl border border-zinc-800">
+    <img class="h-full " src="./public/phone-in-phone.jpg" />
+  </div>
+  <div class="flex flex-col justify-center text-left gap-4">
+    <div class="text-3xl font-black text-[#95E6FF] tracking-tight">Run agents from your phone</div>
+    <div class="flex flex-col gap-3 mt-2">
+      <div class="rounded-xl border border-[#95E6FF]/40 bg-[#95E6FF]/10 px-5 py-3">
+        <span class="text-[#95E6FF] font-bold">Tailscale network</span>
+        <span class="text-zinc-400"> — my devices on one private mesh.</span>
+      </div>
+      <div class="rounded-xl border border-[#ffd8a8]/40 bg-[#ffd8a8]/10 px-5 py-3">
+        <span class="text-[#ffd8a8] font-bold">Mobile browser</span>
+        <span class="text-zinc-400"> — no app to install, just a URL.</span>
+      </div>
+      <div class="rounded-xl border border-[#BECF24]/40 bg-[#BECF24]/10 px-5 py-3">
+        <span class="text-[#BECF24] font-bold">Remote control</span>
+        <span class="text-zinc-400"> — drives a device on my Mac from anywhere.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+---
+
 # Three machines, one client
 
 ```mermaid
@@ -1339,36 +1373,28 @@ flowchart LR
 
 ---
 
-# T3 Connect
 
-```mermaid
-flowchart TB
-    connect("🌌 T3 Connect")
-    connect --- laptop("💻 laptop")
-    connect --- pc("🖥️ PC")
-    connect --- mini("🍎 Mac mini")
-    free(["🎁 3 machines free"])
-    pc ~~~ free
+<div class="absolute inset-0 flex items-center justify-center flex-col">
 
-    classDef free fill:#e8a33d,color:#000,stroke:#e8a33d
-    class free free
-```
+<h1 class="pb-8">T3 Connect</h1>
+<img class="h-[60%] rounded-xl" src="./public/t3-connect.svg" />
+
+</div>
+
+
+
 
 ---
 
-# T3 Connect vs Tailscale
 
-```mermaid
-flowchart LR
-    subgraph withConnect["<b>🌌 with T3 Connect</b>"]
-        direction LR
-        you1("💻 you") --- relay("<b>📡 T3 relay</b><br/><small>☁️ on Cloudflare</small>") --- m1("🖥️ your machine")
-    end
-    subgraph withTailscale["<b>🔗 with Tailscale</b>"]
-        direction LR
-        you2("💻 you") --- tailnet(("🕸️ your tailnet")) --- m2("🖥️ your machine")
-    end
-```
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+
+<h1>T3 Connect vs Tailscale</h1>
+<img class="h-[90%] rounded-xl" src="./public/t3-connect-vs-tailscale.svg" />
+
+</div>
+
+
 
 
 ---
@@ -1474,29 +1500,71 @@ Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/project-settings
 -->
 
 ---
-layout: center
-class: 'text-center'
----
 
 # See where the tokens go
 
-<div class="grid grid-cols-2 gap-10 max-w-5xl mx-auto mt-12">
-  <div class="rounded-3xl border-2 border-[#95E6FF]/60 bg-[#95E6FF]/10 p-9">
-    <div class="text-sm tracking-widest font-bold text-[#95E6FF]">BY ACCOUNT</div>
-    <div class="text-6xl font-black text-zinc-100 mt-6">Who?</div>
-    <p class="text-zinc-400 mt-4">Compare usage across connected provider accounts.</p>
+<div class="grid grid-cols-[2fr_1fr] gap-8 mt-8 items-center">
+
+<div class="flex items-center justify-center">
+  <img class="max-h-[70vh] max-w-full rounded-xl border border-zinc-800 shadow-2xl" src="./public/usage.png" />
+</div>
+
+<div class="flex flex-col gap-3">
+  <div class="rounded-xl border border-[#95E6FF]/60 bg-[#95E6FF]/10 px-4 py-3">
+    <div class="text-[10px] tracking-widest font-bold text-[#95E6FF]">BY ACCOUNT</div>
+    <div class="text-xl font-black text-zinc-100 mt-1">Who?</div>
+    <p class="text-xs text-zinc-400 mt-1">Compare usage across connected provider accounts.</p>
   </div>
-  <div class="rounded-3xl border-2 border-[#BECF24]/60 bg-[#BECF24]/10 p-9">
-    <div class="text-sm tracking-widest font-bold text-[#BECF24]">BY MACHINE</div>
-    <div class="text-6xl font-black text-zinc-100 mt-6">Where?</div>
-    <p class="text-zinc-400 mt-4">See which environment is consuming the work.</p>
+  <div class="rounded-xl border border-[#BECF24]/60 bg-[#BECF24]/10 px-4 py-3">
+    <div class="text-[10px] tracking-widest font-bold text-[#BECF24]">BY MACHINE</div>
+    <div class="text-xl font-black text-zinc-100 mt-1">Where?</div>
+    <p class="text-xs text-zinc-400 mt-1">See which environment is consuming the work.</p>
   </div>
 </div>
 
-<div class="mt-12 text-zinc-500">Parallelism increases throughput. It can also increase spend.</div>
+</div>
+
+
+---
+
+# Free transcripts, any language <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/microphone_1f3a4.png" />
+
+<div class="grid grid-cols-2 gap-10 mt-8 items-center">
+
+<div class="text-left">
+
+<div class="text-2xl text-zinc-300 leading-relaxed">
+  Run <strong class="text-[#BECF24]">local or remote models</strong> to transcribe speech
+</div>
+
+<div class="flex flex-col gap-3 mt-8">
+  <span class="rounded-xl border border-[#95E6FF]/40 bg-[#95E6FF]/10 px-5 py-3 text-base">
+    <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/desktop-computer_1f5a5-fe0f.png" /> Local on your machine
+  </span>
+  <span class="rounded-xl border border-[#d0bfff]/40 bg-[#d0bfff]/10 px-5 py-3 text-base">
+    <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/globe-with-meridians_1f310.png" /> Many languages
+  </span>
+  <span class="rounded-xl border border-[#BECF24]/40 bg-[#BECF24]/10 px-5 py-3 text-base">
+    <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/free-button_1f193.png" /> For free
+  </span>
+</div>
+
+<p class="text-zinc-500 text-base mt-8">
+  Whisper and friends turn any voice into text, auto-detect the language, even translate <img class="w-5 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/speech-balloon_1f4ac.png" />
+</p>
+
+</div>
+
+<div class="flex items-center justify-center">
+  <img class="max-h-[70vh] max-w-full rounded-xl border border-zinc-800 shadow-2xl" src="./public/handy-transcription.png" />
+</div>
+
+</div>
 
 <!--
-01.md names a usage tab with views by account and machine. This turns hidden token consumption into an operational signal.
+You do not need a paid API for transcription.
+
+Pick a local or remote open model like Whisper, point it at your audio, and it writes the transcript for free. It auto-detects the language across dozens of them, and can even translate speech to English on the way.
 -->
 
 ---
@@ -1506,16 +1574,22 @@ class: 'text-center'
 
 # The control surface fits in your pocket
 
-<div class="flex items-center justify-center gap-16 mt-10">
-  <img class="w-44 h-44 rounded-[2.2rem]" src="./public/t3code-icon.png" />
-  <div class="text-left max-w-2xl">
-    <div class="text-3xl font-black text-zinc-100">iOS and Android clients</div>
-    <div class="mt-6 space-y-3 text-xl text-zinc-300">
-      <div>Control threads on remote machines</div>
-      <div>Choose a host before sending work</div>
-      <div>Inspect connected simulator and emulator sessions</div>
-      <div>Manage scheduled tasks from mobile</div>
-    </div>
+<div class="grid grid-cols-4 gap-5 mt-8 max-w-5xl mx-auto">
+  <div class="flex flex-col items-center">
+    <img class="w-full rounded-2xl border border-zinc-800 shadow-2xl" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/39/2d/b9/392db9ac-cf3b-ab66-245c-cb0d1f4d0de3/01-sessions.png/460x998bb.webp" />
+    <div class="mt-3 text-sm font-bold text-[#95E6FF]">Sessions</div>
+  </div>
+  <div class="flex flex-col items-center">
+    <img class="w-full rounded-2xl border border-zinc-800 shadow-2xl" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6b/63/99/6b639953-6895-8028-6b60-20ec09406174/02-environments.png/460x998bb.webp" />
+    <div class="mt-3 text-sm font-bold text-[#BECF24]">Environments</div>
+  </div>
+  <div class="flex flex-col items-center">
+    <img class="w-full rounded-2xl border border-zinc-800 shadow-2xl" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/56/2e/d1/562ed1bd-fb2f-11dc-5773-7aeeb0922875/03-chat.png/460x998bb.webp" />
+    <div class="mt-3 text-sm font-bold text-[#ffd8a8]">Chat</div>
+  </div>
+  <div class="flex flex-col items-center">
+    <img class="w-full rounded-2xl border border-zinc-800 shadow-2xl" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b9/44/cb/b944cba9-4e48-c44a-710e-7249d9fc95f3/04-terminal.png/460x998bb.webp" />
+    <div class="mt-3 text-sm font-bold text-[#d0bfff]">Terminal</div>
   </div>
 </div>
 
@@ -1651,63 +1725,6 @@ If the app fails, npx t3 triage collects logs, state, version information, and k
 Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/triage.md
 -->
 
----
-layout: center
-class: 'text-center'
----
-
-# What T3 Code does not hide
-
-<div class="grid grid-cols-2 gap-7 max-w-5xl mx-auto mt-10 text-left">
-  <div class="rounded-2xl border border-[#CF8377]/50 bg-[#CF8377]/10 p-6">
-    <div class="font-black text-xl text-[#CF8377]">You bring subscriptions</div>
-    <p class="text-zinc-400 mt-2">Provider limits and token costs still apply.</p>
-  </div>
-  <div class="rounded-2xl border border-[#CF8377]/50 bg-[#CF8377]/10 p-6">
-    <div class="font-black text-xl text-[#CF8377]">You bring compute</div>
-    <p class="text-zinc-400 mt-2">Your machines run the agents and tools.</p>
-  </div>
-  <div class="rounded-2xl border border-[#ffd8a8]/50 bg-[#ffd8a8]/10 p-6">
-    <div class="font-black text-xl text-[#ffd8a8]">Nightly changes quickly</div>
-    <p class="text-zinc-400 mt-2">Fast releases can introduce short-lived breakage.</p>
-  </div>
-  <div class="rounded-2xl border border-[#ffd8a8]/50 bg-[#ffd8a8]/10 p-6">
-    <div class="font-black text-xl text-[#ffd8a8]">More throughput uses more tokens</div>
-    <p class="text-zinc-400 mt-2">Parallel work needs explicit budget awareness.</p>
-  </div>
-</div>
-
-<div class="mt-10 text-zinc-500">It is built for developers managing coding agents, not as a general-purpose consumer assistant.</div>
-
-<!--
-01.md is useful because it includes limits. The control plane removes coordination friction, but it cannot remove provider limits, compute costs, or the operational cost of running many agents.
--->
-
----
-layout: center
-class: 'text-center'
----
-
-# A game changer
-
-```mermaid
-flowchart LR
-    subgraph replaced["<b>🗑️ Replaced</b>"]
-        direction TB
-        herdr("✗ 📚 herdr")
-        cda("✗ ✳️ Claude desktop app")
-        codex("✗ ⌨️ Codex")
-        cav("✗ 👾 Claude agents view")
-        tmux("✗ 🖥️ tmux + terminals")
-    end
-    replaced ==> t3("🌌 T3 Code")
-
-    classDef old fill:#222,color:#777,stroke:#444
-    classDef new stroke:#e8a33d,stroke-width:3px
-    class herdr,cda,codex,cav,tmux old
-    class t3 new
-```
-
 
 ---
 
@@ -1736,6 +1753,12 @@ flowchart LR
 <!--
 Close the product introduction with a practical invitation. The current repository is MIT licensed and had 47,521 stars when this section was prepared. Avoid presenting the count as permanent.
 -->
+
+---
+
+<div class="absolute inset-0 flex items-center justify-center">
+  <img class="max-h-[92%] max-w-[94%] rounded-xl" src="./public/ai-evolve.png" />
+</div>
 
 ---
 
@@ -1787,9 +1810,6 @@ Close the product introduction with a practical invitation. The current reposito
 
 </div>
 
-<div class="absolute bottom-4 left-0 right-0 text-center text-[10px] text-zinc-600">T3 Code screenshots came from the official site and repository on 5 Nov 2026.</div>
-
-
 ---
 layout: center
 class: 'text-center'
@@ -1798,6 +1818,7 @@ class: 'text-center'
 <div class="flex items-center justify-center">
 <img class="w-30 mb-12" src="https://em-content.zobj.net/source/microsoft-teams/400/waving-hand_1f44b.png" />
 </div>
+
 
 
 # Thank you! 
@@ -1823,17 +1844,3 @@ class: 'text-center'
     <span class="text-gray-400 text-sm">@sayjeyhi</span>
   </a>
 </div>
-
-<!--
-
-Spec-driven development. GitHub Spec Kit gives you a CLI that turns specs into plans into tasks. OpenSpec adds a three-phase state machine for brownfield changes. BMAD-METHOD ships 21 role-based agents across the full SDLC. Superpowers provides a skills framework with subagent test-driven development. These tools treat specs as the primary artifact. None of them connect a spec to an automated eval suite that verifies the agent actually satisfied what the spec asked for.
-
-Multi-agent orchestration. CrewAI gives you role-based crews with a hierarchical manager that delegates and reviews: the closest thing to orchestrator/worker separation in open source. AutoGen and LangGraph provide graph-based and conversation-driven multi-agent patterns. But here is what none of them enforce: the validator must never touch the implementation. That separation is still a discipline you impose, not a constraint the framework guarantees.
-
-Evaluation. DeepEval and Promptfoo give you frameworks for testing LLM output quality, red-teaming, and vulnerability scanning. LangSmith and Braintrust provide hosted eval platforms with LLM-as-judge capabilities. The missing piece: accepting a structured spec and auto-generating a scenario suite that computes per-requirement satisfaction scores. The spec-to-eval bridge (the thing that tells you whether the agent actually built what you asked for) is unbuilt in open source.
-
-Guardrails. NVIDIA NeMo Guardrails and Guardrails AI provide programmable safety rails for conversational AI. These are not coding harness guardrails. There is no open source framework for pre-commit hooks that block hardcoded credentials, no API call allowlist enforced at the tool level, no eval gate that rejects a pull request below a quality threshold. The guardrail layer for agentic coding is empty.
-
-Observability. Langfuse gives you self-hosted tracing with token cost tracking and latency visibility. Arize Phoenix provides drift detection and RAG evaluation. Here is what neither tracks: spec compliance over time. The measurement that tells you when a spec that used to produce good output has started producing bad output, and why.
-
--->
