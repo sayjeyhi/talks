@@ -147,6 +147,6 @@ export const TALKS = [
     link: "/oh-my-harness/",
     tags: ["AI", "agents", "LLM", "Rust", "t3code"],
     image: "./talks/TBD.jpg",
-    date: "October 2026",
+    date: "November 2026",
   }
 ];
