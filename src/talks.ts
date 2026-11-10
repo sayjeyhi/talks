@@ -138,5 +138,15 @@ export const TALKS = [
     tags: ["AI", "agents", "LLM", "Rust", "Telegram"],
     image: "./talks/devm8.png",
     date: "October 2026",
+  },
+  {
+    title: "Oh My Harness",
+    subtitle: "Ultimate usage of harnesses",
+    description:
+      "How to be best user of AI harness",
+    link: "/oh-my-harness/",
+    tags: ["AI", "agents", "LLM", "Rust", "t3code"],
+    image: "./talks/TBD.jpg",
+    date: "October 2026",
   }
 ];

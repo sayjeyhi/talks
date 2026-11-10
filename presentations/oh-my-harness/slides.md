@@ -1343,6 +1343,9 @@ Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/source-control.m
 
 </div>
 
+<!--
+In a home Local Access Network is it simple.
+-->
 
 ---
 
@@ -1625,7 +1628,9 @@ I have HQ.
 <div class="absolute bottom-4 left-0 right-0 text-[10px] text-zinc-600">Repository figures retrieved 5 Nov 2026 from the GitHub API. Content adapted from 01.md and current official docs.</div>
 
 <!--
-Close the product introduction with a practical invitation. The current repository is MIT licensed and had 47,521 stars when this section was prepared. Avoid presenting the count as permanent.
+I would highly recommend to try t3code
+
+Go play with that and see if that works for you.
 -->
 
 ---
