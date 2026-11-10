@@ -3,16 +3,11 @@ kind: Ingress
 metadata:
   name: talks-n8n-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.entrypoints: "web,websecure"
+    # TLS handled by Cloudflare; serve plain HTTP internally.
+    traefik.ingress.kubernetes.io/router.entrypoints: "web"
     traefik.ingress.kubernetes.io/router.middlewares: "default-redirect-to-talks-n8n@kubernetescrd"
 spec:
   ingressClassName: traefik
-  tls:
-    - hosts:
-        - n8n.catshoulder.dev
-      secretName: talks-n8n-tls
   rules:
     - host: n8n.catshoulder.dev
       http:
@@ -30,16 +25,10 @@ kind: Ingress
 metadata:
   name: talks-i18n-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.entrypoints: "web,websecure"
+    traefik.ingress.kubernetes.io/router.entrypoints: "web"
     traefik.ingress.kubernetes.io/router.middlewares: "default-redirect-to-talks-i18n@kubernetescrd"
 spec:
   ingressClassName: traefik
-  tls:
-    - hosts:
-        - i18n.catshoulder.dev
-      secretName: talks-i18n-tls
   rules:
     - host: i18n.catshoulder.dev
       http:
@@ -57,16 +46,10 @@ kind: Ingress
 metadata:
   name: talks-webcontainer-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.entrypoints: "web,websecure"
+    traefik.ingress.kubernetes.io/router.entrypoints: "web"
     traefik.ingress.kubernetes.io/router.middlewares: "default-redirect-to-talks-web-container@kubernetescrd"
 spec:
   ingressClassName: traefik
-  tls:
-    - hosts:
-        - webcontainer.catshoulder.dev
-      secretName: talks-webcontainer-tls
   rules:
     - host: webcontainer.catshoulder.dev
       http:

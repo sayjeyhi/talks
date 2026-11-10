@@ -3,16 +3,11 @@ kind: Ingress
 metadata:
   name: talks-ingress
   annotations:
-    cert-manager.io/cluster-issuer: "letsencrypt-production"
-    traefik.ingress.kubernetes.io/router.tls: "true"
-    traefik.ingress.kubernetes.io/router.entrypoints: "web,websecure"
-    traefik.ingress.kubernetes.io/router.middlewares: ""
+    # TLS is terminated by Cloudflare at the edge; Traefik serves plain HTTP
+    # inside the cluster, reached via the cloudflared tunnel.
+    traefik.ingress.kubernetes.io/router.entrypoints: "web"
 spec:
   ingressClassName: traefik
-  tls:
-    - hosts:
-        - 'talks.catshoulder.dev'
-      secretName: talks-tls-v2
   rules:
     - host: 'talks.catshoulder.dev'
       http:

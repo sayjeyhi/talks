@@ -5,7 +5,8 @@ metadata:
   namespace: default
 spec:
   redirectRegex:
-    regex: "^https://n8n\\.catshoulder\\.dev(.*)"
+    # scheme-agnostic: request reaching Traefik is http (TLS ends at Cloudflare)
+    regex: "^https?://n8n\\.catshoulder\\.dev(.*)"
     replacement: "https://talks.catshoulder.dev/n8n$1"
     permanent: true
 ---
@@ -16,7 +17,7 @@ metadata:
   namespace: default
 spec:
   redirectRegex:
-    regex: "^https://i18n\\.catshoulder\\.dev(.*)"
+    regex: "^https?://i18n\\.catshoulder\\.dev(.*)"
     replacement: "https://talks.catshoulder.dev/i18n$1"
     permanent: true
 ---
@@ -27,6 +28,6 @@ metadata:
   namespace: default
 spec:
   redirectRegex:
-    regex: "^https://webcontainer\\.catshoulder\\.dev(.*)"
+    regex: "^https?://webcontainer\\.catshoulder\\.dev(.*)"
     replacement: "https://talks.catshoulder.dev/web-container$1"
     permanent: true
