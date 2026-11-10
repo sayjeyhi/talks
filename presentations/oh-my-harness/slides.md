@@ -422,6 +422,29 @@ we have many AI providers solving many of these..
 -->
 
 ---
+class: 'text-center'
+---
+
+<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/confused-face_1f615.png" />
+
+
+<div class="absolute inset-0 flex items-center justify-center">
+  <div class="dg">
+<h1 >Am I dumb moment?</h1>
+<div class="dg-arrow relative -bottom-12 z-0" style="--c:#95E6FF;width:100%;flex:none"></div>
+<div class="dg-row" style="align-items:flex-start;gap:10px">
+<div class="dg-col" style="flex:1;--c:#CF8377"><div class="dg-dot"></div><div class="dg-name">Super cool!</div><div class="dg-note">wow this is fantastic!</div></div>
+<div class="dg-col" style="flex:1;--c:#ffd8a8"></div>
+<div class="dg-col" style="flex:1;--c:#fff3bf"><div class="dg-dot"></div><div class="dg-name">Does the job!</div></div>
+<div class="dg-col" style="flex:1;--c:#95E6FF"></div>
+<div class="dg-col mr-20" style="flex:1;--c:#BECF24"><div class="dg-dot"></div><div class="dg-name">Wait... what?</div><div class="dg-note">This is dumb!</div></div>
+</div>
+</div>
+</div>
+
+
+
+---
 layout: center
 class: 'text-center'
 ---
@@ -895,11 +918,11 @@ The transcript opens with an apparent contradiction: harnesses matter right now,
 <div class="dg-caption" style="--c:#95E6FF">the work moves up a layer</div>
 <div class="dg-arrow relative -bottom-12 z-0" style="--c:#95E6FF;width:100%;flex:none"></div>
 <div class="dg-row" style="align-items:flex-start;gap:10px">
-<div class="dg-col" style="flex:1;--c:#CF8377"><div class="dg-dot"></div><div class="dg-name">assembly</div><div class="dg-note">CPU instructions</div></div>
-<div class="dg-col" style="flex:1;--c:#ffd8a8"><div class="dg-dot"></div><div class="dg-name">C</div><div class="dg-note">portable programs</div></div>
-<div class="dg-col" style="flex:1;--c:#fff3bf"><div class="dg-dot"></div><div class="dg-name">formatters</div><div class="dg-note">style with setting</div></div>
-<div class="dg-col" style="flex:1;--c:#95E6FF"><div class="dg-dot"></div><div class="dg-name">autocomplete</div><div class="dg-note">code by a suggestion</div></div>
-<div class="dg-col" style="flex:1;--c:#BECF24"><div class="dg-dot"></div><div class="dg-name">agents</div><div class="dg-note">implementation is done for you</div></div>
+<div class="dg-col -ml-10" style="flex:1;--c:#CF8377"><div class="dg-dot"></div><div class="dg-name">Vim/Neo Vim</div><div class="dg-note">party tricks</div></div>
+<div class="dg-col" style="flex:1;--c:#ffd8a8"><div class="dg-dot"></div><div class="dg-name">Editors</div></div>
+<div class="dg-col" style="flex:1;--c:#fff3bf"><div class="dg-dot"></div><div class="dg-name">Harnesses</div><div class="dg-note">simple harness</div></div>
+<div class="dg-col" style="flex:1;--c:#95E6FF"><div class="dg-dot"></div><div class="dg-name">Multi-Terminals</div><div class="dg-note">tmux, cmux, ...</div></div>
+<div class="dg-col" style="flex:1;--c:#BECF24"><div class="dg-dot"></div><div class="dg-name">Agents</div><div class="dg-note text-center">gurded agentic envs</div></div>
 </div>
 </div>
 </div>
@@ -999,7 +1022,9 @@ class: slide-bg-121212
   <img class="max-h-[100%] max-w-[94%] rounded-xl" src="./public/harness-planes.png" />
 </div>
 
-
+<!--
+Take the most from LLM and harness
+-->
 
 ---
 
@@ -1038,7 +1063,6 @@ class: 'text-center'
 
 ---
 
-
 # Meet <span class="text-[#BECF24]">opa-cli</span> <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/direct-hit_1f3af.png" />
 
 <div class="text-lg text-zinc-400 mt-3">
@@ -1074,10 +1098,13 @@ class: 'text-center'
 </div>
 
 <!--
-It doesn't mean we can one-shot tickets
+This is not another Ticket to PR skill
+
+and It doesn't mean we can one-shot tickets
 But we do have a pretty high quality results...
+
+It is more like a state machine, telling harness what can it do in each state...
 -->
- 
 
 ---
 class: slide-bg-121212
@@ -1097,28 +1124,17 @@ class: 'text-center'
 
 <img class="w-full mx-auto mt-6" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExejhscDdzOTloODEzOXBkbGMxeWRpNGE3MWZzcTI2N2dzaHRvdHNvMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/spfi6nabVuq5y/200.webp" />
 
----
+<!--
+My problems are not yet solved with this.
 
-<div class="absolute inset-0 flex items-center justify-center bg-black">
-  <img class="w-full h-full object-contain" src="./public/t3code-homepage.png" />
-</div>
+I don't want to pay lots of money to just rent a computer on cloud.
 
----
-layout: center
-class: 'text-center'
----
-
-<div class="flex items-center justify-center gap-12">
-  <img class="w-64 h-64 rounded-[2.5rem]" src="./public/t3code-icon.png" />
-  <div class="text-left max-w-3xl">
-    <h1 class="text-6xl!">T3 Code</h1>
-    <div class="text-3xl font-black text-zinc-200 mt-5 leading-tight">One place to run, watch, and coordinate coding agents.</div>
-    <div class="text-zinc-500 mt-7">Open source. Your machines. Your provider subscriptions.</div>
-  </div>
-</div>
-
+Still need to open different editors, terminals. manage subs, git, PR etc.
+-->
 
 ---
+
+
 
 <div class="absolute inset-0 flex items-center justify-center">
   <div class="dg">
@@ -1138,6 +1154,30 @@ class: 'text-center'
 <!--
 The transcript names T3 Code an Agentic Development Environment, or ADE. It sits above interfaces and harnesses as the place where humans manage agentic work. Like IDEs, ADEs may become less visible as the next abstraction arrives.
 -->
+
+---
+
+<div class="absolute inset-0 flex items-center justify-center bg-black">
+  <img class="w-full h-full object-contain" src="./public/t3code-homepage.png" />
+</div>
+
+<!--
+This was the closest solution for my problems!
+-->
+
+---
+layout: center
+class: 'text-center'
+---
+
+<div class="flex items-center justify-center gap-12">
+  <img class="w-64 h-64 rounded-[2.5rem]" src="./public/t3code-icon.png" />
+  <div class="text-left max-w-3xl">
+    <h1 class="text-6xl!">T3 Code</h1>
+    <div class="text-3xl font-black text-zinc-200 mt-5 leading-tight">One place to run, watch, and coordinate coding agents.</div>
+    <div class="text-zinc-500 mt-7">Open source. Your machines. Your provider subscriptions.</div>
+  </div>
+</div>
 
 
 ---
@@ -1181,34 +1221,6 @@ Orient the audience. The left side is the thread inbox, the center is the active
 
 ---
 
-<div class="absolute inset-0 flex items-center justify-center">
-  <div class="dg">
-<h1>One surface, many agents</h1>
-<div class="dg-row">
-<div class="dg-col" style="flex:0 0 220px;gap:24px">
-<div class="dg-card fill" style="--c:#d0bfff"><div class="dg-name">Claude</div></div>
-<div class="dg-card fill" style="--c:#95E6FF"><div class="dg-name">Codex</div></div>
-</div>
-<div class="dg-arrow" style="--c:#BECF24"></div>
-<div class="dg-card circle fill" style="--c:#BECF24"><div class="dg-name">T3 Code</div><div class="dg-note">control surface</div></div>
-<div class="dg-arrow left" style="--c:#CF8377"></div>
-<div class="dg-col" style="flex:0 0 220px;gap:16px">
-<div class="dg-card fill" style="--c:#ffd8a8"><div class="dg-name">Cursor</div></div>
-<div class="dg-card fill" style="--c:#CF8377"><div class="dg-name">Grok</div></div>
-<div class="dg-card fill" style="--c:#c3fae8"><div class="dg-name">OpenCode</div></div>
-</div>
-</div>
-<div class="dg-caption">keep each harness native</div>
-</div>
-</div>
-
-<!--
-The value is not a new model. T3 Code gives Claude Code, Codex, Cursor, Grok Build, OpenCode, Antigravity, and other supported providers a shared control surface while retaining their native behavior.
-Source: https://github.com/pingdotgg/t3code#readme
--->
-
----
-
 # One thread can become a team
 
 <div class="mt-5 rounded-2xl overflow-hidden border border-zinc-800 h-[70%]">
@@ -1227,23 +1239,13 @@ The official screenshot shows four sub-agents in one thread. 01.md also describe
 
 ---
 
-# Threads connect through MCP
 
-```mermaid
-flowchart LR
-    t1("🧵 fix login bug") --- m1(["🔌 MCP"])
-    t2("🧵 write the tests") --- m2(["🔌 MCP"])
-    t3("🧵 release notes") --- m3(["🔌 MCP"])
-    t4("🧵 landing page") --- m4(["🔌 MCP"])
-    m1 --> app("🌌 T3 Code")
-    m2 --> app
-    m3 --> app
-    m4 --> app
-    t1 -.->|🔗 linked| t3
+<div class="absolute inset-0 flex items-center justify-center flex-col">
 
-    classDef active stroke:#e8a33d,stroke-width:3px
-    class t1 active
-```
+<h1 class="pb-8">Threads connect through MCP</h1>
+<img class="h-[60%] rounded-xl" src="./public/threads-mcp.svg" />
+
+</div>
 
 
 ---
@@ -1279,97 +1281,68 @@ flowchart LR
 </div>
 
 <!--
-01.md treats thread management as an inbox. The point is operational: close work when it is done, snooze it when it is not urgent, and keep running work out of the way.
--->
+No struggle finding history between different harnesses! 
+And switching them.
 
+
+Change the harness t3code will handle the rest
+-->
 
 
 ---
 
 <div class="absolute inset-0 flex items-center justify-center">
   <div class="dg">
-<h1>Control your machines from anywhere</h1>
+<h1>From thread to merged pull request</h1>
 <div class="dg-row">
-<div class="dg-col" style="flex:0 0 220px;gap:16px">
-<div class="dg-card" style="--c:#95E6FF"><div class="dg-name">Desktop</div></div>
-<div class="dg-card" style="--c:#95E6FF"><div class="dg-name">Web</div></div>
-<div class="dg-card" style="--c:#95E6FF"><div class="dg-name">Phone</div></div>
+<div class="dg-card fill" style="--c:#95E6FF"><div class="dg-name">thread</div></div>
+<div class="dg-arrow" style="--c:#52525b"></div>
+<div class="dg-card fill" style="--c:#d0bfff"><div class="dg-name">commit</div></div>
+<div class="dg-arrow" style="--c:#52525b"></div>
+<div class="dg-card fill" style="--c:#d0bfff"><div class="dg-name">push</div></div>
+<div class="dg-arrow" style="--c:#52525b"></div>
+<div class="dg-card fill" style="--c:#ffd8a8"><div class="dg-name">PR</div></div>
+<div class="dg-arrow" style="--c:#52525b"></div>
+<div class="dg-card fill" style="--c:#fff3bf"><div class="dg-name">review</div></div>
+<div class="dg-arrow" style="--c:#52525b"></div>
+<div class="dg-card fill" style="--c:#BECF24"><div class="dg-name">merge</div></div>
 </div>
-<div class="dg-arrow" style="--c:#95E6FF"></div>
-<div class="dg-card fill" style="--c:#ffd8a8;flex:0 0 190px"><div class="dg-name">T3 Connect</div><div class="dg-note">or private route</div></div>
-<div class="dg-arrow" style="--c:#BECF24"></div>
-<div class="dg-col" style="flex:0 0 220px;gap:16px">
-<div class="dg-card" style="--c:#BECF24"><div class="dg-name">Laptop</div></div>
-<div class="dg-card" style="--c:#BECF24"><div class="dg-name">Workstation</div></div>
-<div class="dg-card" style="--c:#BECF24"><div class="dg-name">Remote VM</div></div>
-</div>
-</div>
-<div class="dg-caption">the agents and compute stay on your machines</div>
+<div class="dg-caption" style="color:#f4f4f5">linked reviews stay with the work that created them</div>
+<div class="dg-note">readiness, stacks, diffs, merge, done</div>
 </div>
 </div>
 
 <!--
-T3 Code can connect desktop, web, and mobile clients to several machines. Current docs support T3 Connect, LAN or private-network pairing, Tailscale HTTPS, and desktop-managed SSH.
-Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md
+A thread can commit, push, create a pull request, review changes, and merge. Linked pull requests remain attached to the work that produced them, including stacked reviews.
+Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/source-control.md
 -->
+
 
 ---
 
 
 
-# Control a simulator from your phone!
 
-<div class="grid grid-cols-[auto_1fr] gap-8 mt-6 h-[95%]">
-  <div class="overflow-hidden rounded-2xl border border-zinc-800">
-    <img class="h-full " src="./public/phone-in-phone.jpg" />
-  </div>
-  <div class="flex flex-col justify-center text-left gap-4">
-    <div class="text-3xl font-black text-[#95E6FF] tracking-tight">Run agents from your phone</div>
-    <div class="flex flex-col gap-3 mt-2">
-      <div class="rounded-xl border border-[#95E6FF]/40 bg-[#95E6FF]/10 px-5 py-3">
-        <span class="text-[#95E6FF] font-bold">Tailscale network</span>
-        <span class="text-zinc-400"> — my devices on one private mesh.</span>
-      </div>
-      <div class="rounded-xl border border-[#ffd8a8]/40 bg-[#ffd8a8]/10 px-5 py-3">
-        <span class="text-[#ffd8a8] font-bold">Mobile browser</span>
-        <span class="text-zinc-400"> — no app to install, just a URL.</span>
-      </div>
-      <div class="rounded-xl border border-[#BECF24]/40 bg-[#BECF24]/10 px-5 py-3">
-        <span class="text-[#BECF24] font-bold">Remote control</span>
-        <span class="text-zinc-400"> — drives a device on my Mac from anywhere.</span>
-      </div>
-    </div>
-  </div>
+<div class="absolute inset-0 flex items-center justify-center flex-col">
+
+<h1 class="pb-2">Three machines, one client</h1>
+<img class="h-[80%] rounded-xl" src="./public/t3-client-server.svg" />
+
 </div>
 
 
-
 ---
 
-# Three machines, one client
+# 
 
-```mermaid
-flowchart LR
-    client("<b>💻 laptop</b><br/><small>client</small>")
-    client --- s1("<b>💻 laptop</b><br/><small>🌌 T3 server</small>")
-    client --- s2("<b>🖥️ PC</b><br/><small>🌌 T3 server</small>")
-    client --- s3("<b>🍎 Mac mini</b><br/><small>🌌 T3 server</small>")
 
-    classDef client fill:#e8a33d,color:#000,stroke:#e8a33d
-    class client client
-```
+<div class="absolute inset-0 flex items-center justify-center flex-col">
 
----
+<h1 class="pb-8">At home, the LAN is enough</h1>
+<img class="h-[40%] rounded-xl" src="./public/t3-lan.svg" />
 
-# At home, the LAN is enough
+</div>
 
-```mermaid
-flowchart LR
-    subgraph home["<b>🏠 home</b>"]
-        direction LR
-        laptop("💻 laptop") ---|🔌 LAN| pc("🖥️ PC")
-    end
-```
 
 ---
 
@@ -1386,16 +1359,20 @@ flowchart LR
 
 ---
 
-
 <div class="absolute inset-0 flex items-center justify-center flex-col">
 
 <h1>T3 Connect vs Tailscale</h1>
-<img class="h-[90%] rounded-xl" src="./public/t3-connect-vs-tailscale.svg" />
+<img class="h-[85%] rounded-xl" src="./public/t3-connect-vs-tailscale.svg" />
 
 </div>
 
+<!--
+This opens up some new doors,
 
+features like load balancing the work
 
+using other computer resources... etc!
+-->
 
 ---
 
@@ -1423,31 +1400,6 @@ Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md
 -->
 
 
----
-
-<div class="absolute inset-0 flex items-center justify-center">
-  <div class="dg">
-<h1>From thread to merged pull request</h1>
-<div class="dg-row">
-<div class="dg-card fill" style="--c:#95E6FF"><div class="dg-name">Thread</div></div>
-<div class="dg-arrow" style="--c:#52525b"></div>
-<div class="dg-card fill" style="--c:#d0bfff"><div class="dg-name">Commit + push</div></div>
-<div class="dg-arrow" style="--c:#52525b"></div>
-<div class="dg-card fill" style="--c:#ffd8a8"><div class="dg-name">Pull request</div></div>
-<div class="dg-arrow" style="--c:#52525b"></div>
-<div class="dg-card fill" style="--c:#fff3bf"><div class="dg-name">Checks + review</div></div>
-<div class="dg-arrow" style="--c:#52525b"></div>
-<div class="dg-card fill" style="--c:#BECF24"><div class="dg-name">Merge + settle</div></div>
-</div>
-<div class="dg-caption" style="color:#f4f4f5">linked reviews stay with the work that created them</div>
-<div class="dg-note">readiness, stacks, diffs, merge, done</div>
-</div>
-</div>
-
-<!--
-A thread can commit, push, create a pull request, review changes, and merge. Linked pull requests remain attached to the work that produced them, including stacked reviews.
-Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/source-control.md
--->
 
 ---
 layout: center
@@ -1567,14 +1519,49 @@ You do not need a paid API for transcription.
 Pick a local or remote open model like Whisper, point it at your audio, and it writes the transcript for free. It auto-detects the language across dozens of them, and can even translate speech to English on the way.
 -->
 
+
+---
+
+# Control a simulator from your phone!
+
+<div class="grid grid-cols-[auto_1fr] gap-8 mt-6 h-[95%]">
+  <div class="overflow-hidden rounded-2xl border border-zinc-800">
+    <img class="h-full " src="./public/phone-in-phone.jpg" />
+  </div>
+  <div class="flex flex-col justify-center text-left gap-4">
+    <div class="text-3xl font-black text-[#95E6FF] tracking-tight">Run agents from your phone</div>
+    <div class="flex flex-col gap-3 mt-2">
+      <div class="rounded-xl border border-[#95E6FF]/40 bg-[#95E6FF]/10 px-5 py-3">
+        <span class="text-[#95E6FF] font-bold">Tailscale network</span>
+        <span class="text-zinc-400"> — my devices on one private mesh.</span>
+      </div>
+      <div class="rounded-xl border border-[#ffd8a8]/40 bg-[#ffd8a8]/10 px-5 py-3">
+        <span class="text-[#ffd8a8] font-bold">Mobile browser</span>
+        <span class="text-zinc-400"> — no app to install, just a URL.</span>
+      </div>
+      <div class="rounded-xl border border-[#BECF24]/40 bg-[#BECF24]/10 px-5 py-3">
+        <span class="text-[#BECF24] font-bold">Remote control</span>
+        <span class="text-zinc-400"> — drives a device on my Mac from anywhere.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+This is fun!
+
+It is chrome opened in my iphone, 
+controlling an emulator device on my mac!
+-->
+
 ---
 layout: center
 class: 'text-center'
 ---
 
-# The control surface fits in your pocket
+# Android and iOS apps
 
-<div class="grid grid-cols-4 gap-5 mt-8 max-w-5xl mx-auto">
+<div class="grid grid-cols-4 gap-5 mt-2 max-w-5xl mx-auto">
   <div class="flex flex-col items-center">
     <img class="w-full rounded-2xl border border-zinc-800 shadow-2xl" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/39/2d/b9/392db9ac-cf3b-ab66-245c-cb0d1f4d0de3/01-sessions.png/460x998bb.webp" />
     <div class="mt-3 text-sm font-bold text-[#95E6FF]">Sessions</div>
@@ -1593,7 +1580,6 @@ class: 'text-center'
   </div>
 </div>
 
-<div class="absolute bottom-5 right-7 text-[10px] text-zinc-600">Sources: <a href="https://github.com/pingdotgg/t3code/tree/main/apps/mobile">mobile app</a> · <a href="https://github.com/pingdotgg/t3code/blob/main/docs/user/remote-access.md">remote access docs</a></div>
 
 <!--
 The mobile client is not a smaller editor. It is a remote operations interface for agent work and connected machines.
@@ -1601,130 +1587,18 @@ The mobile client is not a smaller editor. It is a remote operations interface f
 
 ---
 
-# Fleet skill: one HQ on every machine
+<div class="absolute inset-0 flex items-center justify-center flex-col">
 
-```mermaid
-flowchart LR
-    hq[("📁 HQ")]
-    hq --- laptop("<b>💻 laptop</b><br/><small>📁 HQ</small>")
-    hq --- pc("<b>🖥️ PC</b><br/><small>📁 HQ</small>")
-    hq --- mini("<b>🍎 Mac mini</b><br/><small>📁 HQ</small>")
-```
+<h1 class="pb-8">Fleet - one HQ synced on every machine</h1>
+<img class="h-[60%] rounded-xl" src="./public/t3-hq.svg" />
 
----
-
-# Skills live in HQ
-
-```mermaid
-flowchart LR
-    hq[("<b>📁 HQ</b><br/><small>🧩 skills/</small>")]
-    hq --- laptop("<b>💻 laptop</b><br/><small>📁 HQ</small>")
-    hq --- pc("<b>🖥️ PC</b><br/><small>📁 HQ</small>")
-    hq --- mini("<b>🍎 Mac mini</b><br/><small>📁 HQ</small>")
-
-    classDef hq stroke:#e8a33d,stroke-width:3px
-    class hq hq
-```
-
----
-
-# Linked servers
-
-```mermaid
-flowchart LR
-    subgraph machines["<b>🗄️ machines</b>"]
-        direction LR
-        pc("🖥️ PC") ===|🔗 linked| mini("🍎 Mac mini")
-    end
-    subgraph threads["<b>💬 threads</b>"]
-        direction LR
-        t1("💬 thread") --- t2("💬 thread")
-    end
-    pc -.- t1
-    mini -.- t2
-```
-
----
-
-# Subagents on other machines
-
-```mermaid
-flowchart LR
-    pc("🖥️ PC") ===|🔗 linked| mini("🍎 Mac mini")
-    claude("✳️ Claude thread") --> c1("⌨️ Codex subagent")
-    claude --> c2("⌨️ Codex subagent")
-    pc -.- claude
-    mini -.- c1
-    mini -.- c2
-    note(["✳️ Claude → ⌨️ ChatGPT Codex"])
-```
-
----
-
-# Two kinds of links
-
-```mermaid
-flowchart TB
-    subgraph env["<b>🌐 Environments</b>"]
-        direction TB
-        app("💻 your app (client)")
-        app --- s1[("🗄️ server")]
-        app --- s2[("🗄️ server")]
-    end
-    subgraph linked["<b>🔗 Linked environments</b>"]
-        direction LR
-        s3[("🗄️ server")] --- s4[("🗄️ server")]
-    end
-
-    classDef client fill:#e8a33d,color:#000,stroke:#e8a33d
-    class app client
-```
-
-
----
-
-# Small tools remove workflow friction
-
-<div class="grid grid-cols-4 gap-4 mt-9 text-left">
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#95E6FF] font-bold">Drafts</div><div class="text-sm text-zinc-500 mt-2">Keep prompts before sending.</div></div>
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#BECF24] font-bold">Stashes</div><div class="text-sm text-zinc-500 mt-2">Protect local changes.</div></div>
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#ffd8a8] font-bold">Attachments</div><div class="text-sm text-zinc-500 mt-2">Give agents files to inspect.</div></div>
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#d0bfff] font-bold">HTML render</div><div class="text-sm text-zinc-500 mt-2">Show generated visuals in chat.</div></div>
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#CF8377] font-bold">Snapshots</div><div class="text-sm text-zinc-500 mt-2">Capture the current state.</div></div>
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#95E6FF] font-bold">Themes</div><div class="text-sm text-zinc-500 mt-2">Tune the interface.</div></div>
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#BECF24] font-bold">Editor handoff</div><div class="text-sm text-zinc-500 mt-2">Open remote work in VS Code.</div></div>
-  <div class="rounded-xl border border-zinc-700 p-5"><div class="text-[#ffd8a8] font-bold">Transfers</div><div class="text-sm text-zinc-500 mt-2">Move projects between machines.</div></div>
-</div>
-
-<div class="mt-9 text-zinc-400">The product is a collection of small operational shortcuts around long-running agent work.</div>
-
-<!--
-These are the smaller features listed in 01.md. They matter because agent work spans files, machines, threads, and long periods of time.
--->
-
----
-
-<div class="absolute inset-0 flex items-center justify-center">
-  <div class="dg">
-<h1>Triage with the agent you already pay for</h1>
-<div class="dg-row">
-<div class="dg-card" style="--c:#CF8377"><div class="dg-name">T3 Code problem</div></div>
-<div class="dg-arrow" style="--c:#CF8377"></div>
-<div class="dg-card fill" style="--c:#ffd8a8"><div class="dg-name">Collect</div><div class="dg-note">logs, state, version, known issues</div></div>
-<div class="dg-arrow" style="--c:#ffd8a8"></div>
-<div class="dg-card circle fill" style="--c:#d0bfff"><div class="dg-name">Claude or Codex</div></div>
-<div class="dg-arrow" style="--c:#BECF24"></div>
-<div class="dg-card fill" style="--c:#BECF24"><div class="dg-name">Diagnosis + next step</div></div>
-</div>
-<div class="dg-caption">The agent asks before applying a fix or posting an issue.</div>
-</div>
 </div>
 
 <!--
-If the app fails, npx t3 triage collects logs, state, version information, and known issues. It starts Claude Code or Codex with the same playbook used by in-app triage. The agent asks before applying a fix or posting anything.
-Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/triage.md
--->
+There is still one issue not solved by t3 and I solved it for my self. 
 
+I have HQ.
+-->
 
 ---
 

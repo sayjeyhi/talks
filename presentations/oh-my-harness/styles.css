@@ -196,7 +196,7 @@ th:not(:first-child), td:not(:first-child) {
 .dg-arrow {
   --c: #95E6FF;
   position: relative;
-  flex: 0 0 44px;
+  flex: 0 0 23px;
   height: 2px;
   background: var(--c);
 }
