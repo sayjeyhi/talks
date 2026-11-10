@@ -252,6 +252,9 @@ th:not(:first-child), td:not(:first-child) {
   height: 44px;
   border-radius: 50%;
   background: var(--c);
+  z-index: 222;
+  position: relative;
+  top: -3px
 }
 
 .dg-rule {
@@ -281,4 +284,50 @@ th:not(:first-child), td:not(:first-child) {
   font-size: 52px;
   font-weight: 300;
   color: #f4f4f5;
+}
+
+/* Per-slide background override (wins over the global #000 !important).
+   Slidev applies the `class` frontmatter to .slidev-layout, so we target
+   that element and also the .slidev-slide-content that actually paints the bg. */
+.slidev-layout.slide-bg-121212,
+.slidev-slide-content:has(> .slidev-layout.slide-bg-121212) {
+  background-color: #121212 !important;
+}
+
+/* Harness-benchmark grid (replaces harness-benchmark-atlas.png) */
+.hb-grid {
+  display: grid;
+  grid-template-columns: auto repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 64rem;
+  align-items: stretch;
+}
+.hb-label {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c);
+  padding-right: 8px;
+}
+.hb-card {
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--c) 8%, #0f1115);
+  padding: 18px 20px;
+}
+.hb-num {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--c);
+}
+.hb-sub {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #a1a1aa;
 }
