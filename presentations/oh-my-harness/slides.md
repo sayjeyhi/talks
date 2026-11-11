@@ -288,35 +288,6 @@ The server stays alive when the laptop closes. Different systems can pair secure
 
 ---
 
-
-# I gave it to friends, it got serious <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/shield_1f6e1-fe0f.png" />
-
-<br />
-
-<div class="text-lg text-left max-w-3xl mx-auto leading-loose">
-
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/locked_1f512.png" /> **Secure** — every agent run is sandboxed: bubblewrap namespaces, read-only `~/.claude`, `~/.kiro` cleared environment
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/office-building_1f3e2.png" /> **Multi-tenant** — per-project access control, admin roles, 10-minute pairing codes
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/electric-plug_1f50c.png" /> **Integrated** — Slack and Telegram, plus `devm8-client` for the terminal
-- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/brain_1f9e0.png" /> **Agent-powered** — supporting Claude and Kiro, Base support of Codex
-
-</div>
-
-<br />
-
-> Same assistant, every channel, one shared history. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/sparkles_2728.png" />
-
-<br/>
-
-> It is open source now!
-
-<!--
-I was for me only!
-but showed friends and they asked..
--->
-
----
-
 # Where does it live? A homelab <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/house_1f3e0.png" />
 
 <br />
@@ -397,43 +368,47 @@ this is more like my setup to demo
 -->
 
 ---
-layout: center
-class: 'text-center'
----
 
-<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
 
-# Demo time!
+# I gave it to friends, it got serious <img class="w-8 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/shield_1f6e1-fe0f.png" />
 
 <br />
 
-<div class="text-2xl font-bold text-zinc-200">
-  The real thing — live. No screenshots. <img class="w-7 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/fire_1f525.png" />
+<div class="text-lg text-left max-w-3xl mx-auto leading-loose">
+
+- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/locked_1f512.png" /> **Secure** — every agent run is sandboxed: bubblewrap namespaces, read-only `~/.claude`, `~/.kiro` cleared environment
+- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/office-building_1f3e2.png" /> **Multi-tenant** — per-project access control, admin roles, 10-minute pairing codes
+- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/electric-plug_1f50c.png" /> **Integrated** — Slack and Telegram, plus `devm8-client` for the terminal
+- <img class="w-6 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/brain_1f9e0.png" /> **Agent-powered** — supporting Claude and Kiro, Base support of Codex
+
 </div>
 
-<p class="text-zinc-500 text-lg mt-6">
-  A ticket from cli opencode → agent on it → branch ready — while we talk.
-</p>
+<br />
+
+> Same assistant, every channel, one shared history. <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/sparkles_2728.png" />
+
+<br/>
+
+> It is open source now!
 
 <!--
-
-This is not all the solution right? 
-we have many AI providers solving many of these..
+I was for me only!
+but showed friends and they asked..
 -->
 
 ---
 class: 'text-center'
 ---
 
-<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/confused-face_1f615.png" />
+<img class="w-24 mx-auto mb-8 mt-12" src="https://em-content.zobj.net/source/microsoft-teams/400/confused-face_1f615.png" />
 
 
-<div class="absolute inset-0 flex items-center justify-center">
+<div class="absolute inset-0 flex mt-12 items-center justify-center">
   <div class="dg">
-<h1 >Am I dumb moment?</h1>
+<h1 class="mt-20">Am I dumb moment?</h1>
 <div class="dg-arrow relative -bottom-12 z-0" style="--c:#95E6FF;width:100%;flex:none"></div>
 <div class="dg-row" style="align-items:flex-start;gap:10px">
-<div class="dg-col" style="flex:1;--c:#CF8377"><div class="dg-dot"></div><div class="dg-name">Super cool!</div><div class="dg-note">wow this is fantastic!</div></div>
+<div class="dg-col" style="flex:1;--c:#CF8377"><div class="dg-dot"></div><div class="dg-name">Super cool!</div><div class="dg-note">This is fantastic!</div></div>
 <div class="dg-col" style="flex:1;--c:#ffd8a8"></div>
 <div class="dg-col" style="flex:1;--c:#fff3bf"><div class="dg-dot"></div><div class="dg-name">Does the job!</div></div>
 <div class="dg-col" style="flex:1;--c:#95E6FF"></div>
@@ -442,7 +417,15 @@ class: 'text-center'
 </div>
 </div>
 
+<!--
+After a little bit of working with devm8 
+First I said yeah this is fantastic.
+Then it was just working
 
+Then I said this is Dumb!
+
+Let me explain why...
+-->
 
 ---
 layout: center
@@ -582,20 +565,6 @@ manages all AI model can do in your code
 -->
 
 ---
-
-<div class="absolute inset-0 flex items-center justify-center">
-  <img class="max-h-[92%] max-w-[94%] rounded-xl" src="./public/harnesses.png" />
-</div>
-
-<!--
-Good thing is we have many options...
-
-Open and closed sources
--->
-
-
-
----
 layout: center
 class: 'text-center'
 ---
@@ -621,6 +590,19 @@ spend different amount of tokens for the same prompt in same project
 -->
 
 ---
+
+<div class="absolute inset-0 flex items-center justify-center">
+  <img class="max-h-[92%] max-w-[94%] rounded-xl" src="./public/harnesses.png" />
+</div>
+
+<!--
+Good thing is we have many options...
+
+Open and closed sources
+-->
+
+
+---
 layout: center
 class: 'text-center'
 ---
@@ -641,7 +623,7 @@ class: 'text-center'
 <div class="grid grid-cols-2 gap-7 w-full max-w-5xl">
 
   <div class="rounded-2xl border border-[#95E6FF]/45 bg-[#95E6FF]/8 px-8 py-7 text-left">
-    <div class="font-serif font-bold text-2xl text-[#95E6FF]">Open weights</div>
+    <div class="font-bold text-2xl text-[#95E6FF]">Open weights</div>
     <div class="font-mono text-sm text-zinc-400 mt-1 mb-5">download · run · fine-tune</div>
     <ul class="list-none p-0 m-0">
       <li class="flex items-start gap-3 py-2 text-base text-zinc-200"><span class="text-[#BECF24] font-bold">✓</span> Trained parameters (weights, biases)</li>
@@ -653,7 +635,7 @@ class: 'text-center'
   </div>
 
   <div class="rounded-2xl border border-[#BECF24]/45 bg-[#BECF24]/8 px-8 py-7 text-left">
-    <div class="font-serif font-bold text-2xl text-[#BECF24]">Open source AI</div>
+    <div class="font-bold text-2xl text-[#BECF24]">Open source AI</div>
     <div class="font-mono text-sm text-zinc-400 mt-1 mb-5">reproduce · audit (OSI standard)</div>
     <ul class="list-none p-0 m-0">
       <li class="flex items-start gap-3 py-2 text-base text-zinc-200"><span class="text-[#BECF24] font-bold">✓</span> Trained parameters (weights, biases)</li>
@@ -771,10 +753,19 @@ Key point: same model under a different scaffold can swing scores by roughly 17 
 
 ---
 layout: center
-class: 'text-center'
 ---
 
-<img class="h-full mx-auto mb-6" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExajkwaHdxYzR6andkajhuaDI5eGhxZm14NzRnMDhpYWNndGUxZndkaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zMi1U2B6zOY1VoQgVG/giphy.webp" />
+<div class="grid grid-cols-2 gap-8 items-center h-full px-8">
+
+<div class="flex items-center justify-center">
+  <div class="text-6xl font-black text-[#BECF24] tracking-tight">There is a Fact!</div>
+</div>
+
+<div class="flex items-center justify-center">
+  <img class="max-h-[60vh] max-w-full bg-white p-2" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExajkwaHdxYzR6andkajhuaDI5eGhxZm14NzRnMDhpYWNndGUxZndkaiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zMi1U2B6zOY1VoQgVG/giphy.webp" />
+</div>
+
+</div>
 
 ---
 layout: center
@@ -800,13 +791,14 @@ class: 'text-center'
 </div>
 
 <!--
+But still!
+
 building a good harness arround the models make a real sense
+
+Based on Terminal Bench results in 2026
+
 Usually native runtime harnesses are the best
-
-But there are exceptions
 -->
-
-
 
 ---
 layout: center
@@ -832,19 +824,8 @@ class: 'text-center'
 <!--
 Google's 2026 paper
 
-The New SDLC With Vibe Coding 
-
-From Ad-hoc Prompting to Agentic Engineering uses the framing:
-Agent = Model + Harness
-
-Here the harness doesn't mean claude only
-It has parts of it but not all...
-
-SWARM
-Validation 
+Harness and Agentic systems arround it
 -->
-
-
 
 ---
 layout: center
@@ -897,17 +878,22 @@ class: 'text-center'
 ---
 
 # Harnesses matter.
-# Then they disappear.
+# Then they will disappear.
 
 <div class="max-w-3xl mx-auto mt-10 text-2xl text-zinc-300 leading-relaxed">
-  We debate the layer doing the work today.<br/>
-  Mature abstractions turn that layer into an implementation detail.
+  The harness still changes result quality.<br/>
+  But harnesses are <span class="text-[#95E6FF]">catching up fast</span> to each other.
 </div>
 
-<div class="mt-12 text-sm text-zinc-500">The argument is not that harnesses do nothing. It is that their differences should shrink.</div>
+<div class="mt-12 text-sm text-zinc-500">The harness matters today. As they converge, which one you pick matters less.</div>
 
 <!--
-The transcript opens with an apparent contradiction: harnesses matter right now, yet the goal is for users to stop thinking about them. Good infrastructure becomes invisible when it works.
+We said LLM is 10%
+And Harness changes the results quality
+
+Yes,
+But I believe and you might also noticed,
+they are catching up pretty quick!
 -->
 
 ---
@@ -916,36 +902,60 @@ The transcript opens with an apparent contradiction: harnesses matter right now,
   <div class="dg">
 <h1 >Abstraction moves the line</h1>
 <div class="dg-caption" style="--c:#95E6FF">the work moves up a layer</div>
-<div class="dg-arrow relative -bottom-12 z-0" style="--c:#95E6FF;width:100%;flex:none"></div>
+<div class="dg-arrow relative -bottom-10 z-0" style="--c:#95E6FF;width:100%;flex:none"></div>
 <div class="dg-row" style="align-items:flex-start;gap:10px">
 <div class="dg-col -ml-10" style="flex:1;--c:#CF8377"><div class="dg-dot"></div><div class="dg-name">Vim/Neo Vim</div><div class="dg-note">party tricks</div></div>
 <div class="dg-col" style="flex:1;--c:#ffd8a8"><div class="dg-dot"></div><div class="dg-name">Editors</div></div>
-<div class="dg-col" style="flex:1;--c:#fff3bf"><div class="dg-dot"></div><div class="dg-name">Harnesses</div><div class="dg-note">simple harness</div></div>
+
+
 <div class="dg-col" style="flex:1;--c:#95E6FF"><div class="dg-dot"></div><div class="dg-name">Multi-Terminals</div><div class="dg-note">tmux, cmux, ...</div></div>
+
+<div class="dg-col" style="flex:1;--c:#fff3bf"><div class="dg-dot"></div><div class="dg-name">Harnesses</div><div class="dg-note">simple harness</div></div>
+
+
 <div class="dg-col" style="flex:1;--c:#BECF24"><div class="dg-dot"></div><div class="dg-name">Agents</div><div class="dg-note text-center">gurded agentic envs</div></div>
 </div>
 </div>
 </div>
 
 <!--
-Assembly gave way to portable languages. Formatters absorbed style choices. Autocomplete absorbed routine functions. Agents now absorb larger implementation tasks. Each step moves the line of required attention upward.
+We are living in a live world.
+
+Abstraction is not waiting for us to capture!
+
+We must adopt!
+And we need to stay curios and question the basics.
 -->
 
 ---
 layout: center
-class: 'text-center'
 ---
 
-<img class="w-20 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/crystal-ball_1f52e.png" />
-<div class="text-4xl font-black text-zinc-200 tracking-tight leading-snug">
-  The future is agentic <br/>
-  so at <span class="bg-[#EE0000] px-2">HEMA</span> we're building<br/>
-  a <span class="text-[#BECF24]">full harness</span>, just like Claude
+<div class="grid grid-cols-2 gap-10 items-center h-full px-8">
+
+<div class="flex items-center justify-center">
+  <img class="max-h-[70vh] max-w-full rounded-xl" src="./public/hema.png" />
 </div>
 
-<p class="text-zinc-500 text-lg mt-8">
+<div class="text-left">
+  <img class="w-20 mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/crystal-ball_1f52e.png" />
+  <div class="text-4xl font-black text-zinc-200 tracking-tight leading-snug">
+    The future is agentic <br/>
+    so at <span class="bg-[#EE0000] px-2">HEMA</span> we're building a <span class="text-[#BECF24]">full harness</span>, just like Claude
+  </div>
+</div>
+
+</div>
+
+<p class="text-zinc-500 text-lg text-center pt-5">
   Our own complete agent runtime <img class="w-6 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/robot_1f916.png" />
 </p>
+
+<!--
+A big retail company in west NL, BE, DE, FR.
+
+We have more than 10K employees
+-->
 
 ---
 layout: center
@@ -1013,6 +1023,11 @@ class: 'text-center'
     The runtime gives the building blocks. The engineering harness uses them at team scale.
 </div>
 
+<!--
+The Harnesses are Open for us to help them work better.
+
+So we need to do some lets say engineering arround the harness to use it at its most capability
+-->
 
 ---
 class: slide-bg-121212
@@ -1051,15 +1066,19 @@ layout: center
 class: 'text-center'
 ---
 
-
 <img class="w-20 mx-auto mb-6" src="https://em-content.zobj.net/source/microsoft-teams/400/thinking-face_1f914.png" />
 
-# so, If we want to take full control?
+# so, How do you use AI today?
 
 
-<div class="text-3xl font-black text-zinc-200 tracking-tight">
-  We need to build a Agent?
+<div class="text-xl font-black text-zinc-600 tracking-tight">
+  The answer here is valuable
 </div>
+
+<!--
+I think this is a really valid question 
+and people working in big tech should share more and you need to also listen to them..
+-->
 
 ---
 
@@ -1705,21 +1724,22 @@ class: 'text-center'
 <br />
 
 
-<div class="mt-10 text-lg flex gap-12">
-<a href="github.com/sayjeyhi" >
-<img class="w-4 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" /> github.com/sayjeyhi
-</a>
-<a href="https://sayjeyhi.com">
-<img class="w-4 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" /> sayjeyhi.com
-</a>
-</div>
+
 
 
 <div class="avtar mt-12 rounded-full flex w-full align-center justify-center ">
-  <img class="w-18 h-18 rounded-full grayscale" src="https://avatars.githubusercontent.com/u/6254009?v=4" />
+  <img class="w-32 h-32 rounded-xl grayscale" src="./public/linkedin-QR.png" />
 
-  <a class="text-left ml-4 mt-2" href="https://github.com/sayjeyhi">
-    <strong class="text-xl">Jafar Rezaei</strong> <br/>
+  <div class="text-left ml-4 mt-2" href="https://github.com/sayjeyhi">
+    <strong class="text-xl">Reach out to me!</strong> <br/>
+    <div class="mt-2 mb-2 text-lg flex gap-12">
+      <a href="github.com/sayjeyhi" >
+      <img class="w-4 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" /> Jafar Rezaei
+      </a>
+      <a href="https://sayjeyhi.com">
+      <img class="w-4 inline mr-1" src="https://em-content.zobj.net/source/microsoft-teams/400/link_1f517.png" /> sayjeyhi.com
+      </a>
+      </div>
     <span class="text-gray-400 text-sm">@sayjeyhi</span>
-  </a>
+  </div>
 </div>
