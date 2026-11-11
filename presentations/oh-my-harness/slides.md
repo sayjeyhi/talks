@@ -64,7 +64,9 @@ Ultimate usage of harnesses
 <!--
 Hope not boread and tired...
 
-Should we play an ice breaker game?
+Yes, this a bit of click baiting title.
+
+But I will try to give real and useful information
 -->
 
 ---
@@ -74,6 +76,10 @@ Should we play an ice breaker game?
 
 
 <iframe class="mt-2" style="transform: scale(0.5, 0.5) translate(-50%, -50%); position: absolute; left: 10%; right: 50%; " src="https://sayjeyhi.com?v=2" width="160%" height="140%" />
+
+<img class="absolute bottom-4 right-25 z-50 w-28 rounded-lg p-1" src="./public/sayjeyhi.com-qr.png" />
+
+<a href="https://sayjeyhi.com" class="absolute bottom-3 right-24.5 z-50 text-blue-400 text-xs font-bold decoration-none">https://sayjeyhi.com</a>
 
 
 <!--
@@ -95,7 +101,9 @@ I built it before AI getting so powerful.
 </div>
 
 <!--
+Before we start...
 How many of you have done this?
+Raise your hand if you have ever done this
 
 It is really annoying..
 
@@ -284,6 +292,32 @@ Annnd the laptop closing issue
 This is the visual tour in one frame: the server CLI, the paired client TUI, and the same agent flow in Telegram.
 
 The server stays alive when the laptop closes. Different systems can pair securely through devm8-client. The TUI supports remote work, pull-request review, and Jira. Telegram can start from a suggested branch, select a project, run project actions, and return the final result with the available next actions.
+-->
+
+
+---
+layout: center
+class: 'text-center'
+---
+
+<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
+
+# Demo time!
+
+<br />
+
+<div class="text-2xl font-bold text-zinc-200">
+  The real thing — live. No screenshots. <img class="w-7 inline" src="https://em-content.zobj.net/source/microsoft-teams/400/fire_1f525.png" />
+</div>
+
+<p class="text-zinc-500 text-lg mt-6">
+  A ticket from cli opencode → agent on it → branch ready — while we talk.
+</p>
+
+<!--
+
+This is not all the solution right? 
+we have many AI providers solving many of these..
 -->
 
 ---
@@ -523,6 +557,28 @@ class: 'text-center'
 Use the kitchen analogy from the transcript. A brilliant chef in an empty room can describe dinner but cannot cook it. Capability needs tools and an environment where actions have consequences.
 -->
 
+
+---
+layout: center
+class: 'text-center'
+---
+
+<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
+
+# Demo time!
+
+<br />
+
+<div class="text-2xl font-bold text-zinc-200">
+  Let's build a simple kitchen!
+</div>
+
+<!--
+This is a basic run time harness which does 
+
+manages all AI model can do in your code
+-->
+
 ---
 layout: center
 class: 'text-center'
@@ -542,27 +598,6 @@ To take best of harness
 -->
 
 
-
----
-layout: center
-class: 'text-center'
----
-
-<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
-
-# Demo time!
-
-<br />
-
-<div class="text-2xl font-bold text-zinc-200">
-  Let's build a basic AI harness!
-</div>
-
-<!--
-This is a basic run time harness which does 
-
-manages all AI model can do in your code
--->
 
 ---
 layout: center
@@ -1336,6 +1371,20 @@ A thread can commit, push, create a pull request, review changes, and merge. Lin
 Source: https://github.com/pingdotgg/t3code/blob/main/docs/user/source-control.md
 -->
 
+---
+layout: center
+class: 'text-center'
+---
+
+<img class="w-24 mx-auto mb-8" src="https://em-content.zobj.net/source/microsoft-teams/400/rocket_1f680.png" />
+
+# Demo time!
+
+<br/>
+
+<div class="text-2xl font-bold text-zinc-200">
+  See T3 Code in action...
+</div>
 
 ---
 
