@@ -146,7 +146,7 @@ export const TALKS = [
       "How to be best user of AI harness",
     link: "/oh-my-harness/",
     tags: ["AI", "agents", "LLM", "Rust", "t3code"],
-    image: "./talks/TBD.jpg",
+    image: "./talks/go-tech-world.png",
     date: "November 2026",
   }
 ];
