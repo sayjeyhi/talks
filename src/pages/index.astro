@@ -49,7 +49,9 @@ import {TALKS} from "../talks";
                   <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 ml-10 sm:ml-12 pb-8 md:pb-6 w-full">
                       <img src={talk.image} alt={talk.title} loading="lazy" class="w-full sm:w-48 sm:shrink-0 aspect-video object-cover rounded-lg shadow-lg"/>
                       <div class="min-w-0 flex-1">
-                          <h3 class="text-xl font-bold text-gray-100 dark:text-gray-100 mb-1 pr-16">{talk.title}</h3>
+                          <h3 class="text-xl font-bold text-gray-100 dark:text-gray-100 mb-1 sm:pr-16">
+                            <a href={talk.link} target="_blank" rel="noopener noreferrer" class="text-gray-100 dark:text-gray-100 visited:text-gray-100 hover:text-gray-100 dark:hover:text-gray-100 no-underline">{talk.title}</a>
+                          </h3>
                           <span class="block text-xs text-gray-100 dark:text-gray-100 mb-1">{talk.subtitle}</span>
                           <p class="text-sm text-gray-400 dark:text-gray-400 mb-3">{talk.date}</p>
                           <p class="text-gray-300 dark:text-gray-300 leading-relaxed">
@@ -57,7 +59,7 @@ import {TALKS} from "../talks";
                           </p>
                       </div>
                   </div>
-                  <a href={talk.link} target="_blank" rel="noopener noreferrer" class="absolute right-0 top-0 text-blue-500 dark:text-blue-300 hover:underline text-sm">slides</a>
+                  <a href={talk.link} target="_blank" rel="noopener noreferrer" class="hidden sm:block absolute right-0 top-0 text-blue-500 dark:text-blue-300 hover:underline text-sm">slides</a>
                 </li>
               ))}
             </ul>
